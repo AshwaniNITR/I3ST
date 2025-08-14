@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "./ContactAssets/NITR logo.png";
-import cvmilogo from "./ContactAssets/cvmi_logo 1.png";
+
 import Link from "next/link";
 
 import { Mail, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
@@ -21,15 +20,15 @@ export default function Contact() {
     <div id="contactus" className="bg-white">
       {/* Contact Header */}
       <div className="py-10 mx-16 my-2.5">
-        <h2 className="text-5xl font-bold text-[#CC5F00]">
+        <h2 className="text-5xl font-bold text-yellow-500">
           Contact Us
         </h2>
-        <div className="w-56 h-1 bg-[#CC5F00] mx-6 mt-2"></div>
+        <div className="w-56 h-1 bg-yellow-500 mx-6 mt-2"></div>
         <p className="mt-4 text-lg">
           For inquiries, please email us at{" "}
           <span className="font-bold text-black">
-            <a href="mailto:cvmi2025@nitrkl.ac.in" className="hover:underline">
-              cvmi2025@nitrkl.ac.in
+            <a href="mailto:i3st2026@nitrkl.ac.in" className="hover:underline">
+              i3st2026@nitrkl.ac.in
             </a>
           </span>
           .
@@ -37,12 +36,12 @@ export default function Contact() {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-[#0F0F0F] text-white py-10 rounded-t-3xl">
+      <footer className="bg-blue-950 text-white py-10 rounded-t-3xl">
         <div className="container mx-auto flex flex-col md:flex-row justify-between my-5 px-6 ">
           {/* Conference Details */}
           <div>
             <h3 className="text-lg font-semibold">
-              International Conference on Computer Vision & Machine Intelligence CVMI-2025
+              Intelligent Instrumentation For Sustainable Technologies I3ST-2026
             </h3>
             
             {/* Social Icons */}
@@ -85,12 +84,11 @@ export default function Contact() {
             ))}
           </ul>
           
-            <div className="w-64 h-0.5 bg-gray-700 mx-1 mt-2"></div>
+            <div className="w-64 h-0.5 bg-white mx-1 mt-2"></div>
             <div className="max-w-md my-4">
-            <p className="mt-4 text-sm text-gray-400">
-              The 4th International Conference on Computer Vision & Machine
-              Intelligence (CVMI-2025) is being organized by the Electronics &
-              Communication Engineering Department at NIT Rourkela from October 12–13, 2025.
+            <p className="mt-4 text-sm text-white">
+              The 4th International Conference on Intelligent Instrumentation For Sustainable Technologies (I3ST-2026) is being organized by the Electronics &
+              Communication Engineering Department at NIT Rourkela from April 3-4,2026.
             </p>
             </div>
           </div>
@@ -111,12 +109,12 @@ export default function Contact() {
                 name: "Schedule & Agenda",
                 href: "",
               },
+              // {
+              //   name:"CVMI-2025 Attractions",
+              //   href: "",
+              // },
               {
-                name:"CVMI-2025 Attractions",
-                href: "",
-              },
-              {
-                name:"Topics of CVMI-2025",
+                name:"Tracks of I3ST-2026",
                 href: "topics",
               },
               {
@@ -124,7 +122,7 @@ export default function Contact() {
                 href: "",
               },
               {
-                name:"CVMI-2025 Organizing Committee",
+                name:"I3ST-2026 Organizing Committee",
                 href: "ourteam",
               },
               {
@@ -150,37 +148,37 @@ export default function Contact() {
             <h3 className="text-lg font-semibold">CONTACT US</h3>
             <p className="mt-2 flex items-center space-x-2">
               <Mail className="w-5 h-5 text-gray-400" />
-              <span>cvmi2025@nitrkl.ac.in</span>
+              <span>i3st2026@nitrkl.ac.in</span>
             </p>
           </div>
         </div>
-        <div className="w-[98%] h-0.5 bg-gray-700 mx-4 mt-2"></div>
+        <div className="w-[98%] h-0.5 bg-white mx-4 mt-2"></div>
 
         {/* Footer Bottom */}
         <div className="flex flex-col justify-between items-center">
           <div className="flex justify-between items-end w-full">
-            <div className="text-gray-500 text-md mt-6 mx-5">
-              @CVMI-2025
+            <div className="text-white text-md mt-6 mx-5">
+              @I3ST-2026
             </div>
             <div className="flex items-center gap-12 mt-3 mx-5">
               <Image
-                src={cvmilogo}
-                alt="cvmiLogo"
-                width={125}
+                className="rounded-2xl"
+                src={`https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg`}
+                alt="i3stLogo"
+                width={50}
                 height={20}
               />
               <Image
-                src={logo}
+                className="rounded-2xl"
+                src={`/nitlogo.png`}
                 alt="NITR Logo"
                 width={50}
-                height={50}
+                height={20}
               />
             </div>
           </div>
         </div>
-        <div className="text-[#CC5F00] text-md text-center mt-4">
-            Designed and developed with <span className="text-[#CC5F00]">❤️</span> by Team Webwiz
-          </div>
+       
       </footer>
     </div>
   );

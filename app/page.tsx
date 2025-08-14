@@ -11,7 +11,7 @@ export default function Page() {
       <h1 className="text-3xl font-bold underline"></h1>
       <AboutUs />
       <Topics />
-      <KeynoteSpeakers/>
+      {/* <KeynoteSpeakers/> */}
       <Contact/>
     </div>
   }
