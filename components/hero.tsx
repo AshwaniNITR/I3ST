@@ -57,7 +57,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-lg mb-4">
               <div className="flex items-center gap-2">
                 <Calendar />
-                <span>April 3-4, 2026</span>
+                <span className="text-yellow-500 font-bold">April 3-4, 2026</span>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row text-left sm:items-start gap-2 text-sm md:text-lg">
