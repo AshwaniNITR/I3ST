@@ -8,9 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Hero = () => {
   const images = [
-    "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1741620271/image_2_t792t1.png",
-    "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1741779175/WhatsApp_Image_2025-03-12_at_16.39.09_a2b91448_gf1vpc.jpg",
-    "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1741774998/WhatsApp_Image_2025-03-12_at_10.50.21_ff755a16_nithpd.jpg",
+    "/ieeerklsubblack.png",
+    "/ieeeimsdark.png",
     "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1741774950/IMG-20250312-WA0008_1_inru0k.jpg",
   ];
 
@@ -39,17 +38,20 @@ const Hero = () => {
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover object-center"
+                className={`w-full h-full ${images[index]===`/ieeeimsdark.png`?`object-contain`:`object-cover`} object-center`}
                 style={{ height: "100dvh" }}
               />
             </div>
           ))}
         </Slider>
       </div>
-      <section className="relative w-full h-full bg-black/60 xl:py-48 md:py-32 px-6 sm:px-8 py-36 lg:px-12 text-white z-10">
+      <section className="relative w-full h-full xl:py-48 md:py-32 px-6 sm:px-8 py-36 lg:px-12 
+  text-transparent bg-clip-text 
+  bg-gradient-to-r from-yellow-300 via-amber-500 to-orange-700 
+  z-10">
         <div className="max-w-7xl mx-auto my-auto">
           <div className="text-center lg:text-left p-6 rounded-lg">
-            <p className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide leading-tight mb-8">
+            <p className="text-3xl  sm:text-4xl md:text-5xl font-extrabold tracking-wide leading-tight mb-8">
               1st IEEE International Conference<br className="hidden sm:block" />
               On Intelligent Instrumentation <br className='hidden sm:block' />
               For Sustainable Technologies
@@ -57,13 +59,13 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-lg mb-4">
               <div className="flex items-center gap-2">
                 <Calendar />
-                <span className="text-yellow-500 font-bold">April 3-4, 2026</span>
+                <span className=" font-extrabold">April 3-4, 2026</span>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row text-left sm:items-start gap-2 text-sm md:text-lg">
               <div className="flex items-start gap-2">
                 <MapPin />
-                <span>
+                <span className="font-extrabold">
                   Department of Electronics and Communication Engineering <br />
                   National Institute of Technology (NIT), Rourkela. <br />
                   Rourkela, Odisha, India - 769008
