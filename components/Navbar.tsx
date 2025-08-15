@@ -97,7 +97,7 @@ import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Committee", href: "/" },
+  { name: "Committee", href: "/commitee" },
   { name: "Keynote", href: "/" },
   { name: "Call for Papers", href: "/" },
   { name: "Paper Submission", href: "/" },

@@ -9,6 +9,9 @@ const nextConfig:NextConfig = {
           },
           {
             hostname:"images.unsplash.com"
+          },
+          {
+            hostname:"encrypted-tbn0.gstatic.com"
           }
       ],
 
