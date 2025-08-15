@@ -108,6 +108,8 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
+
+
 const AboutUs = () => {
   // Animation controls
   const controls = useAnimation();
@@ -180,9 +182,12 @@ const AboutUs = () => {
         animate={controls}
         variants={containerVariants}
       >
+           
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+             
           {/* Left Column - Text Content */}
           <div>
+               
             <motion.div variants={itemVariants}>
               <div className="relative inline-block">
                 <h1 className="md:text-5xl text-3xl font-bold text-[#ffb803] mb-6 sm:mb-8 text-left">
@@ -238,9 +243,9 @@ const AboutUs = () => {
               className="w-full rounded-xl shadow-xl overflow-hidden"
             >
               <img
-                src="./image 7.png"
+                src="./ieeerklsub.jpg"
                 alt="Conference Venue 1"
-                className="w-full h-64 sm:h-72 lg:h-80 object-cover"
+                className="w-full h-64 sm:h-72 lg:h-80 object-contain"
               />
             </motion.div>
 
@@ -250,7 +255,7 @@ const AboutUs = () => {
               className="w-full rounded-xl shadow-xl overflow-hidden"
             >
               <img
-                src="/image 3.png"
+                src="/ieeeims.png"
                 alt="Conference Venue 2"
                 className="w-full h-64 sm:h-72 lg:h-80 object-cover"
               />
@@ -262,9 +267,9 @@ const AboutUs = () => {
               className="w-full rounded-xl shadow-xl overflow-hidden"
             >
               <img
-                src="/image 8.png"
+                src="/ieeeimsrkl.jpg"
                 alt="Conference Venue 3"
-                className="w-full h-64 sm:h-72 lg:h-80 object-cover"
+                className="w-full h-64 sm:h-72 lg:h-80 object-fill"
               />
             </motion.div>
           </div>

@@ -19,7 +19,7 @@ export default function Contact() {
   return (
     <div id="contactus" className="bg-white">
       {/* Contact Header */}
-      <div className="py-10 mx-16 my-2.5">
+      {/* <div className="py-10 mx-16 my-2.5">
         <h2 className="text-5xl font-bold text-yellow-500">
           Contact Us
         </h2>
@@ -33,7 +33,7 @@ export default function Contact() {
           </span>
           .
         </p>
-      </div>
+      </div> */}
 
       {/* Footer Section */}
       <footer className="bg-blue-950 text-white py-10 rounded-t-3xl">

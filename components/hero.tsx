@@ -6,11 +6,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 const Hero = () => {
   const images = [
-    "/ieeerklsubblack.png",
-    "/ieeeimsdark.png",
-    "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1741774950/IMG-20250312-WA0008_1_inru0k.jpg",
+    "/image 8.png",
+    "./image 7.png",
   ];
 
   const settings = {
@@ -31,6 +31,7 @@ const Hero = () => {
       className="relative overflow-hidden h-screen"
     >
       <Navbar />
+    
       <div className="absolute inset-0">
         <Slider {...settings} className="w-full h-full">
           {images.map((src, index) => (
@@ -47,7 +48,7 @@ const Hero = () => {
       </div>
       <section className="relative w-full h-full xl:py-48 md:py-32 px-6 sm:px-8 py-36 lg:px-12 
   text-transparent bg-clip-text 
-  bg-gradient-to-r from-yellow-300 via-amber-500 to-orange-700 
+  bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500
   z-10">
         <div className="max-w-7xl mx-auto my-auto">
           <div className="text-center lg:text-left p-6 rounded-lg">
