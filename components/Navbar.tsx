@@ -25,7 +25,7 @@
 //           <div className="flex-shrink-0 flex items-center">
 //             {/* <Link href="/" className="flex items-center space-x-2 h-full">
 //               <Image
-//                 src="https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg"
+//                 src="https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I³ST_camy9q.jpg"
 //                 alt="Logo"
 //                 width={0} // will be overridden by style
 //                 height={0}
@@ -35,7 +35,7 @@
 //             </Link> */}
 //             <Link href="/" className="flex items-center space-x-2 h-full">
 //               <span className="text-2xl font-bold">
-//                 <span className="text-blue-900">IEEE I3ST</span>{" "}
+//                 <span className="text-blue-900">IEEE I³ST</span>{" "}
 //                 <span className="text-yellow-500">2026</span>
 //               </span>
 //             </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
               <span className="text-xl font-bold">
-                <span className="text-blue-900">IEEE I3ST</span>{" "}
+                <span className="text-blue-900">IEEE I³ST</span>{" "}
                 <span className="text-yellow-600">2026</span>
               </span>
             </Link>

@@ -5,7 +5,7 @@ import { Inter} from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'IEEE I3ST 2026',
+  title: 'IEEE I³ST 2026',
   description: 'International Conference on Intelligent Instrumentation for Sustainable Technologies',
 };
 

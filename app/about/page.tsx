@@ -51,7 +51,7 @@ const AboutUs: FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        About I3ST 2026
+        About I³ST 2026
       </motion.h2>
 
       <div className="max-w-6xl mx-auto space-y-24">
