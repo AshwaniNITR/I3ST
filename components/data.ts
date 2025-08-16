@@ -148,7 +148,7 @@ export const otherCommittees: Committee[] = [
       {
         id: 17,
         name: "Prof. R.P Naik",
-        imageUrl: "/RPNaik.jpg",
+        imageUrl: "/PrasadSir.jpg",
       },
     ],
   },
