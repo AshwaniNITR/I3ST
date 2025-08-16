@@ -99,7 +99,7 @@ const navigation = [
   { name: "About", href: "/about" },
   { name: "Committee", href: "/commitee" },
   { name: "Keynote", href: "/" },
-  { name: "Call for Papers", href: "/" },
+  { name: "Call for Papers", href: "/callforpapers.pdf" },
   { name: "Paper Submission", href: "/" },
   { name: "Accepted Papers", href: "/" },
   { name: "Sponsors", href: "/" },
