@@ -8,7 +8,6 @@ import Topics from "../components/Topics";
 
 export default function Page() {
     return <div>
-    
       <Hero/>
       <h1 className="text-3xl font-bold underline"></h1>
       <AboutUs />
