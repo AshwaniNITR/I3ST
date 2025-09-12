@@ -54,13 +54,13 @@ const Hero = () => {
           <div className="text-center lg:text-left p-6 rounded-lg">
             <p className="text-3xl  sm:text-4xl md:text-5xl font-extrabold tracking-wide leading-tight mb-8">
               1st IEEE International Conference<br className="hidden sm:block" />
-              On Intelligent Instrumentation <br className='hidden sm:block' />
-              For Sustainable Technologies
+              On Instrumentation <br className='hidden sm:block' />
+              (INSTCon 2026)
             </p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-lg mb-4">
               <div className="flex items-center gap-2">
                 <Calendar />
-                <span className=" font-extrabold">April 3-4, 2026</span>
+                <span className=" font-extrabold">July 24-25, 2026</span>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row text-left sm:items-start gap-2 text-sm md:text-lg">
