@@ -121,9 +121,9 @@ export default function ImportantDatesSlider() {
                 {(() => {
                   switch(item.title){
                     case "Paper Submission Ends":
-                      return "30 Apr, 2025";
+                      return "28 Feb, 2026";
                     case "Camera-ready Submission":
-                      return "20 Jun, 2025";
+                      return "31 May, 2026";
                     default:
                       return formatDate(item.date);
                   }

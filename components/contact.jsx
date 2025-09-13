@@ -41,108 +41,110 @@ export default function Contact() {
           {/* Conference Details */}
           <div>
             <h3 className="text-lg font-semibold">
-              Intelligent Instrumentation For Sustainable Technologies INSTCon-2026
+              Intelligent Instrumentation For Sustainable Technologies
+              INSTCon-2026
             </h3>
-            
+
             {/* Social Icons */}
             <ul className="flex space-x-4 mt-4">
-            {[
-              {
-                icon: Twitter,
-                name: "Twitter",
-                url: "#",
-              },
-              {
-                icon: Instagram,
-                name: "Instagram",
-                url: "#",
-              },
-              {
-                icon: Facebook,
-                name: "Facebook",
-                url: "#",
-              },
-              {
-                icon: Linkedin ,
-                name: "Linkedin",
-                url: "#",
-              },
-            ].map((social) => (
-              <li key={social.name}>
-                <a
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center group"
-                >
-                  <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
-                    <social.icon className="w-4 h-4 text-white"  />
-                  </div>
-                
-                </a>
-              </li>
-            ))}
-          </ul>
-          
+              {[
+                {
+                  icon: Twitter,
+                  name: "Twitter",
+                  url: "#",
+                },
+                {
+                  icon: Instagram,
+                  name: "Instagram",
+                  url: "#",
+                },
+                {
+                  icon: Facebook,
+                  name: "Facebook",
+                  url: "#",
+                },
+                {
+                  icon: Linkedin,
+                  name: "Linkedin",
+                  url: "#",
+                },
+              ].map((social) => (
+                <li key={social.name}>
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center group"
+                  >
+                    <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                      <social.icon className="w-4 h-4 text-white" />
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
             <div className="w-64 h-0.5 bg-white mx-1 mt-2"></div>
             <div className="max-w-md my-4">
-            <p className="mt-4 text-sm text-white">
-              The 4th International Conference on Intelligent Instrumentation For Sustainable Technologies (INSTCon-2026) is being organized by the Electronics &
-              Communication Engineering Department at NIT Rourkela from April 3-4,2026.
-            </p>
+              <p className="mt-4 text-sm text-white">
+                The 1st IEEE International Conference On Instrumentation
+                (INSTCon-2026) is being organized by the Electronics &
+                Communication Engineering Department at NIT Rourkela from July
+                24-25,2026.
+              </p>
             </div>
           </div>
 
           {/* Navigation Menu */}
           <div className="text-sm space-y-2">
             <ul className="space-y-1">
-            {[
-              {
-                name: "Home",
-                href: "home",
-              },
-              {
-                name: "About Us",
-                href: "aboutus",
-              },
-              {
-                name: "Schedule & Agenda",
-                href: "",
-              },
-              // {
-              //   name:"CVMI-2025 Attractions",
-              //   href: "",
-              // },
-              {
-                name:"Tracks of INSTCon-2026",
-                href: "topics",
-              },
-              {
-                name:"Paper Submission",
-                href: "",
-              },
-              {
-                name:"INSTCon-2026 Organizing Committee",
-                href: "ourteam",
-              },
-              {
-                name: "Contact Us",
-                href: "contactus",
-              },
-            ].map((key) => (
-              <li key={key.name}>
-                <Link
-                  href={`#${key.href}`}
-                  onClick={(e) => handleClick(e, key.href)}
-                  className="flex items-center group hover:underline cursor-pointer"
-                >
-                  {key.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+              {[
+                {
+                  name: "Home",
+                  href: "home",
+                },
+                {
+                  name: "About Us",
+                  href: "aboutus",
+                },
+                {
+                  name: "Schedule & Agenda",
+                  href: "",
+                },
+                // {
+                //   name:"CVMI-2025 Attractions",
+                //   href: "",
+                // },
+                {
+                  name: "Tracks of INSTCon-2026",
+                  href: "topics",
+                },
+                {
+                  name: "Paper Submission",
+                  href: "",
+                },
+                {
+                  name: "INSTCon-2026 Organizing Committee",
+                  href: "ourteam",
+                },
+                {
+                  name: "Contact Us",
+                  href: "contactus",
+                },
+              ].map((key) => (
+                <li key={key.name}>
+                  <Link
+                    href={`#${key.href}`}
+                    onClick={(e) => handleClick(e, key.href)}
+                    className="flex items-center group hover:underline cursor-pointer"
+                  >
+                    {key.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          
+
           {/* Contact Information */}
           <div className="text-sm">
             <h3 className="text-lg font-semibold">CONTACT US</h3>
@@ -157,13 +159,11 @@ export default function Contact() {
         {/* Footer Bottom */}
         <div className="flex flex-col justify-between items-center">
           <div className="flex justify-between items-end w-full">
-            <div className="text-white text-md mt-6 mx-5">
-              @INSTCon-2026
-            </div>
+            <div className="text-white text-md mt-6 mx-5">@INSTCon-2026</div>
             <div className="flex items-center gap-12 mt-3 mx-5">
               <Image
                 className="rounded-2xl"
-                src={`https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_INSTCon_camy9q.jpg`}
+                src={`https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg`}
                 alt="INSTConLogo"
                 width={50}
                 height={20}
@@ -178,7 +178,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-       
       </footer>
     </div>
   );
