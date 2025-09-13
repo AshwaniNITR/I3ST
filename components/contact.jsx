@@ -27,8 +27,8 @@ export default function Contact() {
         <p className="mt-4 text-lg">
           For inquiries, please email us at{" "}
           <span className="font-bold text-black">
-            <a href="mailto:I³ST2026@nitrkl.ac.in" className="hover:underline">
-              I³ST2026@nitrkl.ac.in
+            <a href="mailto:INSTCon2026@nitrkl.ac.in" className="hover:underline">
+              INSTCon2026@nitrkl.ac.in
             </a>
           </span>
           .
@@ -41,7 +41,7 @@ export default function Contact() {
           {/* Conference Details */}
           <div>
             <h3 className="text-lg font-semibold">
-              Intelligent Instrumentation For Sustainable Technologies I³ST-2026
+              Intelligent Instrumentation For Sustainable Technologies INSTCon-2026
             </h3>
             
             {/* Social Icons */}
@@ -87,7 +87,7 @@ export default function Contact() {
             <div className="w-64 h-0.5 bg-white mx-1 mt-2"></div>
             <div className="max-w-md my-4">
             <p className="mt-4 text-sm text-white">
-              The 4th International Conference on Intelligent Instrumentation For Sustainable Technologies (I³ST-2026) is being organized by the Electronics &
+              The 4th International Conference on Intelligent Instrumentation For Sustainable Technologies (INSTCon-2026) is being organized by the Electronics &
               Communication Engineering Department at NIT Rourkela from April 3-4,2026.
             </p>
             </div>
@@ -114,7 +114,7 @@ export default function Contact() {
               //   href: "",
               // },
               {
-                name:"Tracks of I³ST-2026",
+                name:"Tracks of INSTCon-2026",
                 href: "topics",
               },
               {
@@ -122,7 +122,7 @@ export default function Contact() {
                 href: "",
               },
               {
-                name:"I³ST-2026 Organizing Committee",
+                name:"INSTCon-2026 Organizing Committee",
                 href: "ourteam",
               },
               {
@@ -148,7 +148,7 @@ export default function Contact() {
             <h3 className="text-lg font-semibold">CONTACT US</h3>
             <p className="mt-2 flex items-center space-x-2">
               <Mail className="w-5 h-5 text-gray-400" />
-              <span>I³ST2026@nitrkl.ac.in</span>
+              <span>INSTCon2026@nitrkl.ac.in</span>
             </p>
           </div>
         </div>
@@ -158,13 +158,13 @@ export default function Contact() {
         <div className="flex flex-col justify-between items-center">
           <div className="flex justify-between items-end w-full">
             <div className="text-white text-md mt-6 mx-5">
-              @I³ST-2026
+              @INSTCon-2026
             </div>
             <div className="flex items-center gap-12 mt-3 mx-5">
               <Image
                 className="rounded-2xl"
-                src={`https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I³ST_camy9q.jpg`}
-                alt="I³STLogo"
+                src={`https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_INSTCon_camy9q.jpg`}
+                alt="INSTConLogo"
                 width={50}
                 height={20}
               />

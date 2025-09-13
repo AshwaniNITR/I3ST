@@ -103,7 +103,7 @@ const Topics = () => {
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#ffb803] to-transparent"></div>
           </div>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-            Explore the diverse research tracks of I³ST 2026 covering cutting-edge topics in intelligent instrumentation and sustainable technologies.
+            Explore the diverse research tracks of INSTCon 2026 covering cutting-edge topics in intelligent instrumentation and sustainable technologies.
           </p>
         </motion.div>
 

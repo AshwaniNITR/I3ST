@@ -47,9 +47,7 @@ const Hero = () => {
         </Slider>
       </div>
       <section className="relative w-full h-full xl:py-48 md:py-32 px-6 sm:px-8 py-36 lg:px-12 
-  text-transparent bg-clip-text 
-  bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500
-  z-10">
+       text-white drop-shadow-[2px_2px_6px_rgba(0,0,0,0.7)] z-10">
         <div className="max-w-7xl mx-auto my-auto">
           <div className="text-center lg:text-left p-6 rounded-lg">
             <p className="text-3xl  sm:text-4xl md:text-5xl font-extrabold tracking-wide leading-tight mb-8">

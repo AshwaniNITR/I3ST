@@ -4,7 +4,7 @@
 //       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
 //         <div>
 //           <h1 className="md:text-5xl text-3xl font-bold underline text-[#ffb803] mb-4 sm:mb-6 text-left relative">
-//             About I³ST 2026
+//             About INSTCon 2026
 //           </h1>
 
 //           <p className="md:mt-16 lg:text-xl font-medium text-center tracking-wide md:text-left mb-4 sm:mb-6 lg:mb-16">
@@ -20,14 +20,14 @@
 //             announce the{" "}
 //             <strong>
 //               1st IEEE International Conference on Intelligent Instrumentation
-//               for Sustainable Technology (I³ST 2026)
+//               for Sustainable Technology (INSTCon 2026)
 //             </strong>
 //             , to be held at the{" "}
 //             <strong>National Institute of Technology, Rourkela, India</strong>.
 //           </p>
 
 //           <p className="lg:text-xl font-medium text-center tracking-wide md:text-left mb-4 sm:mb-6 lg:mb-16">
-//             I³ST 2026 is a premier international forum dedicated to advancements
+//             INSTCon 2026 is a premier international forum dedicated to advancements
 //             in intelligent instrumentation, sustainable engineering solutions,
 //             and cutting-edge automation technologies. The conference aims to
 //             bring together researchers, engineers, scientists, academicians,
@@ -46,7 +46,7 @@
 
 //           <p className="lg:text-xl font-medium text-center tracking-wide md:text-left mb-4 sm:mb-6 lg:mb-16">
 //             Hosted in the vibrant academic and research environment of{" "}
-//             <strong>NIT Rourkela</strong>, I³ST 2026 will feature a highly
+//             <strong>NIT Rourkela</strong>, INSTCon 2026 will feature a highly
 //             selective technical program, including peer-reviewed papers and
 //             invited contributions from renowned experts in instrumentation,
 //             measurement, robotics, automation, and sustainable systems.
@@ -68,7 +68,7 @@
 //           </p>
 
 //           <p className="lg:text-xl font-medium text-center tracking-wide md:text-left lg:mb-16">
-//             With sustainability as its driving vision, I³ST 2026 will serve as a
+//             With sustainability as its driving vision, INSTCon 2026 will serve as a
 //             global platform to exchange knowledge, foster interdisciplinary
 //             collaborations, and showcase innovations that can accelerate
 //             progress toward a more sustainable future. We look forward to
@@ -191,7 +191,7 @@ const AboutUs = () => {
             <motion.div variants={itemVariants}>
               <div className="relative inline-block">
                 <h1 className="md:text-5xl text-3xl font-bold text-[#ffb803] mb-6 sm:mb-8 text-left">
-                  About I³ST 2026
+                  About INSTCon 2026
                 </h1>
                 <motion.div
                   className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#ffb803] to-transparent"
@@ -203,12 +203,12 @@ const AboutUs = () => {
             </motion.div>
 
             {[
-              `It is with great pride that the IEEE Instrumentation and Measurement Society – Rourkela Chapter and the IEEE Robotics and Automation Society Student Chapter – NIT Rourkela announce the 1st IEEE International Conference on Intelligent Instrumentation for Sustainable Technology (I³ST 2026), to be held at the National Institute of Technology, Rourkela, India.`,
-              `I³ST 2026 is a premier international forum dedicated to advancements in intelligent instrumentation, sustainable engineering solutions, and cutting-edge automation technologies. The conference aims to bring together researchers, engineers, scientists, academicians, industry leaders, entrepreneurs, and policymakers from across the globe to advance the frontiers of measurement, sensing, control, and automation for a sustainable future.`,
+              `It is with great pride that the IEEE Instrumentation and Measurement Society – Rourkela Chapter and the IEEE Robotics and Automation Society Student Chapter – NIT Rourkela announce the 1st IEEE International Conference on Intelligent Instrumentation for Sustainable Technology (INSTCon 2026), to be held at the National Institute of Technology, Rourkela, India.`,
+              `INSTCon 2026 is a premier international forum dedicated to advancements in intelligent instrumentation, sustainable engineering solutions, and cutting-edge automation technologies. The conference aims to bring together researchers, engineers, scientists, academicians, industry leaders, entrepreneurs, and policymakers from across the globe to advance the frontiers of measurement, sensing, control, and automation for a sustainable future.`,
               `With rapid advancements in smart sensing, intelligent control, and data-driven decision making, the conference will provide a vibrant platform to exchange ideas, showcase cutting-edge developments, and explore solutions that bridge science, engineering, and societal needs.`,
-              `Hosted in the vibrant academic and research environment of NIT Rourkela, I³ST 2026 will feature a highly selective technical program, including peer-reviewed papers and invited contributions from renowned experts in instrumentation, measurement, robotics, automation, and sustainable systems. Technically sponsored by the IEEE Instrumentation & Measurement Society – Rourkela Chapter and IEEE Robotics & Automation Society Student Branch Chapter – NIT Rourkela, the conference aims to foster collaboration across diverse domains such as precision agriculture, healthcare diagnostics, industrial automation, environmental monitoring, and renewable energy systems.`,
+              `Hosted in the vibrant academic and research environment of NIT Rourkela, INSTCon 2026 will feature a highly selective technical program, including peer-reviewed papers and invited contributions from renowned experts in instrumentation, measurement, robotics, automation, and sustainable systems. Technically sponsored by the IEEE Instrumentation & Measurement Society – Rourkela Chapter and IEEE Robotics & Automation Society Student Branch Chapter – NIT Rourkela, the conference aims to foster collaboration across diverse domains such as precision agriculture, healthcare diagnostics, industrial automation, environmental monitoring, and renewable energy systems.`,
               `By integrating advancements in AI/ML, quantum devices, cyber-physical security, and sustainable hardware design, the event will serve as a showcase of technical excellence and as a call to action for academia, industry, and policymakers to accelerate the adoption of intelligent instrumentation as a cornerstone of global sustainability initiatives.`,
-              `With sustainability as its driving vision, I³ST 2026 will serve as a global platform to exchange knowledge, foster interdisciplinary collaborations, and showcase innovations that can accelerate progress toward a more sustainable future. We look forward to welcoming you to NIT Rourkela for an intellectually stimulating and inspiring event that merges technological excellence with societal responsibility.`,
+              `With sustainability as its driving vision, INSTCon 2026 will serve as a global platform to exchange knowledge, foster interdisciplinary collaborations, and showcase innovations that can accelerate progress toward a more sustainable future. We look forward to welcoming you to NIT Rourkela for an intellectually stimulating and inspiring event that merges technological excellence with societal responsibility.`,
             ].map((paragraph, index) => (
               <motion.p
                 key={index}
