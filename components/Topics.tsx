@@ -87,7 +87,7 @@ const Topics = () => {
   const goToPrev = () => sliderRef.current?.slickPrev();
 
   return (
-    <div id="topics" className="bg-white p-6 sm:p-10 md:p-16 lg:p-20">
+    <div id="topics" className="bg-gradient-to-tr from-slate-50 via-white to-blue-50 shadow-xl  p-6 sm:p-10 md:p-16 lg:p-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,10 +97,10 @@ const Topics = () => {
           className="mb-12"
         >
           <div className="relative inline-block">
-            <h1 className="md:text-5xl text-3xl font-bold text-[#ffb803] text-left">
+            <h1 className="md:text-5xl text-3xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent mb-2">
               Conference Tracks
             </h1>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#ffb803] to-transparent"></div>
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600"></div>
           </div>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl">
             Explore the diverse research tracks of INSTCon 2026 covering cutting-edge topics in intelligent instrumentation and sustainable technologies.
@@ -120,7 +120,7 @@ const Topics = () => {
               >
                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 min-h-[400px] flex flex-col">
                   <motion.h3 
-                    className="text-2xl font-bold text-[#ffb803] mb-6"
+                    className="text-2xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 mb-6 bg-clip-text text-transparent"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4 }}
@@ -136,7 +136,7 @@ const Topics = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.05, duration: 0.3 }}
                         viewport={{ once: true }}
-                        className="text-gray-700 text-lg md:text-xl font-medium relative pl-5 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:bg-[#ffb803] before:rounded-full"
+                        className="bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 mb-6 bg-clip-text text-transparent text-lg md:text-xl font-medium relative pl-5 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:bg-[#ffb803] before:rounded-full"
                       >
                         {item}
                       </motion.li>
@@ -149,15 +149,15 @@ const Topics = () => {
 
           <button
             onClick={goToPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors"
+            className="bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 mb-6 bg-clip-text text-transparent absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 p-2 rounded-full shadow-md transition-colors"
           >
-            <VscArrowCircleLeft className="text-[#ffb803]" size={28} />
+            <VscArrowCircleLeft className="text-yellow-500" size={28} />
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors"
+            className="bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 mb-6 bg-clip-text text-transparent absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 p-2 rounded-full shadow-md  transition-colors"
           >
-            <VscArrowCircleRight className="text-[#ffb803]" size={28} />
+            <VscArrowCircleRight className="text-yellow-500" size={28} />
           </button>
         </div>
       </div>
