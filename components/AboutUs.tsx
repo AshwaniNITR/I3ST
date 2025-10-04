@@ -4,6 +4,8 @@ import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import SecondBack from "./SecondBack";
+
 
 const AboutUs = () => {
   const [isFlyerExpanded, setIsFlyerExpanded] = useState(false);
@@ -71,7 +73,9 @@ const AboutUs = () => {
     <div
       id="aboutus"
       className="bg-gradient-to-br from-slate-50 via-white to-blue-50  p-6 sm:p-10 md:p-16 lg:p-20 overflow-hidden relative"
-    >
+    > 
+    <SecondBack/>
+     
       {/* Backdrop blur overlay - only on desktop when expanded */}
       {isFlyerExpanded && (
         <div 

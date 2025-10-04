@@ -6,6 +6,8 @@ import { VscArrowCircleRight, VscArrowCircleLeft } from "react-icons/vsc";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+
 const Topics = () => {
   const sliderRef = useRef<Slider>(null);
 
@@ -80,6 +82,16 @@ const Topics = () => {
         "Multimodal Fusion and Intelligent Feature Extraction",
         "Automation and Smart Manufacturing"
       ]
+    },
+    {
+      title:"Track 7: Instrumentation for Defense and Space Applications",
+      items:[
+        "Space Instrumentation, Sensors, and Payload Systems",
+        "Remote Sensing, Navigation, and Satellite Communication",
+        "Advanced Materials, Devices, and Energy Solutions for Defense",
+        "Guidance, Navigation, and Control (GNC) Systems",
+        "Simulation, Digital Twins, and Validation of Mission-Critical Systems"
+      ]
     }
   ];
 
@@ -89,6 +101,7 @@ const Topics = () => {
   return (
     <div id="topics" className="bg-gradient-to-tr from-slate-50 via-white to-blue-50 shadow-xl  p-6 sm:p-10 md:p-16 lg:p-20">
       <div className="max-w-7xl mx-auto">
+       
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

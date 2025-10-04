@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Menu, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -12,20 +12,20 @@ const navigation = [
     name: "Committee", 
     href: "/committee",
     dropdown: [
-      { name: "Organizing Committee", href: "/committee/organizing" },
-      { name: "Technical Committee", href: "/committee/technical" },
-      { name: "Advisory Committee", href: "/committee/advisory" }
+      { name: "Organizing Committee", href: "/organizing" },
+      { name: "Technical Committee", href: "/technical" },
+      { name: "Advisory Committee", href: "/advisory" }
     ]
   },
   { name: "Keynote", href: "/" },
-  { name: "Call for Papers", href: "/callforpapers.pdf" },
+  { name: "Call for Papers", href: "/INSTCon_Flyer.pdf" },
   { name: "Paper Submission", href: "/",
     dropdown:[
-      {name:"Submitted Papers",href:"/"},
-      {name:"Accepted Papers",href:"/"}
+      {name:"Submitted Papers",href:"/submitted"},
+      {name:"Accepted Papers",href:"/accepted"}
     ]
    },
-  { name:"Events",href:"/"},
+  { name:"Events",href:"/events"},
   { name: "Sponsors", href: "/" },
 ];
 
@@ -33,7 +33,7 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const dropdownRef = useRef(null);
+  const dropdownRefs = useRef({});
 
   // Handle scroll effect
   useEffect(() => {
@@ -48,19 +48,29 @@ export default function Navbar() {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      const clickedOutside = Object.values(dropdownRefs.current).every(
+        ref => !ref || !(ref as Node).contains(event.target)
+      );
+      
+      if (clickedOutside) {
         setActiveDropdown(null);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+    if (activeDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }
+  }, [activeDropdown]);
 
   const toggleDropdown = (itemName) => {
     setActiveDropdown(activeDropdown === itemName ? null : itemName);
+  };
+
+  const handleDropdownItemClick = () => {
+    setActiveDropdown(null);
   };
 
   return (
@@ -99,7 +109,7 @@ export default function Navbar() {
                 <div
                   key={item.name}
                   className="relative"
-                  ref={dropdownRef}
+                  ref={(el) => { dropdownRefs.current[item.name] = el; }}
                 >
                   <button 
                     onClick={() => toggleDropdown(item.name)}
@@ -125,7 +135,7 @@ export default function Navbar() {
                             key={subItem.name}
                             href={subItem.href}
                             className="block px-4 py-2.5 text-sm text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-purple-50/50 transition-all duration-200"
-                            onClick={() => setActiveDropdown(null)}
+                            onClick={handleDropdownItemClick}
                           >
                             {subItem.name}
                           </Link>

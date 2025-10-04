@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { type FC } from "react";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
+import SecondBack from "../../components/SecondBack";
+// import { CommitteesBackground } from "../../components/Background";
 
 interface Section {
   title: string;
@@ -45,8 +47,9 @@ const AboutUs: FC = () => {
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8 ">
       <Navbar />
+      <SecondBack />
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-500"
+        className="text-4xl md:text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent "
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
