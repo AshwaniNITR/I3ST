@@ -4,17 +4,23 @@ import { Menu, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
 import React, { useState, useRef, useEffect } from "react";
+import { draftMode } from "next/headers";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "About", href: "/about",
+    dropdown:[
+      {name:"About Us",href:"/about"},
+      {name:"Tracks",href:"/track-chairs"},
+    ]
+   },
   { 
     name: "Committee", 
     href: "/committee",
     dropdown: [
       { name: "Organizing Committee", href: "/organizing" },
-      { name: "Technical Committee", href: "/technical" },
-      { name: "Advisory Committee", href: "/advisory" }
+      { name: "Technical Committee", href: "/" },
+      { name: "Advisory Committee", href: "/" },
     ]
   },
   { name: "Keynote", href: "/" },
