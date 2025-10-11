@@ -33,7 +33,7 @@ const navigation = [
   {name:"Tracks",href:"/track-chairs"},
   { name: "Keynote", href: "/updatedsoon" },
   { name: "Events", href: "/updatedsoon" },,
-  { name: "Sponsors", href: "/updatedsoon" },
+  { name: "Sponsors", href: "/Sponsorship" },
 ];
 
 export default function Navbar() {

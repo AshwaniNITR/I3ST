@@ -364,18 +364,18 @@ export const trackChairs: Committee[] = [
         id:5,
         name:"Prof. Sadanand Behera",
         role:"NIT Rourkela",
-        imageUrl:"/sadanand-behera-5.jpg"
+        imageUrl:"/sadanand-behera.jpg"
       },
       {
         id:6,
         name:"Prof. R P Prasad",
         role:"NIT Rourkela",
-        imageUrl:"/r-p-prasad-6.jpg"
+        imageUrl:"/PrasadSir.jpg"
       },
       {
         id:7,
         name:"Prof. Munmun Khanra",
-        role:"NIT Rourkela",
+        role:"NIT Silchar",
         imageUrl:"/munmun-khanra-7.jpg"
       },
       {
