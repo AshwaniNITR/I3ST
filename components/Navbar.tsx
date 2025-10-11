@@ -18,7 +18,7 @@ const navigation = [
     dropdown: [
       { name: "Organizing Committee", href: "/organizing" },
       { name: "Technical Committee", href: "/technical" },
-      { name: "Advisory Committee", href: "/" },
+      { name: "Advisory Committee", href: "/updatedsoon" },
     ]
   },
   {
@@ -26,14 +26,14 @@ const navigation = [
     href: "/authors",
     dropdown:[
       { name: "Call for Papers", href: "/INSTCON_Flyer.pdf" },
-      { name: "Submit Paper", href: "/" },
-      {name:"Registration Details",href:"/"}
+      { name: "Submit Paper", href: "/updatedsoon" },
+      {name:"Registration Details",href:"/updatedsoon"}
     ]
   },
   {name:"Tracks",href:"/track-chairs"},
-  { name: "Keynote", href: "/" },
-  { name: "Events", href: "/events" },,
-  { name: "Sponsors", href: "/" },
+  { name: "Keynote", href: "/updatedsoon" },
+  { name: "Events", href: "/updatedsoon" },,
+  { name: "Sponsors", href: "/updatedsoon" },
 ];
 
 export default function Navbar() {

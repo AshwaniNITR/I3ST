@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import SecondBack from '../../components/SecondBack'
+import Navbar from '../../components/Navbar';
 
 const page = () => {
   const [selectedTrack, setSelectedTrack] = useState(null);
@@ -131,17 +132,18 @@ const page = () => {
   };
 
   return (
-    <div className="">
+    <div className="py-20 px-4 sm:px-6 lg:px-8 ">
       <SecondBack/>
+      <Navbar/>
       
       {/* Header Section */}
       <div className="container mx-auto px-4 py-12">
+   
         <div className="text-center mb-12">
-          <h1 className='md:text-6xl text-4xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent mb-4'>
-            Tracks
+          <h1 className='md:text-6xl text-4xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent  mb-4'>
+            Conference Tracks
           </h1>
-          <p className="text-xl text-gray-600 font-light">INSTCon 2026</p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto  rounded-full"></div>
         </div>
         
         {/* Tracks Grid */}
@@ -150,7 +152,9 @@ const page = () => {
             <div 
               key={track.id}
               onClick={() => openModal(track)}
-              className="group cursor-pointer transform hover:scale-105 transition-all duration-300"
+              className={`group cursor-pointer transform hover:scale-105 transition-all duration-300 ${
+                track.id === 7 ? 'lg:col-start-1 lg:col-span-2 lg:max-w-md lg:mx-auto' : ''
+              }`}
             >
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-2xl transition-all duration-300 group-hover:border-blue-200">
                 {/* Track Header */}
@@ -208,88 +212,87 @@ const page = () => {
       </div>
 
       {/* Modal */}
-      {/* Modal */}
-{isModalOpen && selectedTrack && (
-  <div className="fixed inset-0  bg-opacity-20 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-    <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-      {/* Modal Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 rounded-t-2xl">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div className="w-14 h-14 bg-white bg-opacity-20 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-              {selectedTrack.id}
-            </div>
-            <div>
-              <h2 className="text-xl font-bold text-white">{selectedTrack.title}</h2>
-              <p className="text-blue-100 text-sm">Track Details</p>
-            </div>
-          </div>
-          <button
-            onClick={closeModal}
-            className="text-white hover:bg-white hover:bg-opacity-20 rounded-full p-2 transition-colors"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* Modal Content */}
-      <div className="p-6">
-        {/* Track Chairs Section */}
-        <div className="mb-8">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-            <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-            Track Chairs
-          </h3>
-          <div className="grid gap-3">
-            {selectedTrack.chairs.map((chair, index) => (
-              <div key={index} className="flex items-center p-3 bg-gray-50 rounded-lg">
-                <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                  {index + 1}
+      {isModalOpen && selectedTrack && (
+        <div className="fixed inset-0  bg-opacity-20 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 rounded-t-2xl">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                  <div className="w-14 h-14 bg-white bg-opacity-20 rounded-xl flex items-center justify-center text-black font-bold text-xl">
+                    {selectedTrack.id}
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-bold text-white">{selectedTrack.title}</h2>
+                    <p className="text-blue-100 text-sm">Track Details</p>
+                  </div>
                 </div>
-                <span className="text-gray-700">{chair}</span>
+                <button
+                  onClick={closeModal}
+                  className="text-white hover:bg-amber-50 hover:text-red-500  hover:bg-opacity-20 rounded-full p-2 transition-colors"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        {/* Sub-topics Section */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-            <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-            </svg>
-            Track Sub-topics
-          </h3>
-          <div className="grid gap-2">
-            {selectedTrack.subTopics.map((topic, index) => (
-              <div key={index} className="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-blue-50 transition-colors">
-                <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">
-                  {index + 1}
+            {/* Modal Content */}
+            <div className="p-6">
+              {/* Track Chairs Section */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  Track Chairs
+                </h3>
+                <div className="grid gap-3">
+                  {selectedTrack.chairs.map((chair, index) => (
+                    <div key={index} className="flex items-center p-3 bg-gray-50 rounded-lg">
+                      <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                        {index + 1}
+                      </div>
+                      <span className="text-gray-700">{chair}</span>
+                    </div>
+                  ))}
                 </div>
-                <span className="text-gray-700">{topic}</span>
               </div>
-            ))}
+
+              {/* Sub-topics Section */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  Track Sub-topics
+                </h3>
+                <div className="grid gap-2">
+                  {selectedTrack.subTopics.map((topic, index) => (
+                    <div key={index} className="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-blue-50 transition-colors">
+                      <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">
+                        {index + 1}
+                      </div>
+                      <span className="text-gray-700">{topic}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="border-t border-gray-200 p-4 bg-gray-50 rounded-b-2xl">
+              <button
+                onClick={closeModal}
+                className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105"
+              >
+                Close Details
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Modal Footer */}
-      <div className="border-t border-gray-200 p-4 bg-gray-50 rounded-b-2xl">
-        <button
-          onClick={closeModal}
-          className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105"
-        >
-          Close Details
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+      )}
     </div>
   )
 }

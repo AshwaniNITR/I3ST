@@ -36,8 +36,8 @@ const SimpleCarousel = ({ images }) => {
 
 const Hero = () => {
   const images = [
-    "/image 7.png",
-    "/image 8.png",
+    "/nitfrontgate.jpg",
+    "/nitmainbuilding.jpeg",
   ];
 
   return (
