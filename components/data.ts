@@ -332,6 +332,134 @@ export const patronCommittees: Committee[] = [
     ],
   },
 ];
+export const trackChairs: Committee[] = [
+  {
+    title: "Track Chairs",
+    members: [
+      {
+        id: 1,
+        name: "Prof.Siraz Sohail ",
+        role: "NIT Trichy",
+        imageUrl: "/siraz-sohail-1.jpg",
+      },
+        {
+        id: 2,
+        name: "Prof. Rashmi Achla Minz",
+        role: "NIT Rourkela",
+        imageUrl: "/RMinz.jpg",
+      },
+      {
+        id: 3,
+        name: "Prof. Sougata Kumar Kar",
+        role: "NIT Rourkela",
+        imageUrl: "/SougataKar.jpeg",
+      },
+      {
+        id:4,
+        name:"Prof.Siddharth Deshmukh",
+        role:"NIT Raipur",
+        imageUrl:"/siddharth-deshmukh-4.jpg"
+      },
+      {
+        id:5,
+        name:"Prof. Sadanand Behera",
+        role:"NIT Rourkela",
+        imageUrl:"/sadanand-behera-5.jpg"
+      },
+      {
+        id:6,
+        name:"Prof. R P Prasad",
+        role:"NIT Rourkela",
+        imageUrl:"/r-p-prasad-6.jpg"
+      },
+      {
+        id:7,
+        name:"Prof. Munmun Khanra",
+        role:"NIT Rourkela",
+        imageUrl:"/munmun-khanra-7.jpg"
+      },
+      {
+        id:8,
+        name:"Prof. Rajiv Mishra",
+        role:"NIT Rourkela",
+        imageUrl:"/RKM.jpg"
+      },
+      {
+        id:9,
+        name:"Prof. Ashim Naskar",
+        role:"NIT Rourkela",
+        imageUrl:"/ashim-naskar-9.jpg"
+      },
+      {
+        id:10,
+        name:"Prof. Debashis Mandal",
+        role:"IIT Kharagpur",
+        imageUrl:"/debashis-mandal-10.jpg"
+      },
+      {
+        id:11,
+        name:"Prof. Santanu Sarkar",
+        role:"NIT Rourkela",
+        imageUrl:"/SantanuSarkar.jpeg"
+      },
+      {
+        id:12,
+        name:"Prof. Sovan Dalai",
+        role:"Javadpur University",
+        imageUrl:"/sovan-dalai-12.jpg"
+      },
+      {
+        id:13,
+        name:"Prof. Ananyo Sengupta",
+        role:"NIT Roukela",
+        imageUrl:"/ananyo-sengupta-9.png"
+      },
+      {
+        id:14,
+        name:"Arijit Guha",
+        role:"NIT Rourkela",
+        imageUrl:"/arijit-guha-10.jpg"
+      },
+      {
+        id:15,
+        name:"Prof. Shihabudheen KV",
+        role:"NIT Calicut",
+        imageUrl:"/shihabudheen-kv-15.jpg"
+      },
+      {
+        id:16,
+        name:"Prof. Saptarshi Chaterjee",
+        role:"NIT Rourkela",
+        imageUrl:"/SaptarshiChaterjee.jpeg"
+      },
+      {
+        id:17,
+        name:"Prof. Anusha AS",
+        role:"NIT Rourkela",
+        imageUrl:"/AnushaMam.jpg"
+      },
+      {
+        id:18,
+        name:"Prof. Alok Prakash",
+        role:"NIT Rourkela",
+        imageUrl:"/AlokP.jpeg"
+      },
+      {
+        id:20,
+        name:"Sudip Kundu",
+        role:"NIT Rourkela",
+        imageUrl:"/citations2.jpg"
+      },
+      {
+        id:21,
+        name:"Prof. Aveek Dutta",
+        role:"NIT Rourkela",
+        imageUrl:"/aveek-dutta-21.jpg"
+      },
+    ],
+  },
+];
+
 
 // Other committees
 export const otherCommittees: Committee[] = [

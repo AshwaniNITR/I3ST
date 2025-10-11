@@ -41,7 +41,7 @@ export default function Contact() {
           {/* Conference Details */}
           <div>
             <h3 className="text-lg font-semibold">
-              Intelligent Instrumentation For Sustainable Technologies
+              The 1st IEEE International Conference On Instrumentation
               INSTCon-2026
             </h3>
 
@@ -101,23 +101,23 @@ export default function Contact() {
               {[
                 {
                   name: "Home",
-                  href: "home",
+                  href: "#home",
                 },
                 {
                   name: "About Us",
-                  href: "aboutus",
+                  href: "#aboutus",
                 },
-                {
-                  name: "Schedule & Agenda",
-                  href: "",
-                },
+                // {
+                //   name: "Schedule & Agenda",
+                //   href: "",
+                // },
                 // {
                 //   name:"CVMI-2025 Attractions",
                 //   href: "",
                 // },
                 {
                   name: "Tracks of INSTCon-2026",
-                  href: "topics",
+                  href: "#topics",
                 },
                 {
                   name: "Paper Submission",
@@ -125,16 +125,16 @@ export default function Contact() {
                 },
                 {
                   name: "INSTCon-2026 Organizing Committee",
-                  href: "ourteam",
+                  href: "/organizing",
                 },
                 {
                   name: "Contact Us",
-                  href: "contactus",
+                  href: "#contactus",
                 },
               ].map((key) => (
                 <li key={key.name}>
                   <Link
-                    href={`#${key.href}`}
+                    href={`${key.href}`}
                     onClick={(e) => handleClick(e, key.href)}
                     className="flex items-center group hover:underline cursor-pointer"
                   >
@@ -150,7 +150,7 @@ export default function Contact() {
             <h3 className="text-lg font-semibold">CONTACT US</h3>
             <p className="mt-2 flex items-center space-x-2">
               <Mail className="w-5 h-5 text-gray-400" />
-              <span>INSTCon2026@nitrkl.ac.in</span>
+              <span>instcon2026@nitrkl.ac.in</span>
             </p>
           </div>
         </div>

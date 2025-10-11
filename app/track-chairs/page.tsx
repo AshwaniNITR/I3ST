@@ -59,8 +59,7 @@ const page = () => {
       id: 4,
       title: "Innovations in Microelectronics, Circuits, and Devices",
       chairs: [
-        "Mrigank Sarad, IIT Kharagpur",
-        "Nijwm Wary, IIT Bhubaneswar",
+        "Debashis Mandal, IIT Kharagpur",
         "Santanu Sarkar"
       ],
       subTopics: [
@@ -139,7 +138,7 @@ const page = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className='md:text-6xl text-4xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent mb-4'>
-            Track Chairs
+            Tracks
           </h1>
           <p className="text-xl text-gray-600 font-light">INSTCon 2026</p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 rounded-full"></div>

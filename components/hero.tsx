@@ -2,7 +2,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-
 // Simple Carousel Component
 const SimpleCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -63,19 +62,34 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col justify-center items-center w-full py-12 px-6 overflow-y-auto relative z-10">
-            {/* Logo with modern styling */}
-            <div className="flex justify-center w-full mb-8 flex-shrink-0">
-              <div className="relative group">
-                <div className="relative w-full max-w-sm h-32 lg:h-60 rounded-2xl border border-gray-200/50 bg-white shadow-2xl shadow-blue-500/10 transition-all duration-500 group-hover:shadow-blue-500/20 group-hover:scale-[1.02] overflow-hidden">
-                  <img 
-                    src="/ieeeims.png" 
-                    alt="IEEE IMS Logo"
-                    className="w-full h-full object-contain p-4"
-                  />
-                </div>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
-              </div>
-            </div>
+            {/* Dual Logos with modern styling */}
+            {/* Dual Logos with modern styling */}
+<div className="flex justify-center items-center gap-8 lg:gap-12 w-full mb-8 flex-shrink-0">
+  {/* First Logo */}
+  <div className="relative group">
+    <div className="relative w-40 h-40 lg:w-52 lg:h-52 xl:w-52 xl:h-52 rounded-2xl border border-gray-200/50 bg-[#ffeccd] shadow-2xl shadow-blue-500/10 transition-all duration-500 group-hover:shadow-blue-500/20 group-hover:scale-[1.02] overflow-hidden"
+    style={{backgroundImage: 'url(https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+      {/* <img 
+        src="https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg" 
+        alt="IEEE IMS Logo"
+        className="w-full h-full object-cover p-4 lg:p-5"
+      /> */}
+    </div>
+    <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
+  </div>
+
+  {/* Second Logo */}
+  <div className="relative group">
+    <div className="relative w-40 h-40 lg:w-52 lg:h-52 xl:w-52 xl:h-52 rounded-2xl border border-gray-200/50 bg-white shadow-2xl shadow-blue-500/10 transition-all duration-500 group-hover:shadow-blue-500/20 group-hover:scale-[1.02] overflow-hidden">
+      <img 
+        src="/nitlogo.png" 
+        alt="IEEE Logo"
+        className="w-full h-full object-contain p-4 lg:p-5"
+      />
+    </div>
+    <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
+  </div>
+</div>
             
             {/* Text content with modern styling */}
             <div className="text-center w-full max-w-2xl px-4 space-y-3">
@@ -143,6 +157,24 @@ const Hero = () => {
 
         {/* Content overlay */}
         <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-16 space-y-6">
+          {/* Dual Logos for Mobile */}
+          {/* <div className="flex justify-center items-center gap-4 mb-4">
+            <div className="w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl p-2 shadow-lg">
+              <img 
+                src="/ieeeims.png" 
+                alt="IEEE IMS Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl p-2 shadow-lg">
+              <img 
+                src="/ieeeims.png" 
+                alt="IEEE Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div> */}
+
           {/* Title */}
           <div className="text-center space-y-3">
             <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight drop-shadow-2xl">

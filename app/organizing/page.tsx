@@ -15,7 +15,7 @@ export default function Committee() {
           {/* Modern Header */}
           <div className="mb-16 animate-fadeIn" style={{ animation: "fadeIn 0.5s ease-out" }}>
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#003366] to-[#0066cc] bg-clip-text text-transparent">
-              Our <span className="font-extrabold">Committees</span>
+              Organizing <span className="font-extrabold">Committee</span>
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-[#003366] to-[#0066cc] mx-auto mb-6 rounded-full"></div>
             {/* <p className="text-gray-600 max-w-2xl mx-auto text-lg">

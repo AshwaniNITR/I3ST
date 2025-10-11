@@ -8,30 +8,31 @@ import { draftMode } from "next/headers";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about",
-    dropdown:[
-      {name:"About Us",href:"/about"},
-      {name:"Tracks",href:"/track-chairs"},
-    ]
-   },
+  { 
+    name: "About", 
+    href: "/about",
+  },
   { 
     name: "Committee", 
     href: "/committee",
     dropdown: [
       { name: "Organizing Committee", href: "/organizing" },
-      { name: "Technical Committee", href: "/" },
+      { name: "Technical Committee", href: "/technical" },
       { name: "Advisory Committee", href: "/" },
     ]
   },
-  { name: "Keynote", href: "/" },
-  { name: "Call for Papers", href: "/INSTCon_Flyer.pdf" },
-  { name: "Paper Submission", href: "/",
+  {
+    name: "Author's Information",
+    href: "/authors",
     dropdown:[
-      {name:"Submitted Papers",href:"/submitted"},
-      {name:"Accepted Papers",href:"/accepted"}
+      { name: "Call for Papers", href: "/INSTCON_Flyer.pdf" },
+      { name: "Submit Paper", href: "/" },
+      {name:"Registration Details",href:"/"}
     ]
-   },
-  { name:"Events",href:"/events"},
+  },
+  {name:"Tracks",href:"/track-chairs"},
+  { name: "Keynote", href: "/" },
+  { name: "Events", href: "/events" },,
   { name: "Sponsors", href: "/" },
 ];
 
@@ -90,10 +91,10 @@ export default function Navbar() {
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 via-transparent to-purple-50/30 pointer-events-none"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-16">
-          {/* Logo with gradient */}
-          <div className="flex-shrink-0">
+          {/* Logo - Extreme Left */}
+          <div className="flex-shrink-0 mr-8">
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="relative">
                 <span className="text-xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105 inline-block">
@@ -109,7 +110,7 @@ export default function Navbar() {
           </div>
 
           {/* Center Navigation - Desktop */}
-          <div className="hidden lg:flex items-center justify-center flex-1 space-x-8">
+          <div className="hidden xl:flex items-center justify-center flex-1 space-x-10">
             {navigation.map((item) => (
               item.dropdown ? (
                 <div
@@ -119,7 +120,7 @@ export default function Navbar() {
                 >
                   <button 
                     onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 focus:outline-none group"
+                    className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 focus:outline-none group px-2 py-1"
                   >
                     <span className="relative">
                       {item.name}
@@ -154,7 +155,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 group"
+                  className="relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 group px-2 py-1"
                 >
                   <span className="relative">
                     {item.name}
@@ -166,10 +167,10 @@ export default function Navbar() {
           </div>
 
           {/* Register Button - Desktop */}
-          <div className="hidden lg:flex">
+          <div className="hidden lg:flex ml-8">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-              <Button className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50">
+              <Button className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-6">
                 Register Now
               </Button>
             </div>
@@ -185,7 +186,7 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-[280px] bg-white/95 backdrop-blur-xl border-l border-gray-200/50 flex flex-col justify-between"
+                className="w-[300px] bg-white/95 backdrop-blur-xl border-l border-gray-200/50 flex flex-col justify-between"
               >
                 {/* Gradient overlay for mobile menu */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30 pointer-events-none"></div>
@@ -214,7 +215,7 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+                        className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-600 transition-all duration-300 py-1"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.name}
