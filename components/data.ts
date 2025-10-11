@@ -388,7 +388,7 @@ export const trackChairs: Committee[] = [
         id:9,
         name:"Prof. Ashim Naskar",
         role:"NIT Rourkela",
-        imageUrl:"/ashim-naskar-9.jpg"
+        imageUrl:"/asim-nashkar.jpg"
       },
       {
         id:10,
