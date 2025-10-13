@@ -918,7 +918,7 @@ export const otherCommittees: Committee[] = [
         id: 35,
         name: "Soumyajeet Mahapatra",
         role: "NIT Rourkela",
-        imageUrl: "/soumyajeet-mahapatra-35.jpg",
+        imageUrl: "/soumyajeet-mahapatra.jpg",
       },
     ],
   },
