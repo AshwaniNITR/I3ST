@@ -454,7 +454,205 @@ export const trackChairs: Committee[] = [
     ],
   },
 ];
-
+export const advisory: Committee[] = [
+  {
+    title: "Advisory Commitee",
+    members: [
+      {
+        id: 1,
+        name: "Prof. Santu Rana",
+        role: "Deakin University, Australia",
+        imageUrl: "/advisory/santu-rana-1.jpg",
+      },
+      {
+        id: 2,
+        name: "Prof. Subhas Mukhopadhyay",
+        role: "Macquire University, Sydney, Australia",
+        imageUrl: "/advisory/subhas-mukhopadhyay-2.jpg",
+      },
+      {
+        id: 3,
+        name: "Prof. Anant Madabhushi",
+        role: "Emory University, USA",
+        imageUrl: "/advisory/anant-madabhushi-3.jpg",
+      },
+      {
+        id: 4,
+        name: "Prof. Sivaji Chakravorti",
+        role: "Jadavpur University",
+        imageUrl: "/advisory/sivaji-chakravorti-4.jpg",
+      },
+      {
+        id: 5,
+        name: "Prof. Suparna Kar Chowdhury",
+        role: "Jadavpur University",
+        imageUrl: "/advisory/suparna-kar-chowdhury-5.jpg",
+      },
+      {
+        id: 6,
+        name: "Prof. K.V.S. Hari",
+        role: "IISc Bangalore",
+        imageUrl: "/advisory/kvs-hari-6.jpg",
+      },
+      {
+        id: 7,
+        name: "Prof. Amitava Chatterjee",
+        role: "Jadavpur University",
+        imageUrl: "/advisory/amitava-chatterjee-7.jpg",
+      },
+      {
+        id: 8,
+        name: "Prof. R. B. Pachori",
+        role: "IIT Indore",
+        imageUrl: "/advisory/r-b-pachori-8.jpg",
+      },
+      {
+        id: 9,
+        name: "Prof. P. K. Dutta",
+        role: "IIT Kharagpur",
+        imageUrl: "/advisory/p-k-dutta-9.jpg",
+      },
+      {
+        id: 10,
+        name: "Prof. Rajib Bandyopadhyay",
+        role: "Jadavpur University",
+        imageUrl: "/advisory/rajib-bandyopadhyay-10.jpg",
+      },
+      {
+        id: 11,
+        name: "Prof. Chanchal Dey",
+        role: "University of Calcutta",
+        imageUrl: "/advisory/Chanchal-Dey.jpg",
+      },
+      {
+        id: 12,
+        name: "Prof. Sugata Munshi",
+        role: "Jadavpur University",
+        imageUrl: "/advisory/munshi.jpg",
+      },
+      {
+        id: 13,
+        name: "Prof. Mohanasankar Sivaprakasam",
+        role: "IIT Madras",
+        imageUrl: "/advisory/mohanasankar-sivaprakasam-13.jpg",
+      },
+      {
+        id: 14,
+        name: "Prof. Boby George",
+        role: "IIT Madras",
+        imageUrl: "/advisory/boby-george.png",
+      },
+      {
+        id: 15,
+        name: "Prof. Jayaraj Joseph",
+        role: "IIT Madras",
+        imageUrl: "/advisory/jayaraj-joseph-15.jpg",
+      },
+      {
+        id: 16,
+        name: "Prof. A. G. Ramakrishnan",
+        role: "Rtd. IISc Bangalore",
+        imageUrl: "/advisory/a-g-ramakrishnan-16.jpg",
+      },
+      {
+        id: 17,
+        name: "Prof. Shiru Sharma",
+        role: "IIT BHU",
+        imageUrl: "/advisory/shiru-sharma-17.jpg",
+      },
+      {
+        id: 18,
+        name: "Mr. Deepak Mathur",
+        role: "IEEE Vice President MGA",
+        imageUrl: "/advisory/mr-deepak-mathur-18.jpg",
+      },
+      {
+        id: 19,
+        name: "Prof. Prerna Gaur",
+        role: "IEEE India Council Chair",
+        imageUrl: "/advisory/prerna-gaur-19.jpg",
+      },
+      {
+        id: 20,
+        name: "Prof. G. Uma",
+        role: "NIT Trichy",
+        imageUrl: "/advisory/g-uma-20.jpg",
+      },
+      {
+        id: 21,
+        name: "Prof. M. Umapathy",
+        role: "NIT Trichy",
+        imageUrl: "/advisory/m-umapathy-21.jpg",
+      },
+      {
+        id: 22,
+        name: "Prof. Samir K. Mondal",
+        role: "CSIR-CSIO, ACSIR",
+        imageUrl: "/advisory/samir-k-mondal-22.jpg",
+      },
+      {
+        id: 23,
+        name: "Prof. Siddhartha Sen",
+        role: "Ret Prof. IIT Kharagpur",
+        imageUrl: "/advisory/siddhartha-sen-23.jpg",
+      },
+      {
+        id: 24,
+        name: "Prof. Tarikul Islam",
+        role: "Jamia Millia Islamia",
+        imageUrl: "/advisory/tarikul-islam-24.jpg",
+      },
+      {
+        id: 25,
+        name: "Prof. Neeraj Sharma",
+        role: "IIT BHU Varanasi",
+        imageUrl: "/advisory/neeraj-sharma-25.jpg",
+      },
+      {
+        id: 26,
+        name: "Prof. Indra Narayan Kar",
+        role: "IIT Delhi",
+        imageUrl: "/advisory/indra-narayan.jpg",
+      },
+      {
+        id: 27,
+        name: "Prof. Shaunak Sen",
+        role: "IIT Delhi",
+        imageUrl: "/advisory/shaunak-sen-27.jpg",
+      },
+      {
+        id: 28,
+        name: "Prof. S. Janardhanan",
+        role: "IIT Delhi",
+        imageUrl: "/advisory/s-janardhanan-28.jpg",
+      },
+      {
+        id: 29,
+        name: "Prof. Sachin Srivastava",
+        role: "IIT Roorkee",
+        imageUrl: "/advisory/sachin-srivastava.jpg",
+      },
+      {
+        id: 30,
+        name: "Prof. Ashok Kumar Pandey",
+        role: "IIT Hyderabad",
+        imageUrl: "/advisory/ashok-kumar-pandey-30.jpg",
+      },
+      {
+        id: 31,
+        name: "Prof. Binoy Krishna Roy",
+        role: "NIT Silchar",
+        imageUrl: "/advisory/binoy-krishna-roy-31.jpg",
+      },
+      {
+        id: 32,
+        name: "Dr. Shyam Kamal",
+        role: "IIT BHU",
+        imageUrl: "/advisory/shyam-kamal.jpg",
+      },
+    ],
+  },
+];
 
 // Other committees
 export const otherCommittees: Committee[] = [

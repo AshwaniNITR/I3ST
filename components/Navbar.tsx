@@ -18,7 +18,7 @@ const navigation = [
     dropdown: [
       { name: "Organizing Committee", href: "/organizing" },
       { name: "Technical Committee", href: "/technical" },
-      { name: "Advisory Committee", href: "/updatedsoon" },
+      { name: "Advisory Committee", href: "/advisory" },
     ]
   },
   {
