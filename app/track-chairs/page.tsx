@@ -109,7 +109,6 @@ const page = () => {
       chairs: [
         "Sudip Kundu",
         "Alok Prakash",
-        "Aveek Dutta"
       ],
       subTopics: [
     "Space Instrumentation, Sensors, and Payload Systems",

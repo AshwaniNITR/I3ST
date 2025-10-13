@@ -28,7 +28,7 @@ const AboutUs: FC = () => {
       image: "/ieeerklsub.jpg",
     },
     {
-      title: "About IEEE Kolkata Subsection",
+      title: "About IEEE Kolkata Section",
       content: `The history of the IEEE Calcutta Section dates back to 1971, when professionals from the Eastern and North-Eastern parts of India came together to establish what was then known as the Eastern Regional Sub-Section of IEEE, led by its first Chairman, Mr. Alak Ghose. After the formation of the IEEE India Council, this body was renamed the Calcutta Sub-Section and placed under the Delhi Section. In 1974, with the dedicated efforts of Mr. K.B. Subramaniam and Mr. Kalyan K. Dasgupta, the Sub-Section reached a significant milestone, gaining recognition as a full Section on 28 September 1978. Expansion continued in 1983 with the creation of the Kharagpur Sub-Section at IIT Kharagpur, which attained full Section status in 1985, bringing the Midnapur district of West Bengal into the Calcutta Section’s jurisdiction. Over time, the Section’s activities have flourished, reaching multiple cities and state capitals. Today, it comprises eleven technical society chapters, two affinity groups, and more than fifteen student branches, with membership steadily increasing. Known for maintaining a healthy balance between student and professional members, the Section works closely with its chapters and affinity groups to advance technical knowledge, support education, encourage membership growth, and engage in impactful outreach programs — continuing its legacy as a hub of innovation, collaboration, and service to society.`,
       image: "/ieeekolk.png",
     },

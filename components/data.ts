@@ -450,12 +450,7 @@ export const trackChairs: Committee[] = [
         role:"NIT Rourkela",
         imageUrl:"/citations2.jpg"
       },
-      {
-        id:21,
-        name:"Prof. Aveek Dutta",
-        role:"NIT Rourkela",
-        imageUrl:"/aveek-dutta-21.jpg"
-      },
+     
     ],
   },
 ];

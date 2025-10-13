@@ -36,8 +36,10 @@ const SimpleCarousel = ({ images }) => {
 
 const Hero = () => {
   const images = [
-    "/nitfrontgate.jpg",
-    "/nitmainbuilding.jpeg",
+    "/nitfrontgate3.jpg",
+    "/nitmainbuilding2.jpg",
+    "/la1.jpg",
+    "/ecdept.jpg"
   ];
 
   return (
@@ -49,12 +51,12 @@ const Hero = () => {
       {/* Desktop Layout */}
       <div className="hidden lg:flex h-screen">
         {/* Left side - Carousel */}
-        <div className="w-full lg:w-1/2 h-full">
+        <div className="w-full lg:w-1/2 max-h-[85%]">
           <SimpleCarousel images={images} />
         </div>
 
         {/* Right side - Desktop Content */}
-        <section className="relative w-full lg:w-1/2 min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        <section className="relative w-full lg:w-1/2 max-h-3/4 bg-gradient-to-br from-slate-50 via-white to-blue-50">
           {/* Animated background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-20 right-20 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
