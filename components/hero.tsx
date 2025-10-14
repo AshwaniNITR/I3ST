@@ -96,13 +96,14 @@ const Hero = () => {
             {/* Text content with modern styling */}
             <div className="text-center w-full max-w-2xl px-4 space-y-3">
               <div className="space-y-3">
-                <h4 className="text-4xl lg:text-5xl xl:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent leading-tight animate-fade-in">
-                  IEEE INSTCon 2026
-                </h4>
-                
-                <p className="text-lg lg:text-xl text-gray-600 font-medium leading-relaxed">
+                  <p className="text-lg lg:text-xl  text-blue-900 font-bold leading-relaxed">
                   1st IEEE International Conference on Instrumentation
                 </p>
+                <h4 className="text-4xl lg:text-5xl xl:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent leading-tight animate-fade-in">
+                  INSTCon 2026
+                </h4>
+                
+              
               </div>
 
               {/* Date badge */}
@@ -178,14 +179,13 @@ const Hero = () => {
           </div> */}
 
           {/* Title */}
-          <div className="text-center space-y-3">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight drop-shadow-2xl">
-              IEEE INSTCon 2026
-            </h1>
-            
+          <div className="text-center space-y-3"> 
             <p className="text-lg sm:text-xl text-white font-medium drop-shadow-lg">
               1st IEEE International Conference on Instrumentation
             </p>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight drop-shadow-2xl">
+              INSTCon 2026
+            </h1>
           </div>
 
           {/* Date badge */}

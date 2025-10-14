@@ -504,7 +504,7 @@ export const advisory: Committee[] = [
         id: 9,
         name: "Prof. P. K. Dutta",
         role: "IIT Kharagpur",
-        imageUrl: "/advisory/p-k-dutta-9.jpg",
+        imageUrl: "/pk-dutta.jpg",
       },
       {
         id: 10,
@@ -877,7 +877,7 @@ export const otherCommittees: Committee[] = [
         id: 31,
         name: "Prof. Arunagshu Ghosh",
         role: "NIT Patna",
-        imageUrl: "/arunagshu-ghosh-31.jpg",
+        imageUrl: "/arunagshu-ghosh.jpg",
       },
     ],
   },

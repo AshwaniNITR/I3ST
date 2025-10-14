@@ -1,23 +1,29 @@
 "use client"
 
+import { title } from "process"
 import { useState, useEffect, useRef } from "react"
 
 const IMPORTANT_DATES = [
   {
     id: 1,
     title: "Paper Submission Starts",
-    date: new Date("2026-03-31"),
+    date: new Date("2025-12-01"),
   },
   {
     id: 2,
     title: "Paper Submission Ends",
-    date: new Date("2026-05-15"),
+    date: new Date("2026-03-31"),
   },
   {
     id: 3,
     title: "Notification of Acceptance",
-    date: new Date("2026-05-31"),
+    date: new Date("2026-05-15"),
   },
+  {
+    id:4,
+    title:"Final Paper Submission",
+    date: new Date("2026-05-31")
+  }
 ]
 
 export default function ImportantDatesSlider() {
