@@ -465,12 +465,6 @@ export const advisory: Committee[] = [
         imageUrl: "/advisory/santu-rana-1.jpg",
       },
       {
-        id: 2,
-        name: "Prof. Subhas Mukhopadhyay",
-        role: "Macquire University, Sydney, Australia",
-        imageUrl: "/advisory/subhas-mukhopadhyay-2.jpg",
-      },
-      {
         id: 3,
         name: "Prof. Anant Madabhushi",
         role: "Emory University, USA",
@@ -576,7 +570,7 @@ export const advisory: Committee[] = [
         id: 20,
         name: "Prof. G. Uma",
         role: "NIT Trichy",
-        imageUrl: "/advisory/g-uma-20.jpg",
+        imageUrl: "/g-uma.jpg",
       },
       {
         id: 21,
