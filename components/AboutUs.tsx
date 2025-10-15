@@ -39,7 +39,7 @@ const AboutUs = () => {
 
   const handleFlyerClick = () => {
     if (window.innerWidth < 768) {
-      window.open('/INSTCon_Flyer.pdf', '_blank');
+      window.open('/INSTCon_Flyer2.pdf', '_blank');
     } else {
       setIsFlyerExpanded(!isFlyerExpanded);
     }
@@ -63,14 +63,14 @@ const AboutUs = () => {
     return () => window.removeEventListener("keydown", handleEscape);
   }, [isFlyerExpanded]);
 
-  const paragraphs = [
-    `It is with great pride that the IEEE Instrumentation and Measurement Society – Rourkela Chapter and the IEEE Robotics and Automation Society Student Chapter – NIT Rourkela announce the 1st IEEE International Conference on Instrumentation (INSTCon 2026), to be held at the National Institute of Technology, Rourkela, India.`,
-    `INSTCon 2026 is a premier international forum dedicated to advancements in intelligent instrumentation, sustainable engineering solutions, and cutting-edge automation technologies. The conference aims to bring together researchers, engineers, scientists, academicians, industry leaders, entrepreneurs, and policymakers from across the globe to advance the frontiers of measurement, sensing, control, and automation for a sustainable future.`,
-    `With rapid advancements in smart sensing, intelligent control, and data-driven decision making, the conference will provide a vibrant platform to exchange ideas, showcase cutting-edge developments, and explore solutions that bridge science, engineering, and societal needs.`,
-    `Hosted in the vibrant academic and research environment of NIT Rourkela, INSTCon 2026 will feature a highly selective technical program, including peer-reviewed papers and invited contributions from renowned experts in instrumentation, measurement, robotics, automation, and sustainable systems. Technically sponsored by the IEEE Instrumentation & Measurement Society – Rourkela Chapter and IEEE Robotics & Automation Society Student Branch Chapter – NIT Rourkela, the conference aims to foster collaboration across diverse domains such as precision agriculture, healthcare diagnostics, industrial automation, environmental monitoring, and renewable energy systems.`,
-    `By integrating advancements in AI/ML, quantum devices, cyber-physical security, and sustainable hardware design, the event will serve as a showcase of technical excellence and as a call to action for academia, industry, and policymakers to accelerate the adoption of intelligent instrumentation as a cornerstone of global sustainability initiatives.`,
-    `With sustainability as its driving vision, INSTCon 2026 will serve as a global platform to exchange knowledge, foster interdisciplinary collaborations, and showcase innovations that can accelerate progress toward a more sustainable future. We look forward to welcoming you to NIT Rourkela for an intellectually stimulating and inspiring event that merges technological excellence with societal responsibility.`,
-  ];
+const paragraphs = [
+  `The IEEE Instrumentation and Measurement Society – Rourkela Chapter and IEEE Robotics and Automation Society Student Chapter – NIT Rourkela proudly announce the 1st IEEE International Conference on Instrumentation (INSTCon 2026), to be held at NIT Rourkela, India.`,
+  `INSTCon 2026 aims to be a premier international forum on intelligent instrumentation, sustainable engineering, and advanced automation. It will bring together researchers, engineers, industry leaders, and policymakers to advance measurement, sensing, control, and automation for a sustainable future.`,
+  `The conference will feature a selective technical program with peer-reviewed papers and invited talks, covering a broad spectrum of topics, including smart sensors, IoT-enabled instrumentation, intelligent control and robotics, microelectronics and quantum devices, signal processing, sustainable electrical systems, and mission-critical technologies for space and defense. It aims to highlight innovations in precision agriculture, healthcare diagnostics, industrial automation, environmental monitoring, renewable energy, and other applications where intelligent instrumentation drives societal impact.`,
+  `Hosted in the vibrant academic environment of NIT Rourkela, INSTCon 2026 provides a platform to exchange ideas, foster interdisciplinary collaboration, and showcase cutting-edge research and technologies that combine scientific excellence with sustainability.`,
+  `We look forward to welcoming participants to an inspiring event that merges innovation, technology, and societal responsibility.`,
+];
+
 
   return (
     <div
@@ -224,7 +224,7 @@ const AboutUs = () => {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            window.open('/INSTCon_Flyer.pdf', '_blank');
+                            window.open('/INSTCon_Flyer2.pdf', '_blank');
                           }}
                           className="text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 bg-yellow-400 transition-all duration-300"
                         >
@@ -287,7 +287,7 @@ const AboutUs = () => {
 
             <div className="flex-1 w-full h-full bg-gray-50">
               <iframe
-                src="/INSTCon_Flyer.pdf"
+                src="/INSTCon_Flyer2.pdf"
                 className="w-full h-full"
                 title="INSTCon 2026 Conference Flyer"
               />
