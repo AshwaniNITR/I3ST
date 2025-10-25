@@ -8,7 +8,6 @@ import ImportantDatesSlider from '../components/ImportantDates';
 export default function Page() {
     return <div>
       <Hero/>
-      
       <ImportantDatesSlider />
       <h1 className="text-3xl font-bold underline"></h1>
       <AboutUs />

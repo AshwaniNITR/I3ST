@@ -56,7 +56,7 @@ const Hero = () => {
         </div>
 
         {/* Right side - Desktop Content */}
-        <section className="relative w-full lg:w-1/2 max-h-3/4 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        <section className="relative w-full lg:w-1/2 max-h-4/4 bg-gradient-to-br from-slate-50 via-white to-blue-50">
           {/* Animated background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-20 right-20 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
