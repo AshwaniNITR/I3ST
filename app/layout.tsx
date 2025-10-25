@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: '1st IEEE International Conference on Instrumentation (INSTCon 2026)',
   description: 'International Conference on Intelligent Instrumentation for Sustainable Technologies, July 24-25,2026',
+  verification:{
+    google:"Iwlcjx19Ktt5u5c6ssegmwqaQy8VPykY1ds2jjPeDFo"
+  }
 };
 
 export default function RootLayout({
