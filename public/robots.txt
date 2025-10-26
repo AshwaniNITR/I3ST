@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://i3-st.vercel.app/sitemap.xml
+Sitemap: https://instcon2026.nitrkl.ac.in/sitemap.xml
+
+

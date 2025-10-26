@@ -4,25 +4,25 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://i3-st.vercel.app/",
+      url: "https://instcon2026.nitrkl.ac.in/",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://i3-st.vercel.app/call-for-papers",
+      url: "https://instcon2026.nitrkl.ac.in/call-for-papers",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
       {
-      url: "https://i3-st.vercel.app/about",
+      url: "https://instcon2026.nitrkl.ac.in/about",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
       {
-      url: "https://i3-st.vercel.app/advisory",
+      url: "https://instcon2026.nitrkl.ac.in/advisory",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
