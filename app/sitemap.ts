@@ -21,12 +21,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-      {
+    {
       url: "https://instcon2026.nitrkl.ac.in/advisory",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
+     {
+      url: "https://instcon2026.nitrkl.ac.in/Sponsorship",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: "https://instcon2026.nitrkl.ac.in/commitee",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+  url: "https://instcon2026.nitrkl.ac.in/instcon2026",
+  lastModified: new Date(),
+  changeFrequency: "monthly",
+  priority: 0.6,
+}
+
+
     
   ];
 }

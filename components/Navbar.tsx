@@ -4,7 +4,6 @@ import { Menu, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
 import React, { useState, useRef, useEffect } from "react";
-import { draftMode } from "next/headers";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -26,7 +25,7 @@ const navigation = [
     href: "/authors",
     dropdown:[
       { name: "Call for Papers", href: "/INSTCon_Flyer2.pdf" },
-      { name: "Submit Paper", href: "/updatedsoon" },
+      { name: "Submit Paper", href: "/submitPaper" },
       {name:"Registration Details",href:"/updatedsoon"}
     ]
   },
