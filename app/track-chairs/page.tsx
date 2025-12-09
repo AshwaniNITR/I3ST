@@ -17,11 +17,12 @@ const page = () => {
         "Sougata Kumar Kar"
       ],
       subTopics: [
-         "Smart Sensors and Transducers: Design, Fabrication, and Applications",
-        "Sensor Fusion and Calibration for Intelligent Instrumentation",
-        "3D Printing and Rapid Prototyping for Sensor Design",
+         "Smart Sensors: Design, Fabrication, and Applications",
+        "Sensor Fusion and Calibration",
+        "3D Printing and Rapid Prototyping",
+        "Optical Sensors and Photonic Instrumentation",
         "Sensor Reliability, Fault Tolerance, and Metrology",
-        "AI/ML for Intelligent Measurements and Decision Support"
+        "AI/ML for Measurements and Decision Support",
       ]
     },
     {
@@ -33,11 +34,12 @@ const page = () => {
         "R P Prasad"
       ],
       subTopics: [
-       "Wireless, RFID, and IoT-Enabled Instrumentation",
+      "Wireless, RFID, and IoT-Enabled Instrumentation",
         "Communication Protocols and Network Architectures",
-        "IoT Applications in Smart and Precision Agriculture",
-        "Cyber-Physical Security, Privacy, and Resilience in IoT Systems",
-        "Standardization, Interoperability, and Sustainability in IoT Infrastructure"
+        "IoT in Mining and Precision Agriculture",
+        "Cyber-Physical Security, Privacy, and Resilience",
+        "Standardization, Interoperability, and Sustainability",
+        "5G and Beyond",
       ]
     },
     {
@@ -49,11 +51,12 @@ const page = () => {
         "Ashim Naskar"
       ],
       subTopics: [
-         "Intelligent Control and Adaptive Systems",
-        "Cyber-Physical Systems for Robotics and Industrial Automation",
-        "Predictive Maintenance and Condition Monitoring in Mechatronics",
-        "Drone Design, Navigation, and Autonomous Applications",
-        "Digital Twins and Simulation-Based Instrumentation for Smart Manufacturing"
+        "Intelligent Control and Adaptive Systems",
+        "Instrumentation and Control for Process Industries",
+        "Cyber-Physical Systems, Robotics and Industrial Automation",
+        "Predictive Maintenance and Condition Monitoring",
+        "Drone Design, Navigation, and Control",
+        "Digital Twins, HMI and Smart Manufacturing",
       ]
     },
     {
@@ -64,11 +67,11 @@ const page = () => {
         "Santanu Sarkar"
       ],
       subTopics: [
-        "Quantum Sensors, Emerging Devices, and Design Paradigms",
-        "MEMS, NEMS, and Flexible Electronics",
-        "Energy Harvesting and Low-Power Circuit Design",
-        "Electronics for Biomedical Devices and Wearable Systems",
-        "Microelectronic Solutions for Smart Agricultural Applications"
+       "Quantum Sensors, Emerging Devices, and Design Paradigms",
+        "MEMS, NEMS, Flexible Electronics and Energy Harvesting",
+        "Sensor Interfacing Circuits and Low-Power Circuit Design",
+        "Biomedical Devices and Wearable Systems",
+        "Bio-inspired and Neuromorphic Circuits",
       ]
     },
     {
@@ -81,10 +84,10 @@ const page = () => {
       ],
       subTopics: [
       "Smart Grids and Renewable Energy Systems",
-        "Condition Monitoring and Fault Diagnosis in Electrical Infrastructure",
-        "Energy-Efficient Instrumentation for Water, Soil, and Irrigation Systems",
-        "Sustainable Hardware-Software Co-Design for Power Applications",
-        "Instrumentation for Electric Vehicle (EV) Charging and Storage"
+        "Condition Monitoring and Fault Diagnosis",
+        "Energy-Efficient Irrigation Systems",
+        "Hardware-Software Co-Design for Power Systems",
+        "EV Charging, Storage and Battery Management",
       ]
     },
     {
@@ -97,10 +100,10 @@ const page = () => {
       ],
       subTopics: [
     "Diagnostics and Personalized Healthcare Applications",
-        "Agricultural and Environmental Monitoring",
-        "AI/ML and Explainable AI for Sustainable Instrumentation",
-        "Multimodal Fusion and Intelligent Feature Extraction",
-        "Automation and Smart Manufacturing"
+        "Pollution and Environmental Monitoring",
+        "Multimodal Fusion, AI/ML and Explainable AI",
+        "Automation and Smart Manufacturing",
+        "Computer Vision, Speech and Audio Processing",
       ]
     },
     {
@@ -115,7 +118,7 @@ const page = () => {
         "Remote Sensing, Navigation, and Satellite Communication",
         "Advanced Materials, Devices, and Energy Solutions for Defense",
         "Guidance, Navigation, and Control (GNC) Systems",
-        "Simulation, Digital Twins, and Validation of Mission-Critical Systems"
+        "Simulation, Digital Twins, and Validation of Mission-Critical Systems",
       ]
     }
   ];

@@ -7,7 +7,7 @@ const IMPORTANT_DATES = [
   {
     id: 1,
     title: "Paper Submission Starts",
-    date: new Date("2025-12-01"),
+    date: new Date("2025-12-15"),
   },
   {
     id: 2,

@@ -6,8 +6,6 @@ import { VscArrowCircleRight, VscArrowCircleLeft } from "react-icons/vsc";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-
 const Topics = () => {
   const sliderRef = useRef<Slider>(null);
 
@@ -26,82 +24,89 @@ const Topics = () => {
     {
       title: "Track 1: Smart Sensors and Intelligent Instrumentation",
       items: [
-        "Smart Sensors and Transducers: Design, Fabrication, and Applications",
-        "Sensor Fusion and Calibration for Intelligent Instrumentation",
-        "3D Printing and Rapid Prototyping for Sensor Design",
+        "Smart Sensors: Design, Fabrication, and Applications",
+        "Sensor Fusion and Calibration",
+        "3D Printing and Rapid Prototyping",
+        "Optical Sensors and Photonic Instrumentation",
         "Sensor Reliability, Fault Tolerance, and Metrology",
-        "AI/ML for Intelligent Measurements and Decision Support"
-      ]
+        "AI/ML for Measurements and Decision Support",
+      ],
     },
     {
       title: "Track 2: Sustainable IoT and Communication Technologies",
       items: [
         "Wireless, RFID, and IoT-Enabled Instrumentation",
         "Communication Protocols and Network Architectures",
-        "IoT Applications in Smart and Precision Agriculture",
-        "Cyber-Physical Security, Privacy, and Resilience in IoT Systems",
-        "Standardization, Interoperability, and Sustainability in IoT Infrastructure"
-      ]
+        "IoT in Mining and Precision Agriculture",
+        "Cyber-Physical Security, Privacy, and Resilience",
+        "Standardization, Interoperability, and Sustainability",
+        "5G and Beyond",
+      ],
     },
     {
-      title: "Track 3: Advances in Intelligent Control, Robotics, and Mechatronics",
+      title:
+        "Track 3: Advances in Intelligent Control, Robotics, and Mechatronics",
       items: [
         "Intelligent Control and Adaptive Systems",
-        "Cyber-Physical Systems for Robotics and Industrial Automation",
-        "Predictive Maintenance and Condition Monitoring in Mechatronics",
-        "Drone Design, Navigation, and Autonomous Applications",
-        "Digital Twins and Simulation-Based Instrumentation for Smart Manufacturing"
-      ]
+        "Instrumentation and Control for Process Industries",
+        "Cyber-Physical Systems, Robotics and Industrial Automation",
+        "Predictive Maintenance and Condition Monitoring",
+        "Drone Design, Navigation, and Control",
+        "Digital Twins, HMI and Smart Manufacturing",
+      ],
     },
     {
       title: "Track 4: Innovations in Microelectronics, Circuits, and Devices",
       items: [
         "Quantum Sensors, Emerging Devices, and Design Paradigms",
-        "MEMS, NEMS, and Flexible Electronics",
-        "Energy Harvesting and Low-Power Circuit Design",
-        "Electronics for Biomedical Devices and Wearable Systems",
-        "Microelectronic Solutions for Smart Agricultural Applications"
-      ]
+        "MEMS, NEMS, Flexible Electronics and Energy Harvesting",
+        "Sensor Interfacing Circuits and Low-Power Circuit Design",
+        "Biomedical Devices and Wearable Systems",
+        "Bio-inspired and Neuromorphic Circuits",
+      ],
     },
     {
       title: "Track 5: Sustainable Technologies for Electrical Systems",
       items: [
         "Smart Grids and Renewable Energy Systems",
-        "Condition Monitoring and Fault Diagnosis in Electrical Infrastructure",
-        "Energy-Efficient Instrumentation for Water, Soil, and Irrigation Systems",
-        "Sustainable Hardware-Software Co-Design for Power Applications",
-        "Instrumentation for Electric Vehicle (EV) Charging and Storage"
-      ]
+        "Condition Monitoring and Fault Diagnosis",
+        "Energy-Efficient Irrigation Systems",
+        "Hardware-Software Co-Design for Power Systems",
+        "EV Charging, Storage and Battery Management",
+      ],
     },
     {
-      title: "Track 6: Applied Signal and Image Processing for Smart and Sustainable Instrumentation",
+      title:
+        "Track 6: Applied Signal and Image Processing for Smart and Sustainable Instrumentation",
       items: [
         "Diagnostics and Personalized Healthcare Applications",
-        "Agricultural and Environmental Monitoring",
-        "AI/ML and Explainable AI for Sustainable Instrumentation",
-        "Multimodal Fusion and Intelligent Feature Extraction",
-        "Automation and Smart Manufacturing"
-      ]
+        "Pollution and Environmental Monitoring",
+        "Multimodal Fusion, AI/ML and Explainable AI",
+        "Automation and Smart Manufacturing",
+        "Computer Vision, Speech and Audio Processing",
+      ],
     },
     {
-      title:"Track 7: Instrumentation for Defense and Space Applications",
-      items:[
+      title: "Track 7: Instrumentation for Defense and Space Applications",
+      items: [
         "Space Instrumentation, Sensors, and Payload Systems",
         "Remote Sensing, Navigation, and Satellite Communication",
         "Advanced Materials, Devices, and Energy Solutions for Defense",
         "Guidance, Navigation, and Control (GNC) Systems",
-        "Simulation, Digital Twins, and Validation of Mission-Critical Systems"
-      ]
-    }
+        "Simulation, Digital Twins, and Validation of Mission-Critical Systems",
+      ],
+    },
   ];
 
   const goToNext = () => sliderRef.current?.slickNext();
   const goToPrev = () => sliderRef.current?.slickPrev();
 
   return (
-    <div id="topics" className="bg-gradient-to-tr from-slate-50 via-white to-blue-50 shadow-xl  p-6 sm:p-10 md:p-16 lg:p-20">
+    <div
+      id="topics"
+      className="bg-gradient-to-tr from-slate-50 via-white to-blue-50 shadow-xl  p-6 sm:p-10 md:p-16 lg:p-20"
+    >
       <div className="max-w-7xl mx-auto">
-       
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +121,9 @@ const Topics = () => {
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600"></div>
           </div>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-            Explore the diverse research tracks of INSTCon 2026 covering cutting-edge topics in intelligent instrumentation and sustainable technologies.
+            Explore the diverse research tracks of INSTCon 2026 covering
+            cutting-edge topics in intelligent instrumentation and sustainable
+            technologies.
           </p>
         </motion.div>
 
@@ -132,7 +139,7 @@ const Topics = () => {
                 className="px-4"
               >
                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 min-h-[400px] flex flex-col">
-                  <motion.h3 
+                  <motion.h3
                     className="text-2xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 mb-6 bg-clip-text text-transparent"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
