@@ -40,7 +40,7 @@ const Topics = () => {
         "IoT in Mining and Precision Agriculture",
         "Cyber-Physical Security, Privacy, and Resilience",
         "Standardization, Interoperability, and Sustainability",
-        "5G and Beyond",
+        "RF,5G and Beyond",
       ],
     },
     {
@@ -90,7 +90,7 @@ const Topics = () => {
       title: "Track 7: Instrumentation for Defense and Space Applications",
       items: [
         "Space Instrumentation, Sensors, and Payload Systems",
-        "Remote Sensing, Navigation, and Satellite Communication",
+        "Remote Sensing, Navigation, Satellite Communication and Microwave Systems",
         "Advanced Materials, Devices, and Energy Solutions for Defense",
         "Guidance, Navigation, and Control (GNC) Systems",
         "Simulation, Digital Twins, and Validation of Mission-Critical Systems",
