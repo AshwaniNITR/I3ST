@@ -15,7 +15,7 @@ const Page = () => {
           {/* Modern Header */}
           <div className="mb-16 text-center animate-fadeIn">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#003366] to-[#0066cc] bg-clip-text text-transparent">
-              Important<span className="font-extrabold">Guidelines</span>
+              Important<span className="font-extrabold"> Guidelines</span>
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-[#003366] to-[#0066cc] mx-auto mb-6 rounded-full"></div>
             <p className="text-gray-600 font-extrabold text-lg max-w-3xl mx-auto">
@@ -31,15 +31,15 @@ const Page = () => {
               <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
                 Initial Full Paper Preparation
               </h3>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Please note that at least one author of each accepted paper must register for the conference, 
-                attend the event, and present the paper for it to be included in the proceedings. 
-                Papers that do not meet these requirements will not be published - no exceptions.
+              <p className="text-gray-700 mb-6 leading-relaxed justify-center">
+                Please note that <span className="font-bold">at least one author of each accepted paper must register for the conference, 
+                attend the event, and present the paper for it to be included in the proceedings. </span> 
+                 Papers that do not meet these requirements will not be published - no exceptions.
               </p>
             </div>
 
             {/* Paper Submission Section */}
-            <div className="mb-12">
+            <div className="mb-12 justify-center">
               <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-3 border-b border-gray-200">
                 Paper Submission via Microsoft CMT
               </h3>
@@ -48,6 +48,9 @@ const Page = () => {
                 Microsoft CMT submission portal. Manuscripts must present a complete and original description 
                 of the proposed technical contribution, including relevant research results. 
                 <span className="font-semibold text-red-600"> Submissions shorter than 4 pages may be rejected automatically.</span>
+              </p>
+              <p>
+                Acknowledgement: The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bear all expenses, including costs for Azure cloud services as well as for software development and support.
               </p>
               
               <div className="bg-gray-50 rounded-lg p-6 mb-8">
@@ -84,7 +87,7 @@ const Page = () => {
               </h3>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 All submissions will undergo peer review by the Technical Program Committee. 
-                Authors of accepted papers must upload a final version (maximum 6 pages) conforming 
+                Authors of accepted papers must <span className="font-bold">upload a final version (maximum 6 pages)</span> conforming 
                 to the publication guidelines, complete the registration process, and present the work at the conference.
               </p>
               <p className="text-gray-700 leading-relaxed">
@@ -104,6 +107,8 @@ const Page = () => {
                 </p>
                 <a 
                   href="https://www.ieee.org/conferences/publishing/templates" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold transition-colors"
                 >
                   Paper Templates
