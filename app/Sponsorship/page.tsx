@@ -8,6 +8,8 @@ import SecondBack from "../../components/SecondBack";
 const sponsorLogos = [
   "https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg",
   "/ieeerklsub.jpg",
+  "/IEEE_Kolkata_Section.png",
+  "/WomenInEng.jpeg"
 ];
 
 // Duplicate logos multiple times for seamless scrolling
@@ -33,7 +35,7 @@ export default function Committee() {
         {/* Technical Sponsors Header */}
         <div className="container mx-auto px-4 lg:px-8 text-center mb-5">
           <h2 className="md:text-5xl text-4xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent  mb-4">
-            Technical <span className="font-extrabold">Sponsors</span>
+            Technical <span className="font-extrabold">Co-Sponsors</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto  rounded-full"></div>
         </div>
@@ -48,7 +50,7 @@ export default function Committee() {
             ref={sliderRef}
             className="flex items-center"
             style={{
-              animation: `scroll 40s linear infinite`,
+              animation: `scroll 20s linear infinite`,
               width: "max-content",
             }}
           >
