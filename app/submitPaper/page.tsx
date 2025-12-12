@@ -53,38 +53,39 @@ const Page = () => {
                 <span className="font-semibold text-blue-700">
                   FULL PAPER (4–6 pages)
                 </span>{" "}
-                through the Microsoft CMT submission portal. Manuscripts must
-                present a complete and original description of the proposed
-                technical contribution, including relevant research results.
+                through the Microsoft CMT submission portal.{" "}
+                <span className="font-bold text-blue-600 mb-6 items-center gap-2">
+                  Here is the{" "}
+                  <a
+                    href="https://cmt3.research.microsoft.com/INSTCON2026"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-blue-800"
+                  >
+                     Submission Link
+                  </a>
+                  <svg
+                    className="w-4 h-4 inline"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+                . Manuscripts must present a complete and original description
+                of the proposed technical contribution, including relevant
+                research results.
                 <span className="font-semibold text-red-600">
                   {" "}
                   Submissions shorter than 4 pages may be rejected
                   automatically.
                 </span>
-              </p>
-              <p className="font-bold text-blue-600 mb-6 flex items-center gap-2">
-                Here is the
-                <a
-                  href="https://cmt3.research.microsoft.com/INSTCON2026"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-blue-800"
-                >
-                  Submission Link
-                </a>
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
               </p>
 
               <p>
