@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import SecondBack from "./SecondBack";
+import CombinedBackground from "./CombinedBackground";
 
 const AboutUs = () => {
   const [isFlyerExpanded, setIsFlyerExpanded] = useState(false);
@@ -75,9 +76,10 @@ const paragraphs = [
   return (
     <div
       id="aboutus"
-      className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6 sm:p-10 md:p-16 lg:p-20 overflow-hidden relative"
+      className="bg-gradient-to-br p-6 sm:p-10 md:p-16 lg:p-20 overflow-hidden relative"
     >
-      <SecondBack />
+      {/* <SecondBack /> */}
+      <CombinedBackground />
 
       {isFlyerExpanded && (
         <div
@@ -95,7 +97,7 @@ const paragraphs = [
       >
         {/* Title */}
         <motion.div variants={itemVariants} className="mb-8">
-          <div className="relative inline-block">
+          <div className="relative inline-block bg-gray-100 rounded-full">
             <h1 className="md:text-5xl text-3xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent mb-2">
               About INSTCon 2026
             </h1>
@@ -173,11 +175,11 @@ const paragraphs = [
           )}
 
           {/* Text content that wraps around flyer */}
-          <div className="text-content">
+          <div className="text-content bg-white/80 rounded-xl p-10 shadow-xl ">
             {paragraphs.map((paragraph, index) => (
               <motion.p
                 key={index}
-                className="text-md font-medium text-gray-700 mb-6 leading-relaxed text-justify"
+                className="text-md font-medium  text-gray-700 mb-6 leading-relaxed text-justify"
                 variants={itemVariants}
                 custom={index}
               >
