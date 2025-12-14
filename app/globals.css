@@ -6,3 +6,20 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  /* Add to your global.css or tailwind.config.js */
+@media (max-width: 768px) {
+  .mobile-optimize {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

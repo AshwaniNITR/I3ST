@@ -182,8 +182,8 @@ const Hero = () => {
         {/* Content overlay - Clean, no bordered divs */}
         <div className="relative z-10 h-full flex flex-col justify-end px-5 pb-6 space-y-5 pt-16">
           {/* Title and Conference Info */}
-          <div className="text-center space-y-3"> 
-            <p className="text-sm sm:text-base font-semibold text-white/95 drop-shadow-2xl leading-tight">
+          <div className="text-center backdrop-blur-sm bg-white/20 rounded-lg space-y-3"> 
+            <p className="text-md sm:text-base  font-semibold text-white/95 t drop-shadow-2xl leading-tight">
               1st IEEE International Conference on Instrumentation
             </p>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight drop-shadow-2xl tracking-tight">
@@ -204,7 +204,7 @@ const Hero = () => {
           </div>
 
           {/* Location section - Clean, no bordered card */}
-          <div className="px-3">
+          <div className="px-3 backdrop-blur-sm bg-white/20 rounded-lg py-4">
             <div className="flex items-start gap-3">
               <svg className="w-6 h-6 text-white drop-shadow-2xl flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -229,11 +229,11 @@ const Hero = () => {
                 key={index}
                 className="relative group"
               >
-                <div className="relative rounded-xl overflow-hidden group-hover:bg-black/90 transition-all duration-300 group-hover:scale-105 h-28">
+                <div className="relative rounded-xl overflow-hidden  group-hover:bg-black/90 transition-all duration-300 group-hover:scale-105 h-28">
                   <img
                     src={src}
                     alt={`Partner ${index + 1}`}
-                    className="w-full h-full object-contain p-4"
+                    className={`w-full h-full ${src==="/ieeekolk.png" ? "object-contain" : "object-contain"} `}
                   />
                 </div>
               </div>
