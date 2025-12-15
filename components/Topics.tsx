@@ -104,7 +104,7 @@ const Topics = () => {
   return (
     <div
       id="topics"
-      className="bg-gradient-to-tr from-slate-50 via-white to-blue-50 shadow-xl  p-6 sm:p-10 md:p-16 lg:p-20"
+      className="bg-gradient-to-tr shadow-xl  p-6 sm:p-10 md:p-16 lg:p-20"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -112,19 +112,19 @@ const Topics = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-12 text-center"
         >
-          <div className="relative inline-block">
-            <h1 className="md:text-5xl text-3xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent mb-2">
+          <div className="relative inline-block text-center">
+            <h1 className="md:text-5xl text-3xl text-center font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 bg-clip-text text-transparent mb-2">
               Conference Tracks
             </h1>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600"></div>
           </div>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl">
+          {/* <p className="mt-4 text-lg text-gray-600 max-w-3xl">
             Explore the diverse research tracks of INSTCon 2026 covering
             cutting-edge topics in intelligent instrumentation and sustainable
             technologies.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="relative">

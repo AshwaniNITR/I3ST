@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import SecondBack from "./SecondBack";
 import CombinedBackground from "./CombinedBackground";
+import { CommitteesBackground } from "./Background";
 
 const AboutUs = () => {
   const [isFlyerExpanded, setIsFlyerExpanded] = useState(false);
@@ -79,6 +80,7 @@ const paragraphs = [
       className="bg-gradient-to-br p-6 sm:p-10 md:p-16 lg:p-20 overflow-hidden relative"
     >
       {/* <SecondBack /> */}
+      
       <CombinedBackground />
 
       {isFlyerExpanded && (
@@ -96,9 +98,9 @@ const paragraphs = [
         variants={containerVariants}
       >
         {/* Title */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <div className="relative inline-block bg-gray-100 rounded-full">
-            <h1 className="md:text-5xl text-3xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent mb-2">
+        <motion.div variants={itemVariants} className="mb-8 text-center">
+          <div className="relative  inline-block bg-gray-100 rounded-full">
+            <h1 className="md:text-5xl text-3xl font-bold bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800 bg-clip-text text-transparent mb-2">
               About INSTCon 2026
             </h1>
             <motion.div

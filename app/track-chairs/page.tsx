@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import SecondBack from '../../components/SecondBack'
 import Navbar from '../../components/Navbar';
+import CombinedBackground from '../../components/CombinedBackground';
 
 const page = () => {
   const [selectedTrack, setSelectedTrack] = useState(null);
@@ -135,7 +136,7 @@ const page = () => {
 
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8 ">
-      <SecondBack/>
+      <CombinedBackground/>
       <Navbar/>
       
       {/* Header Section */}
