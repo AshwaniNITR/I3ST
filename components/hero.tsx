@@ -199,9 +199,9 @@ const Hero = () => {
 
             {/* Pulsing animation container */}
             <div className="relative bg-gradient-to-br backdrop-blur-lg border-2 border-transparent bg-clip-padding rounded-2xl p-1 shadow-xl">
-              <div className="relative bg-gradient-to-r from-blue-50 via-white to-purple-50 rounded-xl p-8 text-center space-y-6">
+              <div className="relative bg-gradient-to-r from-blue-50 via-white to-purple-50 rounded-xl p-8 text-center">
                 {/* Animated badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse mb-6">
                   <div className="relative flex h-3 w-3">
                     <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
                     <div className="relative inline-flex h-3 w-3 rounded-full bg-white"></div>
@@ -212,7 +212,7 @@ const Hero = () => {
                 </div>
 
                 {/* Main message */}
-                <div className="space-y-2">
+                <div className="space-y-2 mb-8">
                   <h3 className="text-4xl font-black bg-gradient-to-r from-blue-700 via-purple-700 to-blue-700 bg-clip-text text-transparent">
                     Paper Submission is Live!
                   </h3>
@@ -221,16 +221,16 @@ const Hero = () => {
                   </p>
                 </div>
 
-                {/* CTA Button */}
+                {/* Main CTA Button */}
                 <a
                   href="https://cmt3.research.microsoft.com/INSTCON2026"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="group mb-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   <span className="tracking-wide">Click Here to Submit</span>
                   <svg
-                    className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300"
+                    className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -242,6 +242,39 @@ const Hero = () => {
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     ></path>
                   </svg>
+                </a>
+
+                {/* Divider with "OR" */}
+                <div className="relative my-6">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-300"></div>
+                  </div>
+                  <div className="relative flex justify-center">
+                    <span className="px-4 bg-gradient-to-r from-blue-50 via-white to-purple-50 text-gray-500 font-medium text-sm">
+                      OR
+                    </span>
+                  </div>
+                </div>
+
+                {/* Secondary Button for Guidelines */}
+                <a
+                  href="/submitPaper"
+                  className="group inline-flex items-center justify-center w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 font-bold text-lg px-10 py-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <svg
+                    className="w-5 h-5 mr-3 text-blue-600 group-hover:text-blue-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path>
+                  </svg>
+                  <span className="tracking-wide">View Submission Guidelines</span>
                 </a>
               </div>
             </div>
@@ -347,7 +380,7 @@ const Hero = () => {
         </div>
 
         {/* Paper Submission Section for Mobile */}
-        <div className="w-full px-4 py-8 ">
+        <div className="w-full px-4 py-8">
           <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg">
             {/* Live badge */}
             <div className="flex justify-center mb-4">
@@ -372,12 +405,12 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Button */}
+            {/* Main Button */}
             <a
               href="https://cmt3.research.microsoft.com/INSTCON2026"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 active:scale-95"
+              className="block w-full mb-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 active:scale-95"
             >
               <div className="flex items-center justify-center gap-2">
                 <span className="font-extrabold tracking-wide">
@@ -399,6 +432,42 @@ const Hero = () => {
               </div>
             </a>
 
+            {/* Divider */}
+            <div className="relative my-4">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300"></div>
+              </div>
+              <div className="relative flex justify-center">
+                <span className="px-4 bg-gradient-to-br from-blue-50 to-purple-50 text-gray-500 font-medium text-sm">
+                  OR
+                </span>
+              </div>
+            </div>
+
+            {/* Guidelines Button */}
+            <a
+              href="/submitPaper"
+              className="group block w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 font-bold py-4 px-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all duration-300 active:scale-95"
+            >
+              <div className="flex items-center justify-center gap-2">
+                <svg
+                  className="w-4 h-4 text-blue-600 group-hover:text-blue-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
+                <span className="font-bold tracking-wide">
+                  View Submission Guidelines
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
