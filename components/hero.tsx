@@ -226,7 +226,7 @@ const Hero = () => {
                   href="https://cmt3.research.microsoft.com/INSTCON2026"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group mb-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="group mb-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform  transition-all duration-300"
                 >
                   <span className="tracking-wide">Click Here to Submit</span>
                   <svg

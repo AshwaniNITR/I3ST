@@ -140,13 +140,13 @@ const page = () => {
       <Navbar/>
       
       {/* Header Section */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 ">
    
         <div className="text-center mb-12">
-          <h1 className='md:text-6xl text-4xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 bg-clip-text text-transparent  mb-4'>
+          <h1 className='md:text-6xl text-4xl font-bold bg-gradient-to-r from-[#003366] to-[#0066cc] bg-clip-text text-transparent  mb-4'>
             Conference Tracks
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto  rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#003366] to-[#0066cc] mx-auto  rounded-full"></div>
         </div>
         
         {/* Tracks Grid */}
