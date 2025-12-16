@@ -51,7 +51,7 @@ const AboutUs: FC = () => {
       <Navbar />
       <CombinedBackground />
       <motion.h2
-        className="text-4xl md:text-5xl  font-extrabold text-center mb-4 bg-gradient-to-r  from-[#003366] to-[#0066cc] bg-clip-text text-transparent "
+        className="text-4xl md:text-5xl backdrop-blur-sm  font-extrabold text-center mb-4 bg-gradient-to-r  from-[#003366] to-[#0066cc] bg-clip-text text-transparent "
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

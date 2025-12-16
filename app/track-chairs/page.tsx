@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import SecondBack from '../../components/SecondBack'
 import Navbar from '../../components/Navbar';
 import CombinedBackground from '../../components/CombinedBackground';
+import { motion } from 'framer-motion';
 
 const page = () => {
   const [selectedTrack, setSelectedTrack] = useState(null);
@@ -28,7 +29,7 @@ const page = () => {
     },
     {
       id: 2,
-      title: "Sustainable IoT and Communication Technologies",
+      title: "IoT and Communication Technologies",
       chairs: [
         "Siddharth Deshmukh, NIT Raipur",
         "Sadanand Behera",
@@ -93,16 +94,16 @@ const page = () => {
     },
     {
       id: 6,
-      title: "Signal Processing for Sustainable Instrumentation",
+      title: "Applied Signal and Image Processing",
       chairs: [
         "Shihabudheen KV, NIT Calicut",
         "S Chatterjee",
         "Anusha AS"
       ],
       subTopics: [
-    "Diagnostics and Personalized Healthcare Applications",
+    "Diagnostics and Personalized Healthcare",
         "Pollution and Environmental Monitoring",
-        "Multimodal Fusion, AI/ML and Explainable AI",
+        "Multimodal Fusion, AI/ML and XAI",
         "Automation and Smart Manufacturing",
         "Computer Vision, Speech and Audio Processing",
       ]
@@ -142,13 +143,20 @@ const page = () => {
       {/* Header Section */}
       <div className="container mx-auto px-4 ">
    
-        <div className="text-center mb-12">
-          <h1 className='md:text-6xl text-4xl font-bold bg-gradient-to-r from-[#003366] to-[#0066cc] bg-clip-text text-transparent  mb-4'>
-            Conference Tracks
-          </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#003366] to-[#0066cc] mx-auto  rounded-full"></div>
-        </div>
-        
+      <div className="text-center mb-12">
+  <div className="inline-block   rounded-lg px-6 py-4">
+      <motion.h2
+        className="text-4xl md:text-5xl backdrop-blur-sm font-extrabold text-center mb-4 bg-gradient-to-r  from-[#003366] to-[#0066cc] bg-clip-text text-transparent "
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Conference Tracks
+      </motion.h2>
+    <div className="w-24 h-1 bg-gradient-to-r from-[#003366] to-[#0066cc] mx-auto rounded-full"></div>
+  </div>
+</div>
+
         {/* Tracks Grid */}
         <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {trackChairs.map((track) => (

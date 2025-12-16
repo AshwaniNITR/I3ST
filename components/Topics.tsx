@@ -57,7 +57,7 @@ const Topics = () => {
       ],
     },
     {
-      title: "Track 2: Sustainable IoT and Communication Technologies",
+      title: "Track 2: IoT and Communication Technologies",
       items: [
         "Wireless, RFID, and IoT-Enabled Instrumentation",
         "Communication Protocols and Network Architectures",
@@ -101,11 +101,11 @@ const Topics = () => {
     },
     {
       title:
-        "Track 6: Applied Signal and Image Processing for Smart and Sustainable Instrumentation",
+        "Track 6: Applied Signal and Image Processing",
       items: [
-        "Diagnostics and Personalized Healthcare Applications",
+        "Diagnostics and Personalized Healthcare",
         "Pollution and Environmental Monitoring",
-        "Multimodal Fusion, AI/ML and Explainable AI",
+        "Multimodal Fusion, AI/ML and XAI",
         "Automation and Smart Manufacturing",
         "Computer Vision, Speech and Audio Processing",
       ],
