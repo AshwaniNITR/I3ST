@@ -162,7 +162,7 @@ export default function Page() {
 
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
-      <Navbar/>
+      {/* <Navbar/> */}
       {/* Canvas Background */}
       <canvas
         ref={canvasRef}

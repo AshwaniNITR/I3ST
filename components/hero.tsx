@@ -52,11 +52,9 @@ const Hero = () => {
 
   return (
     <div id="home" className="relative overflow-hidden">
-      <Navbar />
-
-      {/* Desktop Layout */}
-      <div className="hidden lg:block">
-        {/* Main content row - Carousel and Info side by side */}
+      {/* Desktop Layout (for larger screens) */}
+      <div className="hidden xl:block">
+        {/* Your existing desktop layout */}
         <div className="flex h-[calc(100vh-4rem)]">
           {/* Left side - Carousel - 60% width */}
           <div className="w-[65%] h-full">
@@ -67,31 +65,31 @@ const Hero = () => {
           <section className="relative w-[35%] h-full bg-gradient-to-br ">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-20 right-10 w-72 h-72  rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute top-20 right-10 w-72 h-72 rounded-full blur-3xl animate-pulse"></div>
               <div
-                className="absolute bottom-20 left-10 w-96 h-96  rounded-full blur-3xl animate-pulse"
+                className="absolute bottom-20 left-10 w-96 h-96 rounded-full blur-3xl animate-pulse"
                 style={{ animationDelay: "1s" }}
               ></div>
             </div>
 
             {/* Content Section - Adjusted spacing to push content down */}
-            <div className="flex flex-col justify-start items-center w-full h-full py-8 px-6 relative z-10 mt-4">
-              {/* NIT Logo - Enlarged and pushed down more */}
-              <div className="flex justify-center items-center w-full mb-8 mt-6">
+            <div className="flex flex-col justify-start items-center w-full h-full pt-16 pb-2 relative z-10">
+              {/* NIT Logo - Enlarged and reduced margin */}
+              <div className="flex justify-center items-center w-full mb-0">
                 <div className="relative">
-                  <div className="relative w-48 h-48 rounded-2xl  transition-all duration-500 overflow-hidden">
+                  <div className="relative w-64 h-40 rounded-2xl transition-all duration-500 overflow-hidden">
                     <img
-                      src="/nitlogo-removebg-preview.png"
+                      src="/IEEE_Instcon-removebg-preview (1).png"
                       alt="NIT Rourkela Logo"
-                      className="w-full h-full object-contain "
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Text content - Adjusted spacing */}
-              <div className="text-center w-full px-6 space-y-6">
-                <div className="space-y-4">
+              {/* Text content - Reduced spacing */}
+              <div className="text-center w-full px-6 space-y-2">
+                <div className="space-y-2">
                   <p className="text-xl lg:text-2xl text-blue-900 font-extrabold leading-tight tracking-tight">
                     1st IEEE International Conference on Instrumentation
                   </p>
@@ -100,8 +98,8 @@ const Hero = () => {
                   </h4>
                 </div>
 
-                {/* Date badge */}
-                <div className="inline-block relative group">
+                {/* Date badge - Reduced margin */}
+                <div className="inline-block relative group mt-2">
                   <div className="relative bg-gradient-to-r backdrop-blur-sm px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg">
                     <div className="flex items-center justify-center gap-3">
                       <svg
@@ -124,41 +122,54 @@ const Hero = () => {
                   </div>
                 </div>
 
-                {/* Location - Reduced margin to prevent overlap with bottom logos */}
-                <div className="relative group mt-2 space-y-2">
-                  <div className="text-left max-w-md mx-auto space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-700 rounded-xl flex items-center justify-center shadow-lg">
-                        <svg
-                          className="w-5 h-5 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2.5"
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                          ></path>
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2.5"
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                          ></path>
-                        </svg>
-                      </div>
-                      <div className="text-left">
-                        <p className="font-extrabold text-gray-900 text-lg mb-1 leading-tight tracking-tight">
-                          Department of Electronics and Communication
-                          Engineering
-                        </p>
-                        <p className="font-bold text-gray-700 leading-relaxed">
-                          National Institute of Technology, Rourkela
-                          <br />
-                          Rourkela, Odisha, India - 769008
-                        </p>
+                {/* Location section with NIT logo positioned on top */}
+                <div className="relative group mt-8">
+                  {/* NIT Logo positioned on top of the department div */}
+                  <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="w-32 h-32 rounded-full p-2">
+                      <img
+                        src="/nitlogo-removebg-preview.png"
+                        alt="NIT Rourkela Logo"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Department information */}
+                  <div className="pt-20 pb-4 px-6 bg-gradient-to-br rounded-2xl">
+                    <div className="flex flex-row items-start justify-between max-w-md mx-auto">
+                      <div className="flex items-start flex-1">
+                        <div className="flex-shrink-0 w-7 h-7 bg-gradient-to-br from-blue-600 to-purple-700 rounded-xl flex items-center justify-center shadow-lg">
+                          <svg
+                            className="w-4 h-4 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2.5"
+                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2.5"
+                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div className="text-center flex-1">
+                          <p className="font-extrabold text-gray-900 text-lg mb-1 leading-tight tracking-tight">
+                            Department of Electronics and Communication Engineering
+                          </p>
+                          <p className="font-bold text-gray-700 leading-relaxed">
+                            National Institute of Technology, Rourkela
+                            <br />
+                            Rourkela, Odisha, India - 769008
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -169,12 +180,11 @@ const Hero = () => {
         </div>
 
         {/* 4 Images Section - Enlarged logos with consistent size */}
-        <div className="w-full bg-gradient-to-br  py-8">
+        <div className="w-full bg-gradient-to-br py-8">
           <div className="w-full px-12">
             <div className="flex justify-center items-center gap-8 w-full">
               {bottomImages.map((src, index) => (
                 <div key={index} className="relative group flex-1">
-                  {/* Clean logos without container styling */}
                   <div className="relative overflow-hidden flex justify-center items-center h-36">
                     <img
                       src={src}
@@ -191,13 +201,11 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        {/* Add this after the 4 Images Section in the desktop layout */}
-        <div className="w-full  py-8">
-          <div className="relative overflow-hidden rounded-2xl mx-auto max-w-4xl">
-            {/* Animated gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-10"></div>
 
-            {/* Pulsing animation container */}
+        {/* Paper Submission Section */}
+        <div className="w-full py-8">
+          <div className="relative overflow-hidden rounded-2xl mx-auto max-w-4xl">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-10"></div>
             <div className="relative bg-gradient-to-br backdrop-blur-lg border-2 border-transparent bg-clip-padding rounded-2xl p-1 shadow-xl">
               <div className="relative bg-gradient-to-r from-blue-50 via-white to-purple-50 rounded-xl p-8 text-center">
                 {/* Animated badge */}
@@ -226,7 +234,7 @@ const Hero = () => {
                   href="https://cmt3.research.microsoft.com/INSTCON2026"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group mb-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform  transition-all duration-300"
+                  className="group mb-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300"
                 >
                   <span className="tracking-wide">Click Here to Submit</span>
                   <svg
@@ -282,7 +290,181 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Mobile Layout */}
+      {/* SPECIFIC LAYOUT FOR 1024x600 SCREENS (Nest Hub) */}
+     <div className="hidden lg:block xl:hidden">
+  {/* Ultra-compact layout for 1024x600 */}
+  <div className="h-[600px] flex flex-col">
+    {/* Top row with carousel and info */}
+    <div className="flex flex-1 min-h-0">
+      {/* Carousel - 55% width */}
+      <div className="w-[95%] h-full">
+        <SimpleCarousel images={images} />
+      </div>
+
+      {/* Info section - 45% width, SUPER COMPACT */}
+      <section className="relative w-[45%] h-full">
+        {/* Content - Centered vertically and horizontally */}
+        <div className="flex flex-col items-center justify-center w-full h-full px-2 pt-10">
+          {/* Logo - Centered */}
+          <div className="mb-2 flex justify-center">
+            <div className="w-44 h-28">
+              <img
+                src="/IEEE_Instcon-removebg-preview (1).png"
+                alt="IEEE Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Text content - All centered */}
+          <div className="text-center w-full px-1 space-y-1">
+            <p className="text-xs font-bold text-blue-900 leading-tight mb-1 text-center">
+              1st IEEE International Conference on Instrumentation
+            </p>
+            <h4 className="text-2xl font-black bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent mb-2 text-center">
+              INSTCon 2026
+            </h4>
+
+            {/* Date badge - Centered */}
+            <div className="flex justify-center mb-2">
+              <div className="relative px-3 py-1 rounded-lg inline-block">
+                <div className="flex items-center justify-center gap-1">
+                  <svg
+                    className="w-3 h-3 text-blue-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  <span className="font-bold text-xs bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent">
+                    JULY 24-25, 2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Department section - Centered */}
+            <div className="relative mt-2 flex justify-center">
+              <div className="flex flex-col items-center max-w-[90%]">
+                <div className="mb-1 flex justify-center">
+                  <div className="w-20 h-20">
+                    <img
+                      src="/nitlogo-removebg-preview.png"
+                      alt="NIT Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="flex items-start justify-center">
+                  <div className="flex-shrink-0 mr-1 mt-0.5">
+                    <svg
+                      className="w-3 h-3 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-bold text-gray-900 text-[12px] leading-tight mb-0.5">
+                      Dept. of Electronics & Communication Engg.
+                    </p>
+                    <p className="text-[10px] font-bold text-gray-700 leading-tight">
+                      National Institute of Technology, Rourkela
+                      <br />
+                      Rourkela, Odisha, India - 769008
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    {/* Bottom section - 4 images in a row - Centered */}
+    <div className="h-16 bg-gradient-to-br py-1">
+      <div className="w-full px-2 h-full flex items-center justify-center">
+        <div className="grid grid-cols-4 gap-2 h-full w-full max-w-[95%]">
+          {bottomImages.map((src, index) => (
+            <div key={index} className="relative flex justify-center items-center h-full">
+              <img
+                src={src}
+                alt={`Partner ${index + 1}`}
+                className="h-full w-auto object-contain max-h-16"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Paper Submission Section - Centered */}
+    <div className="px-2 py-1 flex justify-center">
+      <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-2 w-full max-w-[95%]">
+        {/* Live badge - Centered */}
+        <div className="flex justify-center mb-1">
+          <div className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse">
+            <div className="relative flex h-1.5 w-1.5">
+              <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
+              <div className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white"></div>
+            </div>
+            <span className="font-bold text-white text-[10px]">LIVE</span>
+          </div>
+        </div>
+
+        {/* Message - Centered */}
+        <div className="text-center mb-1">
+          <h3 className="text-xs font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent mb-0.5">
+            Paper Submission is Live!
+          </h3>
+          <p className="text-gray-700 font-semibold text-[10px]">
+            Submit papers for INSTCon 2026
+          </p>
+        </div>
+
+        {/* Buttons - Centered */}
+        <div className="space-y-1">
+          <a
+            href="https://cmt3.research.microsoft.com/INSTCON2026"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-1 px-2 rounded text-center text-[10px]"
+          >
+            Click to Submit
+          </a>
+          <a
+            href="/submitPaper"
+            className="block w-full border border-blue-600 text-blue-600 font-bold py-1 px-2 rounded text-center text-[10px]"
+          >
+            View Guidelines
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      {/* Mobile Layout (for phones) */}
       <div className="lg:hidden relative">
         {/* Full screen carousel */}
         <div className="relative h-screen">
@@ -370,7 +552,7 @@ const Hero = () => {
                     <img
                       src={src}
                       alt={`Partner ${index + 1}`}
-                      className={`w-full h-full object-contain`}
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>

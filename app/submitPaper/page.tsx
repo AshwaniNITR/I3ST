@@ -7,7 +7,7 @@ import { CheckCircle } from "lucide-react";
 const Page = () => {
   return (
     <div className="relative min-h-screen">
-      <Navbar />
+      {/* <Navbar /> */}
       <CommitteesBackground />
 
       <section className="relative py-20 flex flex-col items-center justify-center min-h-screen">

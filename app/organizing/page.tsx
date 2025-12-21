@@ -9,7 +9,7 @@ export default function Committee() {
   return (
     <div className="relative min-h-screen">
       <CombinedBackground/>
-      <Navbar />
+      {/* <Navbar /> */}
       
       <section className="relative py-20 flex flex-col items-center justify-center min-h-screen">
         <div className="container mx-auto px-4 lg:px-8 text-center">

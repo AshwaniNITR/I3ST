@@ -1,6 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter} from 'next/font/google';
+import Contact from '../components/contact';
+import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -8,7 +11,11 @@ export const metadata: Metadata = {
   title: "INSTCon 2026 | INSTCon2026 | 1st IEEE International Conference on Instrumentation",
   description:
     "Official website of INSTCon 2026 (INSTCon2026) — 1st IEEE International Conference on Instrumentation focusing on Intelligent Instrumentation for Sustainable Technologies. July 24-25, 2026 at NIT Rourkela.",
-
+   icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   keywords: [
     "INSTCon",
     "INSTCon 2026",
@@ -76,9 +83,11 @@ export default function RootLayout({
         <meta name="google-site-verification" content="Iwlcjx19Ktt5u5c6ssegmwqaQy8VPykY1ds2jjPeDFo" />
       </head>
       <body className={inter.className + 'bg-transparent antialiased'}suppressHydrationWarning>
+        <Navbar/>
         <main className="">
           {children}
         </main>
+        <Contact/>
       </body>
     </html>
   );

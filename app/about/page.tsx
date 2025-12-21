@@ -6,6 +6,7 @@ import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import SecondBack from "../../components/SecondBack";
 import CombinedBackground from "../../components/CombinedBackground";
+import Contact from "../../components/contact";
 // import { CommitteesBackground } from "../../components/Background";
 
 
@@ -48,7 +49,7 @@ const AboutUs: FC = () => {
 
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8 ">
-      <Navbar />
+      {/* <Navbar /> */}
       <CombinedBackground />
       <motion.h2
         className="text-4xl md:text-5xl backdrop-blur-sm  font-extrabold text-center mb-4 bg-gradient-to-r  from-[#003366] to-[#0066cc] bg-clip-text text-transparent "

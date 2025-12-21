@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
-
 import Link from "next/link";
-
 import { Mail, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 export default function Contact() {
@@ -16,30 +14,14 @@ export default function Contact() {
       }
     }
   };
+  
   return (
     <div id="contactus" className="bg-white">
-      {/* Contact Header */}
-      {/* <div className="py-10 mx-16 my-2.5">
-        <h2 className="text-5xl font-bold text-yellow-500">
-          Contact Us
-        </h2>
-        <div className="w-56 h-1 bg-yellow-500 mx-6 mt-2"></div>
-        <p className="mt-4 text-lg">
-          For inquiries, please email us at{" "}
-          <span className="font-bold text-black">
-            <a href="mailto:INSTCon2026@nitrkl.ac.in" className="hover:underline">
-              INSTCon2026@nitrkl.ac.in
-            </a>
-          </span>
-          .
-        </p>
-      </div> */}
-
       {/* Footer Section */}
-      <footer className="bg-blue-950 text-white py-10 rounded-t-3xl">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between my-5 px-6 ">
+      <footer className="bg-blue-950 text-white py-10 rounded-t-3xl w-full overflow-hidden">
+        <div className="container mx-auto flex flex-col lg:flex-row justify-between my-5 px-4 md:px-6">
           {/* Conference Details */}
-          <div>
+          <div className="lg:w-2/5 mb-8 lg:mb-0">
             <h3 className="text-lg font-semibold">
               The 1st IEEE International Conference On Instrumentation
               INSTCon-2026
@@ -84,8 +66,8 @@ export default function Contact() {
               ))}
             </ul>
 
-            <div className="w-64 h-0.5 bg-white mx-1 mt-2"></div>
-            <div className="max-w-md my-4">
+            <div className="w-full lg:w-64 h-0.5 bg-white mt-4"></div>
+            <div className="w-full my-4">
               <p className="mt-4 text-sm text-white">
                 The 1st IEEE International Conference On Instrumentation
                 (INSTCon-2026) is being organized by the Electronics &
@@ -96,40 +78,28 @@ export default function Contact() {
           </div>
 
           {/* Navigation Menu */}
-          <div className="text-sm space-y-2">
+          <div className="lg:w-1/5 mb-8 lg:mb-0 text-sm space-y-2">
             <ul className="space-y-1">
               {[
                 {
                   name: "Home",
-                  href: "#home",
+                  href: "/",
                 },
                 {
                   name: "About Us",
-                  href: "#aboutus",
+                  href: "/about",
                 },
-                // {
-                //   name: "Schedule & Agenda",
-                //   href: "",
-                // },
-                // {
-                //   name:"CVMI-2025 Attractions",
-                //   href: "",
-                // },
                 {
                   name: "Tracks of INSTCon-2026",
-                  href: "#topics",
+                  href: "/track-chairs",
                 },
                 {
                   name: "Paper Submission",
-                  href: "",
+                  href: "/submitPaper",
                 },
                 {
                   name: "INSTCon-2026 Organizing Committee",
                   href: "/organizing",
-                },
-                {
-                  name: "Contact Us",
-                  href: "#contactus",
                 },
               ].map((key) => (
                 <li key={key.name}>
@@ -146,7 +116,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Information */}
-          <div className="text-sm">
+          <div className="lg:w-1/5 text-sm">
             <h3 className="text-lg font-semibold">CONTACT US</h3>
             <p className="mt-2 flex items-center space-x-2">
               <Mail className="w-5 h-5 text-gray-400" />
@@ -154,27 +124,40 @@ export default function Contact() {
             </p>
           </div>
         </div>
-        <div className="w-[98%] h-0.5 bg-white mx-4 mt-2"></div>
+        
+        {/* Divider */}
+        <div className="w-full h-0.5 bg-white mt-8"></div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col justify-between items-center">
-          <div className="flex justify-between items-end w-full">
-            <div className="text-white text-md mt-6 mx-5">@INSTCon-2026</div>
-            <div className="flex items-center gap-12 mt-3 mx-5">
-              <Image
-                className="rounded-2xl"
-                src={`https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg`}
-                alt="INSTConLogo"
-                width={50}
-                height={20}
-              />
-              <Image
-                className="rounded-2xl"
-                src={`/nitlogo.png`}
-                alt="NITR Logo"
-                width={50}
-                height={20}
-              />
+        <div className="container mx-auto px-4 md:px-6 mt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+            <div className="order-1 md:order-1 text-white text-sm md:text-md">
+              @INSTCon-2026
+            </div>
+            
+            <div className="order-3 md:order-2 text-white text-xs md:text-sm text-center mt-2 md:mt-0">
+              © 2026 IEEE Rourkela Subsection. All rights reserved.
+            </div>
+            
+            <div className="order-2 md:order-3 flex items-center gap-8 md:gap-12">
+              <div className="relative w-12 h-8 md:w-12 md:h-8">
+                <Image
+                  className="rounded-2xl object-contain"
+                  src={`https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg`}
+                  alt="INSTConLogo"
+                  fill
+                  sizes="(max-width: 768px) 48px, 48px"
+                />
+              </div>
+              <div className="relative w-12 h-8 md:w-12 md:h-8">
+                <Image
+                  className="rounded-2xl object-contain"
+                  src={`/nitlogo.png`}
+                  alt="NITR Logo"
+                  fill
+                  sizes="(max-width: 768px) 48px, 48px"
+                />
+              </div>
             </div>
           </div>
         </div>
