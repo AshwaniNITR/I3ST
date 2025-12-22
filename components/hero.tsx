@@ -55,11 +55,11 @@ const Hero = () => {
       {/* Desktop Layout (for larger screens) */}
       <div className="hidden xl:block">
         {/* Your existing desktop layout */}
-        <div className="flex h-[calc(100vh-4rem)]">
+        <div className="flex h-[700px]">
           {/* Left side - Carousel - 60% width */}
-          <div className="w-[65%] h-full">
+          <section className="w-[65%] h-full">
             <SimpleCarousel images={images} />
-          </div>
+          </section>
 
           {/* Right side - Content - 40% width */}
           <section className="relative w-[35%] h-full bg-gradient-to-br ">
@@ -134,7 +134,7 @@ const Hero = () => {
                       />
                     </div>
                   </div>
-                  
+
                   {/* Department information */}
                   <div className="pt-20 pb-4 px-6 bg-gradient-to-br rounded-2xl">
                     <div className="flex flex-row items-start justify-between max-w-md mx-auto">
@@ -162,7 +162,8 @@ const Hero = () => {
                         </div>
                         <div className="text-center flex-1">
                           <p className="font-extrabold text-gray-900 text-lg mb-1 leading-tight tracking-tight">
-                            Department of Electronics and Communication Engineering
+                            Department of Electronics and Communication
+                            Engineering
                           </p>
                           <p className="font-bold text-gray-700 leading-relaxed">
                             National Institute of Technology, Rourkela
@@ -282,7 +283,9 @@ const Hero = () => {
                       d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                     ></path>
                   </svg>
-                  <span className="tracking-wide">View Submission Guidelines</span>
+                  <span className="tracking-wide">
+                    View Submission Guidelines
+                  </span>
                 </a>
               </div>
             </div>
@@ -291,368 +294,371 @@ const Hero = () => {
       </div>
 
       {/* SPECIFIC LAYOUT FOR 1024x600 SCREENS (Nest Hub) */}
-     <div className="hidden lg:block xl:hidden">
-  {/* Ultra-compact layout for 1024x600 */}
-  <div className="h-[600px] flex flex-col">
-    {/* Top row with carousel and info */}
-    <div className="flex flex-1 min-h-0">
-      {/* Carousel - 55% width */}
-      <div className="w-[95%] h-full">
-        <SimpleCarousel images={images} />
-      </div>
-
-      {/* Info section - 45% width, SUPER COMPACT */}
-      <section className="relative w-[45%] h-full">
-        {/* Content - Centered vertically and horizontally */}
-        <div className="flex flex-col items-center justify-center w-full h-full px-2 pt-10">
-          {/* Logo - Centered */}
-          <div className="mb-2 flex justify-center">
-            <div className="w-44 h-28">
-              <img
-                src="/IEEE_Instcon-removebg-preview (1).png"
-                alt="IEEE Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-
-          {/* Text content - All centered */}
-          <div className="text-center w-full px-1 space-y-1">
-            <p className="text-xs font-bold text-blue-900 leading-tight mb-1 text-center">
-              1st IEEE International Conference on Instrumentation
-            </p>
-            <h4 className="text-2xl font-black bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent mb-2 text-center">
-              INSTCon 2026
-            </h4>
-
-            {/* Date badge - Centered */}
-            <div className="flex justify-center mb-2">
-              <div className="relative px-3 py-1 rounded-lg inline-block">
-                <div className="flex items-center justify-center gap-1">
-                  <svg
-                    className="w-3 h-3 text-blue-700"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    ></path>
-                  </svg>
-                  <span className="font-bold text-xs bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent">
-                    JULY 24-25, 2026
-                  </span>
-                </div>
-              </div>
+      <div className="hidden lg:block xl:hidden">
+        {/* Ultra-compact layout for 1024x600 */}
+        <div className="h-[600px] flex flex-col">
+          {/* Top row with carousel and info */}
+          <div className="flex flex-1 min-h-0">
+            {/* Carousel - 55% width */}
+            <div className="w-[95%] h-full">
+              <SimpleCarousel images={images} />
             </div>
 
-            {/* Department section - Centered */}
-            <div className="relative mt-2 flex justify-center">
-              <div className="flex flex-col items-center max-w-[90%]">
-                <div className="mb-1 flex justify-center">
-                  <div className="w-20 h-20">
+            {/* Info section - 45% width, SUPER COMPACT */}
+            <section className="relative w-[45%] h-full">
+              {/* Content - Centered vertically and horizontally */}
+              <div className="flex flex-col items-center justify-center w-full h-full px-2 pt-10">
+                {/* Logo - Centered */}
+                <div className="mb-2 flex justify-center">
+                  <div className="w-44 h-28">
                     <img
-                      src="/nitlogo-removebg-preview.png"
-                      alt="NIT Logo"
+                      src="/IEEE_Instcon-removebg-preview (1).png"
+                      alt="IEEE Logo"
                       className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
-                <div className="flex items-start justify-center">
-                  <div className="flex-shrink-0 mr-1 mt-0.5">
-                    <svg
-                      className="w-3 h-3 text-blue-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      ></path>
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      ></path>
-                    </svg>
+
+                {/* Text content - All centered */}
+                <div className="text-center w-full px-1 space-y-1">
+                  <p className="text-xs font-bold text-blue-900 leading-tight mb-1 text-center">
+                    1st IEEE International Conference on Instrumentation
+                  </p>
+                  <h4 className="text-2xl font-black bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent mb-2 text-center">
+                    INSTCon 2026
+                  </h4>
+
+                  {/* Date badge - Centered */}
+                  <div className="flex justify-center mb-2">
+                    <div className="relative px-3 py-1 rounded-lg inline-block">
+                      <div className="flex items-center justify-center gap-1">
+                        <svg
+                          className="w-3 h-3 text-blue-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          ></path>
+                        </svg>
+                        <span className="font-bold text-xs bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent">
+                          JULY 24-25, 2026
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <p className="font-bold text-gray-900 text-[12px] leading-tight mb-0.5">
-                      Dept. of Electronics & Communication Engg.
-                    </p>
-                    <p className="text-[10px] font-bold text-gray-700 leading-tight">
-                      National Institute of Technology, Rourkela
-                      <br />
-                      Rourkela, Odisha, India - 769008
-                    </p>
+
+                  {/* Department section - Centered */}
+                  <div className="relative mt-2 flex justify-center">
+                    <div className="flex flex-col items-center max-w-[90%]">
+                      <div className="mb-1 flex justify-center">
+                        <div className="w-20 h-20">
+                          <img
+                            src="/nitlogo-removebg-preview.png"
+                            alt="NIT Logo"
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex items-start justify-center">
+                        <div className="flex-shrink-0 mr-1 mt-0.5">
+                          <svg
+                            className="w-3 h-3 text-blue-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div className="text-center">
+                          <p className="font-bold text-gray-900 text-[12px] leading-tight mb-0.5">
+                            Dept. of Electronics & Communication Engg.
+                          </p>
+                          <p className="text-[10px] font-bold text-gray-700 leading-tight">
+                            National Institute of Technology, Rourkela
+                            <br />
+                            Rourkela, Odisha, India - 769008
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    {/* Bottom section - 4 images in a row - Centered */}
-    <div className="h-16 bg-gradient-to-br py-1">
-      <div className="w-full px-2 h-full flex items-center justify-center">
-        <div className="grid grid-cols-4 gap-2 h-full w-full max-w-[95%]">
-          {bottomImages.map((src, index) => (
-            <div key={index} className="relative flex justify-center items-center h-full">
-              <img
-                src={src}
-                alt={`Partner ${index + 1}`}
-                className="h-full w-auto object-contain max-h-16"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    {/* Paper Submission Section - Centered */}
-    <div className="px-2 py-1 flex justify-center">
-      <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-2 w-full max-w-[95%]">
-        {/* Live badge - Centered */}
-        <div className="flex justify-center mb-1">
-          <div className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse">
-            <div className="relative flex h-1.5 w-1.5">
-              <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
-              <div className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white"></div>
-            </div>
-            <span className="font-bold text-white text-[10px]">LIVE</span>
-          </div>
-        </div>
-
-        {/* Message - Centered */}
-        <div className="text-center mb-1">
-          <h3 className="text-xs font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent mb-0.5">
-            Paper Submission is Live!
-          </h3>
-          <p className="text-gray-700 font-semibold text-[10px]">
-            Submit papers for INSTCon 2026
-          </p>
-        </div>
-
-        {/* Buttons - Centered */}
-        <div className="space-y-1">
-          <a
-            href="https://cmt3.research.microsoft.com/INSTCON2026"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-1 px-2 rounded text-center text-[10px]"
-          >
-            Click to Submit
-          </a>
-          <a
-            href="/submitPaper"
-            className="block w-full border border-blue-600 text-blue-600 font-bold py-1 px-2 rounded text-center text-[10px]"
-          >
-            View Guidelines
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-      {/* Mobile Layout (for phones) */}
-      <div className="lg:hidden relative">
-        {/* Full screen carousel */}
-        <div className="relative h-screen">
-          <div className="absolute inset-0">
-            <SimpleCarousel images={images} />
+            </section>
           </div>
 
-          {/* Dark gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-transparent"></div>
-
-          {/* Content overlay - Clean, no bordered divs */}
-          <div className="relative z-10 h-full flex flex-col justify-end px-5 pb-6 space-y-5 pt-16">
-            {/* Title and Conference Info */}
-            <div className="text-center backdrop-blur-sm bg-white/20 rounded-lg space-y-3">
-              <p className="text-md sm:text-base font-semibold text-white/95 t drop-shadow-2xl leading-tight">
-                1st IEEE International Conference on Instrumentation
-              </p>
-              <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight drop-shadow-2xl tracking-tight">
-                INSTCon 2026
-              </h1>
-            </div>
-
-            {/* Date badge - Clean style */}
-            <div className="flex justify-center">
-              <div className="inline-flex items-center gap-3 px-5 py-3 bg-white/20 backdrop-blur-lg rounded-xl">
-                <svg
-                  className="w-5 h-5 text-white drop-shadow-2xl"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2.5"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  ></path>
-                </svg>
-                <span className="font-black text-lg text-white tracking-wider drop-shadow-2xl">
-                  JULY 24-25, 2026
-                </span>
-              </div>
-            </div>
-
-            {/* Location section - Clean, no bordered card */}
-            <div className="px-3 backdrop-blur-sm bg-white/20 rounded-lg py-4">
-              <div className="flex items-start gap-3">
-                <svg
-                  className="w-6 h-6 text-white drop-shadow-2xl flex-shrink-0 mt-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2.5"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  ></path>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2.5"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path>
-                </svg>
-                <div className="text-left flex-1">
-                  <p className="font-extrabold text-white text-sm mb-1 leading-snug drop-shadow-2xl tracking-tight">
-                    Department of Electronics and Communication Engineering
-                  </p>
-                  <p className="font-bold text-xs text-white/95 leading-relaxed drop-shadow-2xl">
-                    National Institute of Technology, Rourkela
-                    <br />
-                    Rourkela, Odisha, India - 769008
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* 4 Images Overlay for Mobile - Larger, full width */}
-            <div className="grid grid-cols-2 gap-3 px-3 mt-4">
-              {bottomImages.map((src, index) => (
-                <div key={index} className="relative group">
-                  <div className="relative rounded-xl overflow-hidden group-hover:bg-black/90 transition-all duration-300 group-hover:scale-105 h-28">
+          {/* Bottom section - 4 images in a row - Centered */}
+          <div className="h-16 bg-gradient-to-br py-1">
+            <div className="w-full px-2 h-full flex items-center justify-center">
+              <div className="grid grid-cols-4 gap-2 h-full w-full max-w-[95%]">
+                {bottomImages.map((src, index) => (
+                  <div
+                    key={index}
+                    className="relative flex justify-center items-center h-full"
+                  >
                     <img
                       src={src}
                       alt={`Partner ${index + 1}`}
-                      className="w-full h-full object-contain"
+                      className="h-full w-auto object-contain max-h-16"
                     />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Paper Submission Section for Mobile */}
-        <div className="w-full px-4 py-8">
-          <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg">
-            {/* Live badge */}
-            <div className="flex justify-center mb-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse">
-                <div className="relative flex h-2 w-2">
-                  <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
-                  <div className="relative inline-flex h-2 w-2 rounded-full bg-white"></div>
+          {/* Paper Submission Section - Centered */}
+          <div className="px-2 py-1 flex justify-center">
+            <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-2 w-full max-w-[95%]">
+              {/* Live badge - Centered */}
+              <div className="flex justify-center mb-1">
+                <div className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse">
+                  <div className="relative flex h-1.5 w-1.5">
+                    <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
+                    <div className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white"></div>
+                  </div>
+                  <span className="font-bold text-white text-[10px]">LIVE</span>
                 </div>
-                <span className="font-bold text-white text-xs tracking-wider">
-                  LIVE NOW
-                </span>
               </div>
-            </div>
 
-            {/* Message */}
-            <div className="text-center space-y-2 mb-6">
-              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent">
-                Paper Submission is Live!
-              </h3>
-              <p className="text-gray-700 font-semibold text-base">
-                Submit your papers for INSTCon 2026
-              </p>
-            </div>
+              {/* Message - Centered */}
+              <div className="text-center mb-1">
+                <h3 className="text-xs font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent mb-0.5">
+                  Paper Submission is Live!
+                </h3>
+                <p className="text-gray-700 font-semibold text-[10px]">
+                  Submit papers for INSTCon 2026
+                </p>
+              </div>
 
-            {/* Main Button */}
-            <a
-              href="https://cmt3.research.microsoft.com/INSTCON2026"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full mb-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 active:scale-95"
-            >
-              <div className="flex items-center justify-center gap-2">
-                <span className="font-extrabold tracking-wide">
-                  Click Here to Submit
-                </span>
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              {/* Buttons - Centered */}
+              <div className="space-y-1">
+                <a
+                  href="https://cmt3.research.microsoft.com/INSTCON2026"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-1 px-2 rounded text-center text-[10px]"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2.5"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  ></path>
-                </svg>
-              </div>
-            </a>
-
-            {/* Divider */}
-            <div className="relative my-4">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300"></div>
-              </div>
-              <div className="relative flex justify-center">
-                <span className="px-4 bg-gradient-to-br from-blue-50 to-purple-50 text-gray-500 font-medium text-sm">
-                  OR
-                </span>
+                  Click to Submit
+                </a>
+                <a
+                  href="/submitPaper"
+                  className="block w-full border border-blue-600 text-blue-600 font-bold py-1 px-2 rounded text-center text-[10px]"
+                >
+                  View Guidelines
+                </a>
               </div>
             </div>
-
-            {/* Guidelines Button */}
-            <a
-              href="/submitPaper"
-              className="group block w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 font-bold py-4 px-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all duration-300 active:scale-95"
-            >
-              <div className="flex items-center justify-center gap-2">
-                <svg
-                  className="w-4 h-4 text-blue-600 group-hover:text-blue-700"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  ></path>
-                </svg>
-                <span className="font-bold tracking-wide">
-                  View Submission Guidelines
-                </span>
-              </div>
-            </a>
           </div>
         </div>
       </div>
+
+      {/* Mobile Layout (for phones) */}
+  <div className="lg:hidden relative">
+  {/* Full screen carousel */}
+  <div className="relative h-screen">
+    <div className="absolute inset-0">
+      <SimpleCarousel images={images} />
+    </div>
+
+    {/* Dark gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-transparent"></div>
+
+    {/* Content overlay - Adjusted for screens above 700px */}
+    <div className="relative z-10 h-full flex flex-col justify-end px-5 pb-6 space-y-5 pt-16 sm:justify-center sm:pt-0 sm:pb-20 sm:space-y-6">
+      {/* Title and Conference Info */}
+      <div className="text-center backdrop-blur-sm bg-white/20 rounded-lg space-y-3 sm:space-y-4 sm:px-4 sm:py-3">
+        <p className="text-md sm:text-lg md:text-xl font-semibold text-white/95 drop-shadow-2xl leading-tight">
+          1st IEEE International Conference on Instrumentation
+        </p>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight drop-shadow-2xl tracking-tight">
+          INSTCon 2026
+        </h1>
+      </div>
+
+      {/* Date badge - Clean style */}
+      <div className="flex justify-center">
+        <div className="inline-flex items-center gap-3 px-5 py-3 bg-white/20 backdrop-blur-lg rounded-xl sm:px-6 sm:py-3">
+          <svg
+            className="w-5 h-5 text-white drop-shadow-2xl sm:w-6 sm:h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2.5"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            ></path>
+          </svg>
+          <span className="font-black text-lg sm:text-xl text-white tracking-wider drop-shadow-2xl">
+            JULY 24-25, 2026
+          </span>
+        </div>
+      </div>
+
+      {/* Location section - Centered and adjusted for larger screens */}
+      <div className="px-3 backdrop-blur-sm bg-white/20 rounded-lg py-4 sm:px-4 sm:py-4 sm:max-w-md sm:mx-auto">
+        <div className="flex items-start gap-3 sm:flex-col sm:items-center sm:gap-4">
+          <svg
+            className="w-6 h-6 text-white drop-shadow-2xl flex-shrink-0 mt-1 sm:w-7 sm:h-7 sm:mt-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2.5"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            ></path>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2.5"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+            ></path>
+          </svg>
+          <div className="text-left flex-1 sm:text-center sm:w-full">
+            <p className="font-extrabold text-white text-sm mb-1 leading-snug drop-shadow-2xl tracking-tight sm:text-base sm:mb-2 sm:leading-tight">
+              Department of Electronics and Communication Engineering
+            </p>
+            <p className="font-bold text-xs text-white/95 leading-relaxed drop-shadow-2xl sm:text-sm sm:leading-snug">
+              National Institute of Technology, Rourkela
+              <br />
+              Rourkela, Odisha, India - 769008
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 4 Images Overlay for Mobile - Adjusted for larger screens */}
+      <div className="grid grid-cols-2 gap-3 px-3 mt-4 sm:mt-6 sm:gap-4 sm:px-6 sm:max-w-lg sm:mx-auto">
+        {bottomImages.map((src, index) => (
+          <div key={index} className="relative group">
+            <div className="relative rounded-xl overflow-hidden group-hover:bg-black/90 transition-all duration-300 group-hover:scale-105 h-28 sm:h-36">
+              <img
+                src={src}
+                alt={`Partner ${index + 1}`}
+                className="w-full h-full object-contain p-2 sm:p-3"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {/* Paper Submission Section for Mobile - Adjusted for larger screens */}
+  <div className="w-full px-4 py-8 sm:px-8 sm:py-10">
+    <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8">
+      {/* Live badge */}
+      <div className="flex justify-center mb-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse sm:px-4 sm:py-1.5">
+          <div className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+            <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
+            <div className="relative inline-flex h-2 w-2 rounded-full bg-white sm:h-2.5 sm:w-2.5"></div>
+          </div>
+          <span className="font-bold text-white text-xs tracking-wider sm:text-sm">
+            LIVE NOW
+          </span>
+        </div>
+      </div>
+
+      {/* Message */}
+      <div className="text-center space-y-2 mb-6 sm:space-y-3 sm:mb-8">
+        <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
+          Paper Submission is Live!
+        </h3>
+        <p className="text-gray-700 font-semibold text-base sm:text-lg">
+          Submit your papers for INSTCon 2026
+        </p>
+      </div>
+
+      {/* Main Button */}
+      <a
+        href="https://cmt3.research.microsoft.com/INSTCON2026"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full mb-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 active:scale-95 sm:py-5 sm:text-lg"
+      >
+        <div className="flex items-center justify-center gap-2">
+          <span className="font-extrabold tracking-wide">
+            Click Here to Submit
+          </span>
+          <svg
+            className="w-4 h-4 sm:w-5 sm:h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2.5"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            ></path>
+          </svg>
+        </div>
+      </a>
+
+      {/* Divider */}
+      <div className="relative my-4 sm:my-6">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-gray-300"></div>
+        </div>
+        <div className="relative flex justify-center">
+          <span className="px-4 bg-gradient-to-br from-blue-50 to-purple-50 text-gray-500 font-medium text-sm sm:text-base">
+            OR
+          </span>
+        </div>
+      </div>
+
+      {/* Guidelines Button */}
+      <a
+        href="/submitPaper"
+        className="group block w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 font-bold py-4 px-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all duration-300 active:scale-95 sm:py-5 sm:text-lg"
+      >
+        <div className="flex items-center justify-center gap-2">
+          <svg
+            className="w-4 h-4 text-blue-600 group-hover:text-blue-700 sm:w-5 sm:h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            ></path>
+          </svg>
+          <span className="font-bold tracking-wide">
+            View Submission Guidelines
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
 
       <style jsx>{`
         @keyframes fade-in {
