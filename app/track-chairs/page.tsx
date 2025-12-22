@@ -16,7 +16,8 @@ const page = () => {
       chairs: [
         "Siraz Sohail, NIT Trichy",
         "Rashmi Achla Minz",
-        "Sougata Kumar Kar"
+        "Sougata Kumar Kar",
+        "M.N. Muralidharan"
       ],
       subTopics: [
          "Smart Sensors: Design, Fabrication, and Applications",
@@ -50,7 +51,8 @@ const page = () => {
       chairs: [
         "Munmun Khanra, NIT Silchar",
         "Rajiv Mishra",
-        "Ashim Naskar"
+        "Ashim Naskar",
+        "Abhisek Choudhary"
       ],
       subTopics: [
         "Intelligent Control and Adaptive Systems",

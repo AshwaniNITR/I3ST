@@ -644,6 +644,12 @@ export const advisory: Committee[] = [
         role: "IIT BHU",
         imageUrl: "/advisory/shyam-kamal.jpg",
       },
+      {
+        id:33,
+        name:"Dr. A Seema",
+        role:"CMET Thissur",
+        imageUrl:"/advisory/DrASeema.jpg",
+      }
     ],
   },
 ];
