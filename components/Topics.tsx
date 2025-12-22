@@ -57,7 +57,7 @@ const Topics = () => {
       ],
     },
     {
-      title: "Track 2: IoT and Communication Technologies",
+      title: "Track 2:Sustainable IoT and Communication Technologies",
       items: [
         "Wireless, RFID, and IoT-Enabled Instrumentation",
         "Communication Protocols and Network Architectures",

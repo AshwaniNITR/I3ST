@@ -5,6 +5,7 @@ import { Button } from "../components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "../components/ui/sheet";
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -41,6 +42,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRefs = useRef({});
+  const router = useRouter();
 
   // Handle scroll effect
   useEffect(() => {
@@ -178,7 +180,8 @@ export default function Navbar() {
           <div className="hidden lg:flex ml-8">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-              <Button className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-6">
+              <Button
+              onClick={()=>{router.push("/submitPaper")}}  className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-6">
                 Register Now
               </Button>
             </div>
@@ -243,7 +246,7 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
           <Button 
             className="relative w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-800/50"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={() => {router.push("/submitPaper")}}
           >
             Register Now
           </Button>
