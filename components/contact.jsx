@@ -2,16 +2,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
-
+import { useRouter } from "next/navigation";
 export default function Contact() {
   // Scroll to specific section
+  const router=useRouter();
   const handleClick = (e, href) => {
     e.preventDefault();
     if (href) {
-      const targetElement = document.getElementById(href);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }
+      // const targetElement = document.getElementById(href);
+      // if (targetElement) {
+      //   targetElement.scrollIntoView({ behavior: "smooth" });
+      // }
+      router.push(href);
     }
   };
   
