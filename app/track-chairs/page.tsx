@@ -127,7 +127,9 @@ const trackChairs = [
     id: 7,
     title: "Instrumentation for Defense and Space Applications",
     chairs: [
-      "L. P. Roy, NIT Rourkela"
+      "L. P. Roy, NIT Rourkela",
+      "Banibrata Mukherjee, IIT KGP",
+      "k. B. M. Swamy, NIT Surathkal"
     ],
     subTopics: [
       "Space Instrumentation, Sensors, and Payload Systems",
