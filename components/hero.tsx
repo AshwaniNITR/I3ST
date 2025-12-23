@@ -39,7 +39,7 @@ const Hero = () => {
     "/nitfrontgate3.jpg",
     "/nitmainbuilding2.jpg",
     "/la1.jpg",
-    "/ecdept.jpg",
+    "/ecdeptNew.jpeg",
   ];
 
   // Images for the new section

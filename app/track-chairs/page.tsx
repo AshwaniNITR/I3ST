@@ -129,7 +129,8 @@ const trackChairs = [
     chairs: [
       "L. P. Roy, NIT Rourkela",
       "Banibrata Mukherjee, IIT KGP",
-      "k. B. M. Swamy, NIT Surathkal"
+      "K. B. M. Swamy, NIT Surathkal",
+      "Aveek Dutta, PXE DRDO"
     ],
     subTopics: [
       "Space Instrumentation, Sensors, and Payload Systems",
