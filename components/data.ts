@@ -520,6 +520,12 @@ export const otherCommittees: Committee[] = [
         role: "Chair, IEEE Rourkela Subsection",
         imageUrl: "/Poonam-Singh.jpg",
       },
+      {
+        id: 29,
+        name: "Shri Subodha K Nayak",
+        role: "Director, PXE",
+        imageUrl: "/Subodh-Kumar-Nayak-12-1024x708.jpg",
+      }
     ],
   },
   {
