@@ -499,6 +499,18 @@ export const advisory: Committee[] = [
         role: "CMET Thissur",
         imageUrl: "/advisory/DrASeema.jpg",
       },
+      {
+        id:34,
+        name:"Dr. H. S. Panda",
+        role:"PXE DRDO",
+        imageUrl:"/advisory/Professor-Panda_edited.jpg",
+      },
+      {
+        id:35,
+        name:"Dr. Sankarsan Padhy ",
+        role:"PXE, DRDO",
+        imageUrl:"/advisory/SPadhy.png",
+      }
     ],
   },
 ];
