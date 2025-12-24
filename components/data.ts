@@ -154,7 +154,7 @@ export const trackChairs: Committee[] = [
         id: 22,
         name: "Prof. Arunagshu Ghosh",
         role: "NIT Patna",
-        imageUrl: "/scraped_images/22_Arunagshu_Ghosh_1.jpg",
+        imageUrl: "/arunagshu-ghosh.jpg",
       },
       {
         id: 23,

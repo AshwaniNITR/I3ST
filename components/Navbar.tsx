@@ -100,7 +100,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="relative">
                 {/* Logo Container */}
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center pt-2">
                   <div className="relative h-12 w-auto transition-all duration-300 group-hover:scale-105">
                     <Image
                       src="/IEEE_Instcon-removebg-preview (1).png"

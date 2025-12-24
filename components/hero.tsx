@@ -77,7 +77,7 @@ const Hero = () => {
               {/* NIT Logo - Enlarged and reduced margin */}
               <div className="flex justify-center items-center w-full mb-0">
                 <div className="relative">
-                  <div className="relative w-64 h-40 rounded-2xl transition-all duration-500 overflow-hidden">
+                  <div className="relative w-64 h-44 rounded-2xl transition-all duration-500 overflow-hidden">
                     <img
                       src="/IEEE_Instcon-removebg-preview (1).png"
                       alt="NIT Rourkela Logo"
@@ -482,10 +482,10 @@ const Hero = () => {
     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-transparent"></div>
 
     {/* Content overlay - Adjusted for screens above 700px */}
-    <div className="relative z-10 h-full flex flex-col justify-end px-5 pb-6 space-y-5 pt-16 sm:justify-center sm:pt-0 sm:pb-20 sm:space-y-6">
+    <div className="relative z-10 h-full flex flex-col justify-end px-5 pb-6 space-y-5 pt-16 sm:justify-center sm:pt-20 sm:pb-20 sm:space-y-6">
       {/* Title and Conference Info */}
       <div className="text-center backdrop-blur-sm bg-white/20 rounded-lg space-y-3 sm:space-y-4 sm:px-4 sm:py-3">
-        <p className="text-md sm:text-lg md:text-xl font-semibold text-white/95 drop-shadow-2xl leading-tight">
+        <p className="text-md sm:text-lg md:text-xl font-bold text-white/95 drop-shadow-2xl leading-tight">
           1st IEEE International Conference on Instrumentation
         </p>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight drop-shadow-2xl tracking-tight">
