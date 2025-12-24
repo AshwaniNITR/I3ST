@@ -95,7 +95,7 @@ const trackChairs = [
       "Sovan Dalai, Jadavpur University",
       "Arijit Guha, NIT Rourkela",
       "Amit Mallick, VSSUT Burla",
-      "Dr. Rabindra Behera, IGIT Sarang"
+      "Rabindra Behera, IGIT Sarang"
     ],
     subTopics: [
       "Smart Grids and Renewable Energy Systems",
