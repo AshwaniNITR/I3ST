@@ -14,8 +14,8 @@ export default function Committee() {
       <section className="relative py-20 flex flex-col items-center justify-center min-h-screen">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           {/* Modern Header */}
-          <div className="mb-16 animate-fadeIn" style={{ animation: "fadeIn 0.5s ease-out" }}>
-            <h2 className="text-4xl backdrop-blur-sm md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#003366] to-[#0066cc] bg-clip-text text-transparent">
+          <div className="mb-16  animate-fadeIn" style={{ animation: "fadeIn 0.5s ease-out" }}>
+            <h2 className="inline-block backdrop-blur-sm text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#003366] to-[#0066cc] bg-clip-text text-transparent">
               Organizing <span className="font-extrabold">Committee</span>
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-[#003366] to-[#0066cc] mx-auto mb-6 rounded-full"></div>

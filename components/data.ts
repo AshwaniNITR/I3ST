@@ -148,7 +148,7 @@ export const trackChairs: Committee[] = [
         id: 21,
         name: "Pritam Paral",
         role: "IIEST Sibpur",
-        imageUrl: "/scraped_images/21_Pritam_Paral_1.jpg",
+        imageUrl: "/advisory/PritamParal.jpg",
       },
       {
         id: 22,
@@ -399,13 +399,13 @@ export const advisory: Committee[] = [
       },
       {
         id: 17,
-        name: " Shiru Sharma",
+        name: "Shiru Sharma",
         role: "IIT BHU",
         imageUrl: "/advisory/shiru-sharma-17.jpg",
       },
       {
         id: 18,
-        name: "Mr. Deepak Mathur",
+        name: "Deepak Mathur",
         role: "IEEE Vice President MGA",
         imageUrl: "/advisory/mr-deepak-mathur-18.jpg",
       },
