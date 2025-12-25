@@ -28,7 +28,7 @@ const navigation = [
     dropdown:[
       { name: "Call for Papers", href: "/INSTCon_Flyer2.pdf" },
       { name: "Submit Paper", href: "/submitPaper" },
-      {name:"Registration Details",href:"/updatedsoon"}
+      {name:"Registration Details",href:"/RegDet"}
     ]
   },
   {name:"Tracks",href:"/track-chairs"},
