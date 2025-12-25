@@ -135,7 +135,7 @@ const paragraphs = [
                   </div>
 
                   <div
-                    style={{ backgroundImage: 'url(/instcon-flyer-2-prev.png)', backgroundSize: 'cover' }}
+                    style={{ backgroundImage: 'url(/newFlyer.png)', backgroundSize: 'contain' }}
                     className="w-full h-full bg-gray-50 flex items-center justify-center p-4"
                   >
                     <div className="text-center">
@@ -154,9 +154,10 @@ const paragraphs = [
                       </div>
                     </div>
                   </div>
+                   
 
                   <div
-                    style={{ backgroundImage: 'url(/instcon-flyer-2-prev.png)', backgroundSize: 'cover' }}
+                    style={{ backgroundImage: 'url(/newFlyer.png)', backgroundSize: 'contain' }}
                     className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300 rounded-2xl flex items-center justify-center"
                   >
                     <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-2xl border border-gray-100">
@@ -206,7 +207,7 @@ const paragraphs = [
                   </div>
 
                   <div
-                    style={{ backgroundImage: 'url(/instcon-flyer-2-prev.png)', backgroundSize: 'cover' }}
+                    style={{ backgroundImage: 'url(/newFlyer.png)', backgroundSize: 'contain' }}
                     className="w-full h-full bg-gray-50 flex items-center justify-center p-4"
                   >
                     <div className="text-center">

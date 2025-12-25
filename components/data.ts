@@ -226,7 +226,7 @@ export const trackChairs: Committee[] = [
         id: 34,
         name: " Priyanka Saha",
         role: "STCET Kolkata",
-        imageUrl: "/scraped_images/34_Priyanka_Saha_1.jpg",
+        imageUrl: "/PriyankaSaha.jpeg",
       },
       {
         id: 35,
@@ -437,7 +437,7 @@ export const advisory: Committee[] = [
         id: 23,
         name: " Siddhartha Sen",
         role: "Ret  IIT Kharagpur",
-        imageUrl: "/advisory/siddhartha-sen-23.jpg",
+        imageUrl: "/SidharthSen.jpeg",
       },
       {
         id: 24,
@@ -503,7 +503,7 @@ export const advisory: Committee[] = [
         id:34,
         name:" H. S. Panda",
         role:"PXE DRDO",
-        imageUrl:"/advisory/Professor-Panda_edited.jpg",
+        imageUrl:"/HSPanda.jpeg",
       },
       {
         id:35,
@@ -677,7 +677,7 @@ export const otherCommittees: Committee[] = [
     members: [
       {
         id: 17,
-        name: " Ramvath P Naik",
+        name: "Ramavath P Naik",
         role: "NIT Rourkela",
         imageUrl: "/PrasadSir.jpg",
       },
