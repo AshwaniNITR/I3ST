@@ -299,7 +299,7 @@ export const trackChairs: Committee[] = [
         name: "Aveek Dutta",
         role: "PXE DRDO",
         imageUrl: "/scraped_images/AveekDutta.jpg",
-      }
+      },
     ],
   },
 ];
@@ -510,6 +510,12 @@ export const advisory: Committee[] = [
         name:" Sankarsan Padhy ",
         role:"PXE, DRDO",
         imageUrl:"/advisory/SPadhy.png",
+      },
+         {
+        id:36,
+        name:"Palash Kundu",
+        role:"Ret. Jadavpur University",
+        imageUrl:"/Kundu.jpeg"
       }
     ],
   },
