@@ -1,6 +1,29 @@
 import { motion } from "framer-motion";
+import React from "react";
 
 export default function FeesPage() {
+  const rows = [
+  {
+    left: "All registration fees are inclusive of 18% GST",
+    right:
+      "For more than one accepted paper, a 40% discount will be given on the registration of the 2nd paper only (e.g. for two papers in the student category, registration fees will be ₹12000 (1st Reg. ₹7500 + 2nd Reg. ₹7500×60%) instead of ₹15000).",
+    highlightLeft: false,
+    highlightRight: true,
+  },
+  {
+    left:
+      "Author registration fee includes- Registration Kit, Conference Lunch and Banquet Dinner.",
+    right: "Registration fees, once paid, are non-refundable.",
+  },
+  {
+    left:
+      "Papers exceeding 6 pages will be charged at ₹1000 (USD 50) per additional page, up to a maximum of 8 pages. Beyond 8 pages, the charge will be ₹4000 (USD 200) per page",
+    right:
+      "Registration fees for attendees (co-author/non-author/accompanying person) is ₹3500 (without any Registration Kit).",
+    highlightLeft: true,
+  },
+];
+
   const indianTableData = [
     [
       "Category",
@@ -30,7 +53,7 @@ export default function FeesPage() {
   return (
     <div className="max-w-6xl mx-auto p-4 sm:p-6 md:p-8">
       <motion.h2
-        className="mt-12 sm:mt-10 text-4xl md:text-5xl text-center font-bold leading-[1.25] pb-[0.15em] bg-gradient-to-r from-[#003366] to-[#0066cc] bg-clip-text text-transparent"
+        className="mt-12 font-extrabold sm:mt-10 text-4xl md:text-5xl text-center  leading-[1.25] pb-[0.15em] bg-gradient-to-r from-[#003366] to-[#0066cc] bg-clip-text text-transparent"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -467,77 +490,68 @@ export default function FeesPage() {
           </p>
         </div>
 
-        <div className="p-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              {[
-                "All registration fees are inclusive of 18% GST",
-                "Author registration fee includes- Registration Kit, Conference Lunch and Banquet Dinner.",
-                "Papers exceeding 6 pages will be charged at ₹1000 (USD 50) per additional page, up to a maximum of 8 pages. Beyond 8 pages, the charge will be ₹4000 (USD 200) per page",
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start group hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200"
-                >
-                  <div
-                    className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 ${
-                      index === 2 ? "bg-red-100" : "bg-blue-100"
-                    }`}
-                  >
-                    <span
-                      className={`text-sm font-bold ${
-                        index === 2 ? "text-red-600" : "text-blue-600"
-                      }`}
-                    >
-                      •
-                    </span>
-                  </div>
-                  <p
-                    className={`text-gray-700 ${
-                      index === 2 ? "font-semibold text-red-600" : ""
-                    }`}
-                  >
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="space-y-4">
-              {[
-                "For more than one accepted paper, a 40% discount will be given on the registration of the 2nd paper only (e.g. for two papers in the student category, registration fees will be ₹12000 (1st Reg. ₹7500 + 2nd Reg. ₹7500×60%) instead of ₹15000).",
-                "Registration fees, once paid, are non-refundable.",
-                "Registration fees for attendees (co-author/non-author/accompanying person) is ₹3500 (without any Registration Kit).",
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start group hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200"
-                >
-                  <div
-                    className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 ${
-                      index === 0 ? "bg-red-100" : "bg-blue-100"
-                    }`}
-                  >
-                    <span
-                      className={`text-sm font-bold ${
-                        index === 0 ? "text-red-600" : "text-blue-600"
-                      }`}
-                    >
-                      •
-                    </span>
-                  </div>
-                  <p
-                    className={`text-gray-700 ${
-                      index === 0 ? "font-semibold text-red-600" : ""
-                    }`}
-                  >
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
+      <div className="p-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+    {rows.map((row, index) => (
+      <React.Fragment key={index}>
+        {/* LEFT CELL */}
+        <div className="flex items-start p-3 rounded-lg hover:bg-blue-50 transition">
+          <div
+            className={`w-6 h-6 aspect-square shrink-0 rounded-full
+  flex items-center justify-center mr-3 leading-none ${
+              row.highlightLeft ? "bg-red-100" : "bg-blue-100"
+            }`}
+          >
+            <span
+              className={`text-sm font-bold leading-none ${
+                row.highlightLeft ? "text-red-600" : "text-blue-600"
+              }`}
+            >
+              •
+            </span>
           </div>
+          <p
+            className={`${
+              row.highlightLeft
+                ? "text-red-600 font-semibold"
+                : "text-gray-700"
+            }`}
+          >
+            {row.left}
+          </p>
         </div>
+
+        {/* RIGHT CELL */}
+        <div className="flex items-start p-3 rounded-lg hover:bg-blue-50 transition">
+          <div
+            className={`w-6 h-6 aspect-square shrink-0 rounded-full
+  flex items-center justify-center mr-3 leading-none ${
+              row.highlightRight ? "bg-red-100" : "bg-blue-100"
+            }`}
+          >
+            <span
+              className={`text-sm font-bold leading-none ${
+                row.highlightRight ? "text-red-600" : "text-blue-600"
+              }`}
+            >
+              •
+            </span>
+          </div>
+          <p
+            className={`${
+              row.highlightRight
+                ? "text-red-600 font-semibold"
+                : "text-gray-700"
+            }`}
+          >
+            {row.right}
+          </p>
+        </div>
+      </React.Fragment>
+    ))}
+  </div>
+</div>
+
       </motion.div>
     </div>
   );
