@@ -181,7 +181,7 @@ export default function Navbar() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <Button
-              onClick={()=>{router.push("/submitPaper")}}  className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-6">
+              onClick={()=>{router.push("/RegDet")}}  className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-6">
                 Register Now
               </Button>
             </div>
@@ -246,7 +246,7 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
           <Button 
             className="relative w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-800/50"
-            onClick={() => {router.push("/submitPaper")}}
+            onClick={() => {router.push("/RegDet")}}
           >
             Register Now
           </Button>
