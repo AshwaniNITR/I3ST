@@ -189,7 +189,7 @@ const trackChairs = [
                 {/* Track Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-800 to-blue-700 rounded-xl flex items-center justify-center text-white font-bold text-lg">
                       {track.id}
                     </div>
                     <h2 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
@@ -245,7 +245,7 @@ const trackChairs = [
         <div className="fixed inset-0  bg-opacity-20 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 rounded-t-2xl">
+            <div className="bg-gradient-to-r from-blue-800 to-blue-700 p-6 rounded-t-2xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   <div className="w-14 h-14 bg-white bg-opacity-20 rounded-xl flex items-center justify-center text-black font-bold text-xl">
@@ -314,7 +314,7 @@ const trackChairs = [
             <div className="border-t border-gray-200 p-4 bg-gray-50 rounded-b-2xl">
               <button
                 onClick={closeModal}
-                className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105"
+                className="w-full py-3 bg-gradient-to-r from-blue-800 to-blue-700 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-101"
               >
                 Close Details
               </button>
