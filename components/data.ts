@@ -256,7 +256,7 @@ export const trackChairs: Committee[] = [
         id: 39,
         name: " Samiran Das",
         role: "IISER Bhopal",
-        imageUrl: "/scraped_images/39_Samiran_Das_1.jpg",
+        imageUrl: "/Samiran.jpg",
       },
       {
         id: 40,
@@ -300,6 +300,73 @@ export const trackChairs: Committee[] = [
         role: "PXE DRDO",
         imageUrl: "/scraped_images/AveekDutta.jpg",
       },
+      {
+        id:47,
+        name:"Pubali Dey",
+        role:"IEM-UEM,Kolkata",
+        imageUrl:"/pubaliDey.jpeg",
+      },
+      {
+        id:48,
+        name:"Sounak Nandi",
+        role:"NIT Jalandhar",
+        imageUrl:"/SounakNandi.jpeg"
+      },
+      {
+        id:49,
+        name:"Reetam Mondal",
+        role:"IIEST Shibpur",
+        imageUrl:"/ReetamMondal.jpeg"
+      },
+       {
+        id: 50,
+        name: " Sandip Ghosal",
+        role: "NIT Rourkela",
+        imageUrl: "/SandipGhosal.jpeg",
+      },
+      {
+        id:51,
+        name:"Jogesh C. Dash",
+        role:"NIT Rourkela",
+        imageUrl:"/JogeshDash.jpg"
+      },
+      {
+        id:52,
+        name:"Nilanjan Biswas",
+        role:"NIT Durgapur",
+        imageUrl:"/Nilanjan.jpg"
+      },
+       {
+        id: 53,
+        name: "Anirban Bhowal",
+        role: "NIT Rourkela",
+        imageUrl:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZM5o7owWopsWVdTgws4wa-BoGHi69WNBrAg&s",
+      },
+       {
+        id: 54,
+        name: " Atin Mukherjee",
+        role: "NIT Rourkela",
+        imageUrl: "/AtinMukherjee.jpeg",
+      },
+      {
+        id:55,
+        name:"Subhajit Maur",
+        role:"R. M. Govt. Engg. College, Purulia",
+        imageUrl:"/Subhajit.jpg"
+      },
+      {
+        id:56,
+        name:"Surja Sekhar Chakraborty",
+        role:"NIT Rourkela",
+        imageUrl:"/SurajShekhar.jpg"
+      },
+      {
+        id:57,
+        name:"Papiya Debnath",
+        role:"Techno International Newtown",
+        imageUrl:"/Papiya.jpg"
+      }
     ],
   },
 ];

@@ -28,7 +28,9 @@ const trackChairs = [
       "Sadanand Behera, NIT Rourkela",
       "R. Prasad Naik, NIT Rourkela",
       "Basabdatta Palit, IIEST",
-      "Ranjay Hazra, NIT Silchar"
+      "Ranjay Hazra, NIT Silchar",
+      "Nilanjan Biswas, NIT Durgapur",
+      "Anirban Bhowal, NIT Rourkela"
     ],
     subTopics: [
       "Wireless, RFID, and IoT-Enabled Instrumentation",
@@ -48,7 +50,8 @@ const trackChairs = [
       "Krishanu Nath, NIT Agartala",
       "Surajit Panja, IIIT Guwahati",
       "Madhab Chandra Tripathy, OUTR Bhubaneswar",
-      "Abhisek Choudhary, CMET Thrissur"
+      "Abhisek Choudhary, CMET Thrissur",
+      "Reetam Mondal, IIEST Shibpur"
     ],
     subTopics: [
       "Intelligent Control and Adaptive Systems",
@@ -67,7 +70,8 @@ const trackChairs = [
       "Santanu Sarkar, NIT Rourkela",
       "Priyanka Saha, STCET Kolkata",
       "Sounak Roy, IIIT Guwahati",
-      "Aditya Kumar Hota, VSSUT Burla"
+      "Aditya Kumar Hota, VSSUT Burla",
+      "Atin Mukherjee, NIT Rourkela"
     ],
     subTopics: [
       "Quantum Sensors, Emerging Devices, and Design Paradigms",
@@ -84,7 +88,10 @@ const trackChairs = [
       "Sovan Dalai, Jadavpur University",
       "Arijit Guha, NIT Rourkela",
       "Amit Mallick, VSSUT Burla",
-      "Rabindra Behera, IGIT Sarang"
+      "Rabindra Behera, IGIT Sarang",
+      "Subhajit Maur, R. M. Govt. Engg. College, Purulia",
+      "Sounak Nandi,NIT Jalandhar",
+      "Surja Sekhar Chakraborty, NIT Rourkela                                     "
     ],
     subTopics: [
       "Smart Grids and Renewable Energy Systems",
@@ -102,7 +109,9 @@ const trackChairs = [
       "Samiran Das, IISER Bhopal",
       "Biswarup Ganguly, NIT Silchar",
       "Radhagayathri Udhayakumar, Amrita V. Vidyapeetham",
-      "Biswajit Kar, CIT Kokrajhar"
+      "Biswajit Kar, CIT Kokrajhar",
+      "Papiya Debnath, Techno International Newtown",
+      "Pubali Dey, IEM-UEM,Kolkata"
     ],
     subTopics: [
       "Diagnostics and Personalized Healthcare",
@@ -119,7 +128,9 @@ const trackChairs = [
       "L. P. Roy, NIT Rourkela",
       "Banibrata Mukherjee, IIT KGP",
       "K. B. M. Swamy, NIT Surathkal",
-      "Aveek Dutta, PXE DRDO"
+      "Aveek Dutta, PXE DRDO",
+      "Sandip Ghosal, NIT Rourkela",
+      "Jogesh C. Dash, NIT Rourkela"
     ],
     subTopics: [
       "Space Instrumentation, Sensors, and Payload Systems",
@@ -136,3 +147,4 @@ const nameByTrack = trackChairs.map(track => ({
   names: track.chairs
 }));
 export default nameByTrack;
+export { trackChairs };
