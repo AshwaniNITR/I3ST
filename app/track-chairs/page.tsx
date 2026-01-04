@@ -133,7 +133,7 @@ const page = () => {
 
       {/* Modal */}
       {isModalOpen && selectedTrack && (
-        <div className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 z-50">
+        <div className="fixed inset-0 bg-blur-md bg-opacity-20 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 z-50">
           <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl max-w-full w-full max-h-[90vh] overflow-y-auto mx-2 sm:mx-4 md:max-w-2xl">
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-blue-800 to-blue-700 p-4 sm:p-6 rounded-t-xl sm:rounded-t-2xl">
