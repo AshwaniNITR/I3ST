@@ -84,7 +84,7 @@ export const trackChairs: Committee[] = [
       },
       {
         id: 10,
-        name: "Debashis Mandal",
+        name: "Debasis Mandal",
         role: "IIT Kharagpur",
         imageUrl: "/debashis-mandal-10.jpg",
       },
