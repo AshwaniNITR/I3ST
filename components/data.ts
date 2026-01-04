@@ -334,7 +334,7 @@ export const trackChairs: Committee[] = [
         id:52,
         name:"Nilanjan Biswas",
         role:"NIT Durgapur",
-        imageUrl:"/Nilanjan.jpg"
+        imageUrl:"/nilanjanbi.jpeg"
       },
        {
         id: 53,

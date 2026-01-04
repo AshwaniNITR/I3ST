@@ -9,142 +9,6 @@ import { trackChairs } from '../../components/RefineData';
 const page = () => {
   const [selectedTrack, setSelectedTrack] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-// const trackChairs = [
-//   {
-//     id: 1,
-//     title: "Smart Sensors and Intelligent Instrumentation",
-//     chairs: [
-//       "Siraz Sohail, NIT Trichy",
-//       "Pritam Paral, IIEST Sibpur",
-//       "Arunagshu Ghosh, NIT Patna",
-//       "Madhurima Chattopadhyay, HIT Kolkata",
-//       "Rashmi Achla Minz, NIT Rourkela",
-//       "Debangana Das, NIT Agartala",
-//       "M. N. Muralidharan, CMET Thrissur"
-//     ],
-//     subTopics: [
-//       "Smart Sensors: Design, Fabrication, and Applications",
-//       "Sensor Fusion and Calibration",
-//       "3D Printing and Rapid Prototyping",
-//       "Optical Sensors and Photonic Instrumentation",
-//       "Sensor Reliability, Fault Tolerance, and Metrology",
-//       "AI/ML for Measurements and Decision Support"
-//     ]
-//   },
-//   {
-//     id: 2,
-//     title: "Sustainable IoT and Communication Technologies",
-//     chairs: [
-//       "Siddharth Deshmukh, NIT Raipur",
-//       "Sadanand Behera, NIT Rourkela",
-//       "R. Prasad Naik, NIT Rourkela",
-//       "Basabdatta Palit, IIEST",
-//       "Ranjay Hazra, NIT Silchar"
-//     ],
-//     subTopics: [
-//       "Wireless, RFID, and IoT-Enabled Instrumentation",
-//       "Communication Protocols and Network Architectures",
-//       "IoT in Mining and Precision Agriculture",
-//       "Cyber-Physical Security, Privacy, and Resilience",
-//       "Standardization, Interoperability, and Sustainability",
-//       "RF, 5G and Beyond"
-//     ]
-//   },
-//   {
-//     id: 3,
-//     title: "Advances in Intelligent Control, Robotics, and Mechatronics",
-//     chairs: [
-//       "Munmun Khanra, NIT Silchar",
-//       "Manas Kumar Bera, NIT Rourkela",
-//       "Krishanu Nath, NIT Agartala",
-//       "Surajit Panja, IIIT Guwahati",
-//       "Madhab Chandra Tripathy, OUTR Bhubaneswar",
-//       "Abhisek Choudhary, CMET Thrissur"
-//     ],
-//     subTopics: [
-//       "Intelligent Control and Adaptive Systems",
-//       "Instrumentation and Control for Process Industries",
-//       "Cyber-Physical Systems, Robotics and Industrial Automation",
-//       "Predictive Maintenance and Condition Monitoring",
-//       "Drone Design, Navigation, and Control",
-//       "Digital Twins, HMI and Smart Manufacturing"
-//     ]
-//   },
-//   {
-//     id: 4,
-//     title: "Innovations in Microelectronics, Circuits, and Devices",
-//     chairs: [
-//       "Debasis Mandal, IIT Kharagpur",
-//       "Santanu Sarkar, NIT Rourkela",
-//       "Priyanka Saha, STCET Kolkata",
-//       "Sounak Roy, IIIT Guwahati",
-//       "Aditya Kumar Hota, VSSUT Burla"
-//     ],
-//     subTopics: [
-//       "Quantum Sensors, Emerging Devices, and Design Paradigms",
-//       "MEMS, NEMS, Flexible Electronics and Energy Harvesting",
-//       "Sensor Interfacing Circuits and Low-Power Circuit Design",
-//       "Biomedical Devices and Wearable Systems",
-//       "Bio-inspired and Neuromorphic Circuits"
-//     ]
-//   },
-//   {
-//     id: 5,
-//     title: "Sustainable Technologies for Electrical Systems",
-//     chairs: [
-//       "Sovan Dalai, Jadavpur University",
-//       "Arijit Guha, NIT Rourkela",
-//       "Amit Mallick, VSSUT Burla",
-//       "Rabindra Behera, IGIT Sarang"
-//     ],
-//     subTopics: [
-//       "Smart Grids and Renewable Energy Systems",
-//       "Condition Monitoring and Fault Diagnosis",
-//       "Energy-Efficient Irrigation Systems",
-//       "Hardware-Software Co-Design for Power Systems",
-//       "EV Charging, Storage and Battery Management"
-//     ]
-//   },
-//   {
-//     id: 6,
-//     title: "Applied Signal and Image Processing",
-//     chairs: [
-//       "Shihabudheen KV, NIT Calicut",
-//       "Samiran Das, IISER Bhopal",
-//       "Biswarup Ganguly, NIT Silchar",
-//       "Radhagayathri Udhayakumar, Amrita V. Vidyapeetham",
-//       "Biswajit Kar, CIT Kokrajhar",
-//        "Pubali Dey, IEM-UEM,Kolkata"
-//     ],
-//     subTopics: [
-//       "Diagnostics and Personalized Healthcare",
-//       "Pollution and Environmental Monitoring",
-//       "Multimodal Fusion, AI/ML and XAI",
-//       "Automation and Smart Manufacturing",
-//       "Computer Vision, Speech and Audio Processing"
-//     ]
-//   },
-//   {
-//     id: 7,
-//     title: "Instrumentation for Defense and Space Applications",
-//     chairs: [
-//       "L. P. Roy, NIT Rourkela",
-//       "Banibrata Mukherjee, IIT KGP",
-//       "K. B. M. Swamy, NIT Surathkal",
-//       "Aveek Dutta, PXE DRDO"
-//     ],
-//     subTopics: [
-//       "Space Instrumentation, Sensors, and Payload Systems",
-//       "Remote Sensing, Navigation, Satellite Communication and Microwave Systems",
-//       "Advanced Materials, Devices, and Energy Solutions for Defense",
-//       "Guidance, Navigation, and Control (GNC) Systems",
-//       "Simulation, Digital Twins, and Validation of Mission-Critical Systems"
-//     ]
-//   }
-// ];
-
-
   const openModal = (track) => {
     setSelectedTrack(track);
     setIsModalOpen(true);
@@ -187,7 +51,7 @@ const page = () => {
                 track.id === 7 ? 'lg:col-start-1 lg:col-span-2 lg:max-w-md lg:mx-auto' : ''
               }`}
             >
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-2xl transition-all duration-300 group-hover:border-blue-200">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-2xl transition-all duration-300 group-hover:border-blue-200 h-full flex flex-col">
                 {/* Track Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
@@ -205,34 +69,36 @@ const page = () => {
                   </div>
                 </div>
 
-                {/* Track Chairs */}
-                <div className="space-y-2">
-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">Track Chairs</h3>
-                  <ul className="space-y-1">
-                    {track.chairs.map((chair, index) => (
-                      <li key={index} className="text-sm text-gray-600 flex items-center">
-                        <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        {chair}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Quick Preview */}
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex flex-wrap gap-1">
-                    {track.subTopics.slice(0, 3).map((topic, index) => (
-                      <span 
+                {/* Sub-topics First - All shown in vertical list */}
+                <div className="space-y-2 mb-4 flex-grow">
+                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">Track Sub-topics</h3>
+                  <div className="space-y-2">
+                    {track.subTopics.map((topic, index) => (
+                      <div 
                         key={index}
-                        className="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full"
+                        className="w-full px-3 py-2 bg-blue-50 text-blue-600 text-sm rounded-lg border border-blue-100"
                       >
                         {topic}
-                      </span>
+                      </div>
                     ))}
-                    {track.subTopics.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded-full">
-                        +{track.subTopics.length - 3} more
-                      </span>
+                  </div>
+                </div>
+
+                {/* Track Chairs - Show only first 4 */}
+                <div className="pt-4 border-t border-gray-100">
+                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Track Chairs</h3>
+                  <div className="space-y-1">
+                    {track.chairs.slice(0, 4).map((chair, index) => (
+                      <div key={index} className="text-sm text-gray-600 flex items-center w-full">
+                        <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
+                        <span className="truncate">{chair}</span>
+                      </div>
+                    ))}
+                    {track.chairs.length > 4 && (
+                      <div className="text-sm text-gray-500 flex items-center w-full">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 flex-shrink-0"></span>
+                        <span>+{track.chairs.length - 4} more</span>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -269,30 +135,10 @@ const page = () => {
               </div>
             </div>
 
-            {/* Modal Content */}
+            {/* Modal Content - Sub-topics First */}
             <div className="p-6">
-              {/* Track Chairs Section */}
+              {/* Sub-topics Section First */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                  Track Chairs
-                </h3>
-                <div className="grid gap-3">
-                  {selectedTrack.chairs.map((chair, index) => (
-                    <div key={index} className="flex items-center p-3 bg-gray-50 rounded-lg">
-                      <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                        {index + 1}
-                      </div>
-                      <span className="text-gray-700">{chair}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Sub-topics Section */}
-              <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
                   <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -306,6 +152,26 @@ const page = () => {
                         {index + 1}
                       </div>
                       <span className="text-gray-700">{topic}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Track Chairs Section Second */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  Track Chairs
+                </h3>
+                <div className="grid gap-3">
+                  {selectedTrack.chairs.map((chair, index) => (
+                    <div key={index} className="flex items-center p-3 bg-gray-50 rounded-lg">
+                      <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                        {index + 1}
+                      </div>
+                      <span className="text-gray-700">{chair}</span>
                     </div>
                   ))}
                 </div>
