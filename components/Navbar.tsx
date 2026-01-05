@@ -33,6 +33,7 @@ const navigation = [
   },
   {name:"Tracks",href:"/track-chairs"},
   { name: "Keynote", href: "/updatedsoon" },
+  {name:"Travel",href:"/travel"},
   { name: "Events", href: "/updatedsoon" },,
   { name: "Sponsors", href: "/Sponsorship" },
 ];
