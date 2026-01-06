@@ -160,7 +160,7 @@ export const trackChairs: Committee[] = [
         id: 23,
         name: "Madhurima Chattopadhyay",
         role: "HIT Kolkata",
-        imageUrl: "/scraped_images/23_Madhurima_Chattopadhyay_1.jpg",
+        imageUrl: "/Madhurima.jpeg",
       },
       {
         id: 24,
@@ -583,6 +583,18 @@ export const advisory: Committee[] = [
         name:"Palash Kundu",
         role:"Ret. Jadavpur University",
         imageUrl:"/Kundu.jpeg"
+      },
+      {
+        id:37,
+        name:"Rajarshi Gupta",
+        role:"University of Calcutta",
+        imageUrl:"/Rajshri.jpeg"
+      },
+      {
+        id:38,
+        name:"Sreelal S. Pillai",
+        role:"ISRO",
+        imageUrl:"/Sreelal.jpeg"
       }
     ],
   },

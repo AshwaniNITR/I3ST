@@ -5,6 +5,7 @@ import { Plane, Train, Bus, Car, MapPin, Navigation, Clock, ExternalLink } from 
 import Image from "next/image"
 import { motion } from "framer-motion"
 import CombinedBackground from "../../components/CombinedBackground";
+import PlacesSlider from "../../components/Swiper"
 
 export default function TravelGuideToNITRourkela() {
   const [activeTab, setActiveTab] = useState("air")
@@ -453,44 +454,7 @@ export default function TravelGuideToNITRourkela() {
             Explore these attractions during your stay in Rourkela
           </p>
         </div>
-        <div className="p-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              { name: "Hanuman Vatika", distance: "7 km", img: "/Hanuman_Vatika_Rourkela.jpg", desc: "Famous for its 75-foot-tall Hanuman statue, this park offers beautiful gardens and religious significance.", hours: "6:00 AM - 8:00 PM" },
-              { name: "Vedvyas Temple", distance: "10 km", img: "/vedVyas.jpg", desc: "A sacred site where sage Ved Vyasa is believed to have written the epic Mahabharata, located at the confluence of rivers.", hours: "5:00 AM - 9:00 PM" },
-              { name: "Mandira Dam", distance: "20 km", img: "/mandira.jpg", desc: "A picturesque reservoir with scenic views, perfect for picnics and nature photography. The dam supplies water to the Rourkela Steel Plant.", hours: "Best time to visit: Early morning or sunset" },
-            ].map((place, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: idx * 0.1 }}
-                className="bg-gradient-to-br from-white to-blue-50 rounded-xl overflow-hidden shadow-md border border-blue-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="h-48 overflow-hidden relative">
-                  <Image
-                    src={place.img}
-                    alt={place.name}
-                    width={400}
-                    height={200}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-3 right-3 bg-gradient-to-r from-blue-800 to-blue-900 px-3 py-1 rounded-full text-white text-sm font-medium">
-                    {place.distance} from campus
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-lg text-blue-900 mb-2">{place.name}</h3>
-                  <p className="text-gray-600 text-sm mb-3">{place.desc}</p>
-                  <div className="flex items-center text-xs text-blue-600">
-                    <Clock className="w-3 h-3 mr-2" />
-                    <span>{place.hours}</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <PlacesSlider/>
       </motion.div>
     </div>
   )
