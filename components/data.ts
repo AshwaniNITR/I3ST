@@ -864,7 +864,7 @@ export const otherCommittees: Committee[] = [
     ],
   },
   {
-    title: "Student Activity Chairs",
+    title: "Student Members",
     members: [
       {
         id: 35,
@@ -872,6 +872,12 @@ export const otherCommittees: Committee[] = [
         role: "NIT Rourkela",
         imageUrl: "/soumyajeet-mahapatra.jpg",
       },
+      {
+        id: 36,
+        name:"Ashwani Senapati",
+        role:"NIT Rourkela",
+        imageUrl:"/my.jpeg"
+      }
     ],
   },
 ];

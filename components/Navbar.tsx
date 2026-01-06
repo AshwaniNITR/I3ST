@@ -26,7 +26,7 @@ const navigation = [
     name: "Author's Information",
     href: "/authors",
     dropdown:[
-      { name: "Call for Papers", href: "/INSTCon_Flyer2.pdf" },
+      { name: "Call for Papers", href: "/finalFlyer.pdf" },
       { name: "Submit Paper", href: "/submitPaper" },
       {name:"Registration Details",href:"/RegDet"}
     ]

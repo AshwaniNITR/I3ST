@@ -41,7 +41,7 @@ const AboutUs = () => {
 
   const handleFlyerClick = () => {
     if (window.innerWidth < 768) {
-      window.open('/INSTCon_Flyer2.pdf', '_blank');
+      window.open('/finalFlyer.pdf', '_blank');
     } else {
       setIsFlyerExpanded(!isFlyerExpanded);
     }
@@ -66,7 +66,7 @@ const AboutUs = () => {
   }, [isFlyerExpanded]);
 
 const paragraphs = [
-  `The IEEE Instrumentation and Measurement Society – Rourkela Chapter and IEEE Robotics and Automation Society Student Chapter – NIT Rourkela proudly announce the 1st IEEE International Conference on Instrumentation (INSTCon 2026), to be held at NIT Rourkela, India.`,
+  `The IEEE Instrumentation and Measurement Society – Rourkela Chapter and IEEE Robotics and Automation Society Student Chapter – NIT Rourkela proudly announce the 1st IEEE International Conference on Instrumentation (INSTCon 2026) (Conference Record #69741), to be held at NIT Rourkela, India.`,
   `INSTCon 2026 aims to be a premier international forum on intelligent instrumentation, sustainable engineering, and advanced automation. It will bring together researchers, engineers, industry leaders, and policymakers to advance measurement, sensing, control, and automation for a sustainable future.`,
   `The conference will feature a selective technical program with peer-reviewed papers and invited talks, covering a broad spectrum of topics, including smart sensors, IoT-enabled instrumentation, intelligent control and robotics, microelectronics and quantum devices, signal processing, sustainable electrical systems, and mission-critical technologies for space and defense. It aims to highlight innovations in precision agriculture, healthcare diagnostics, industrial automation, environmental monitoring, renewable energy, and other applications where intelligent instrumentation drives societal impact.`,
   `Hosted in the vibrant academic environment of NIT Rourkela, INSTCon 2026 provides a platform to exchange ideas, foster interdisciplinary collaboration, and showcase cutting-edge research and technologies that combine scientific excellence with sustainability.`,
@@ -229,7 +229,7 @@ const paragraphs = [
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            window.open('/INSTCon_Flyer2.pdf', '_blank');
+                            window.open('/finalFlyer.pdf', '_blank');
                           }}
                           className="text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 bg-yellow-400 transition-all duration-300"
                         >
@@ -292,7 +292,7 @@ const paragraphs = [
 
             <div className="flex-1 w-full h-full bg-gray-50">
               <iframe
-                src="/INSTCon_Flyer2.pdf"
+                src="/finalFlyer.pdf"
                 className="w-full h-full"
                 title="INSTCon 2026 Conference Flyer"
               />
