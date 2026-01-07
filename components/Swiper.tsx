@@ -432,7 +432,7 @@ export default function PlacesSlider() {
                   rel="noopener noreferrer"
                   className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center"
                 >
-                  <Navigation className="w-4 h-4 mr-2" />
+                  <Navigation className="w-2 h-2 sm:w-4 sm:h-4  mr-2" />
                   Open in Google Maps
                 </a>
               </div>
