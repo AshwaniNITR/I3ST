@@ -7,8 +7,11 @@ import { motion } from "framer-motion"
 import CombinedBackground from "../../components/CombinedBackground";
 import PlacesSlider from "../../components/Swiper"
 
+
+
 export default function TravelGuideToNITRourkela() {
   const [activeTab, setActiveTab] = useState("air")
+  
 
   return (
     <div className="max-w-6xl mx-auto p-4 sm:p-6 md:p-8">
