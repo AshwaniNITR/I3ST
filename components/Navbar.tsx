@@ -189,6 +189,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu */}
+{/* Mobile Menu */}
 <div className="lg:hidden flex items-center">
   <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
     <SheetTrigger asChild>
@@ -198,7 +199,7 @@ export default function Navbar() {
     </SheetTrigger>
     <SheetContent
       side="right"
-      className="w-[300px] bg-white/95 backdrop-blur-xl border-l border-gray-200/50 flex flex-col justify-between"
+      className="w-[300px] bg-white/95 backdrop-blur-xl border-l border-gray-200/50 flex flex-col"
     >
       {/* Add SheetTitle for accessibility - visually hidden but available for screen readers */}
       <SheetTitle className="sr-only">
@@ -208,46 +209,52 @@ export default function Navbar() {
       {/* Gradient overlay for mobile menu */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30 pointer-events-none"></div>
       
-      <nav className="flex flex-col gap-4 mt-6 relative z-10">
-        {navigation.map((item) => (
-          item.dropdown ? (
-            <div key={item.name} className="space-y-2">
-              <div className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+      {/* Scrollable container for navigation items */}
+      <div className="flex-1 overflow-y-auto py-6">
+        <nav className="flex flex-col gap-4">
+          {navigation.map((item) => (
+            item.dropdown ? (
+              <div key={item.name} className="space-y-2">
+                <div className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                  {item.name}
+                </div>
+                <div className="pl-4 space-y-2 border-l-2 border-blue-200">
+                  {item.dropdown.map((subItem) => (
+                    <Link
+                      key={subItem.name}
+                      href={subItem.href}
+                      className="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {subItem.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-600 transition-all duration-300 py-1"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {item.name}
-              </div>
-              <div className="pl-4 space-y-2 border-l-2 border-blue-200">
-                {item.dropdown.map((subItem) => (
-                  <Link
-                    key={subItem.name}
-                    href={subItem.href}
-                    className="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {subItem.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-600 transition-all duration-300 py-1"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.name}
-            </Link>
-          )
-        ))}
-      </nav>
+              </Link>
+            )
+          ))}
+        </nav>
+      </div>
 
-      {/* Register Button inside sidebar */}
-      <div className="mb-6 relative z-10">
+      {/* Fixed Register Button at the bottom */}
+      <div className="pt-4 border-t border-gray-200/50 shrink-0">
         <div className="relative group">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
           <Button 
             className="relative w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-800/50"
-            onClick={() => {router.push("/RegDet")}}
+            onClick={() => {
+              router.push("/RegDet");
+              setMobileMenuOpen(false);
+            }}
           >
             Register Now
           </Button>
