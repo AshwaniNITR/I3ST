@@ -141,7 +141,8 @@ export default function FeesPage() {
                     key={rowIndex}
                     className={`${
                       rowIndex % 2 === 0 ? "bg-white" : "bg-blue-50"
-                    } ${rowIndex === indianTableData.length - 2 ? "rounded-b-xl" : ""}`}
+                    } ${rowIndex === indianTableData.length - 2 ? "rounded-b-xl" : ""}
+                   `}
                   >
                     {row.map((cell, cellIndex) => (
                       <td

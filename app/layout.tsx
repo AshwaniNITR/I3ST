@@ -80,9 +80,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="google-site-verification" content="Iwlcjx19Ktt5u5c6ssegmwqaQy8VPykY1ds2jjPeDFo" />
+      <meta name="google-site-verification" content="cw1_8gl8nq05FsobxveJq8HUE4BlMFBFEeR_nAitBwQ" />
       </head>
-      <body className={inter.className + 'bg-transparent antialiased'}suppressHydrationWarning>
+      <body className={inter.className + 'bg-transparent antialiased'} suppressHydrationWarning>
         <Navbar/>
         <main className="">
           {children}

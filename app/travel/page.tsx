@@ -6,6 +6,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import CombinedBackground from "../../components/CombinedBackground";
 import PlacesSlider from "../../components/Swiper"
+import PlacesSliderOut from "../../components/SwiperOut"
 
 
 
@@ -458,6 +459,22 @@ export default function TravelGuideToNITRourkela() {
           </p>
         </div>
         <PlacesSlider/>
+      </motion.div>
+      <motion.div
+        className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl overflow-hidden mb-12 border border-blue-200"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <div className="bg-gradient-to-r from-blue-800 to-blue-900 p-5">
+          <h2 className="text-2xl font-bold text-white text-center">
+            Places to Visit in Odisha
+          </h2>
+          <p className="text-blue-200 text-center text-sm mt-1">
+            Explore these attractions during your stay in Odisha
+          </p>
+        </div>
+        <PlacesSliderOut/>
       </motion.div>
     </div>
   )
