@@ -35,7 +35,12 @@ const navigation = [
   { name: "Keynote", href: "/updatedsoon" },
   {name:"Travel",href:"/travel"},
   { name: "Events", href: "/updatedsoon" },,
-  { name: "Sponsors", href: "/Sponsorship" },
+  { name: "Sponsorship", href: "/Sponsorship" ,
+    dropdown:[
+      {name:"Our Sponsors",href:"/Sponsorship"},
+      {name:"Call For Sponsors",href:"/callforSponsorship.jpeg"}
+    ]
+  },
 ];
 
 export default function Navbar() {
