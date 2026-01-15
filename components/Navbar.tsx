@@ -37,8 +37,8 @@ const navigation = [
   { name: "Events", href: "/updatedsoon" },,
   { name: "Sponsorship", href: "/Sponsorship" ,
     dropdown:[
+      {name:"Call For Sponsors",href:"/callforSponsorship.jpeg"},
       {name:"Our Sponsors",href:"/Sponsorship"},
-      {name:"Call For Sponsors",href:"/callforSponsorship.jpeg"}
     ]
   },
 ];
