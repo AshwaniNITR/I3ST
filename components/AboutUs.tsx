@@ -41,7 +41,7 @@ const AboutUs = () => {
 
   const handleFlyerClick = () => {
     if (window.innerWidth < 768) {
-      window.open('/finalFlyer.pdf', '_blank');
+      window.open('/NITFINAL.pdf', '_blank');
     } else {
       setIsFlyerExpanded(!isFlyerExpanded);
     }
@@ -157,7 +157,7 @@ const paragraphs = [
                    
 
                   <div
-                    style={{ backgroundImage: 'url(/newFlyer.png)', backgroundSize: 'contain' }}
+                    style={{ backgroundImage: 'url(/nitfinalimg.jpeg)', backgroundSize: 'cover' }}
                     className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300 rounded-2xl flex items-center justify-center"
                   >
                     <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-2xl border border-gray-100">
@@ -207,7 +207,7 @@ const paragraphs = [
                   </div>
 
                   <div
-                    style={{ backgroundImage: 'url(/newFlyer.png)', backgroundSize: 'contain' }}
+                    style={{ backgroundImage: 'url(/nitfinalimg.jpeg)', backgroundSize: 'cover' }}
                     className="w-full h-full bg-gray-50 flex items-center justify-center p-4"
                   >
                     <div className="text-center">
@@ -229,7 +229,7 @@ const paragraphs = [
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            window.open('/finalFlyer.pdf', '_blank');
+                            window.open('/NITFINAL.pdf', '_blank');
                           }}
                           className="text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 bg-yellow-400 transition-all duration-300"
                         >
@@ -292,7 +292,7 @@ const paragraphs = [
 
             <div className="flex-1 w-full h-full bg-gray-50">
               <iframe
-                src="/finalFlyer.pdf"
+                src="/NITFINAL.pdf"
                 className="w-full h-full"
                 title="INSTCon 2026 Conference Flyer"
               />
