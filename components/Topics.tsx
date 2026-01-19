@@ -139,7 +139,7 @@ const Topics = () => {
           className="mb-8 sm:mb-10 md:mb-12 text-center"
         >
           <div className="relative inline-block text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 bg-clip-text text-transparent mb-2">
+            <h1 className="text-2xl  sm:text-3xl md:text-4xl lg:text-5xl text-center font-extrabold bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 bg-clip-text text-transparent mb-2">
               Conference Tracks
             </h1>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600"></div>
@@ -181,7 +181,7 @@ const Topics = () => {
                     </span>
                   </div>
                   
-                  <h3 className="text-lg sm:text-xl md:text-xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-purple-600 mb-4 sm:mb-6 bg-clip-text text-transparent leading-tight">
+                  <h3 className="text-lg sm:text-xl md:text-xl font-bold bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 mb-4 sm:mb-6 bg-clip-text text-transparent leading-tight">
                     {track.title}
                   </h3>
                   
