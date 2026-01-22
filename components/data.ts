@@ -4,6 +4,18 @@ export type Member = {
   role?: string;
   imageUrl: string;
 };
+export type  Speaker={
+  id:number;
+  name:string;
+  role?:string;
+  imageUrl:string;
+  abstract?:string;
+  talkTitle?:string;  
+}
+export type SpeakerCom={
+  title:string;
+  members:Speaker[];
+}
 
 export type Committee = {
   title: string;
@@ -880,4 +892,45 @@ export const otherCommittees: Committee[] = [
       }
     ],
   },
+];
+export const speakers:SpeakerCom[]=[
+    {
+    title: "Our Speakers",
+    members: [
+       {
+        id: 1,
+        name: " Karabi Biswas",
+        role: "IIT Kharagpur",
+        imageUrl: "/karabi-biswas-34.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+       {
+        id: 2,
+        name: "Ridhi Ghosh",
+        role: "Senior Scientist, Hitachi Energy",
+        imageUrl: "/RidhiGhosh.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+      {
+        id:3,
+        name:"Soumyabrata Dev",
+        role:"University College Dublin",
+        imageUrl:"/hopefully.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+      {
+        id:4,
+        name:"Subhas C. Mukhopadhyay",
+        role:"Macquarie University",
+        imageUrl:"/SubhasCMuk.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      }
+      
+    ],
+  },
+  
 ];

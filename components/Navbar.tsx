@@ -32,7 +32,7 @@ const navigation = [
     ]
   },
   {name:"Tracks",href:"/track-chairs"},
-  { name: "Keynote", href: "/updatedsoon" },
+  { name: "Speakers", href: "/speaker" },
   {name:"Travel",href:"/travel"},
   { name: "Events", href: "/updatedsoon" },,
   { name: "Sponsorship", href: "/Sponsorship" ,
