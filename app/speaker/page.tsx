@@ -61,7 +61,7 @@ export default function Committee() {
                 }`}
               >
                 {/* Image Container - Square aspect ratio */}
-                <div className="relative w-full pt-[100%] overflow-hidden bg-gray-100">
+                <div className="relative w-full pt-[100%] overflow-hidden ">
                   <Image
                     src={speaker.imageUrl || "/placeholder.svg"}
                     alt={speaker.name}
@@ -139,7 +139,7 @@ export default function Committee() {
               </div>
 
               {/* Fixed Larger Image */}
-              <div className="relative w-full h-72 bg-gray-100">
+              <div className="relative w-full h-72 ">
                 <Image
                   src={selectedSpeaker.imageUrl || "/placeholder.svg"}
                   alt={selectedSpeaker.name}
