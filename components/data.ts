@@ -925,7 +925,7 @@ export const speakers:SpeakerCom[]=[
         id:4,
         name:"Subhas C. Mukhopadhyay",
         role:"Macquarie University",
-        imageUrl:"/SubhasCMuk.jpg",
+        imageUrl:"/Sc-Mukhopadhyay.jpg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
       }
