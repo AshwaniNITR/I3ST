@@ -899,7 +899,7 @@ export const speakers:SpeakerCom[]=[
     members: [
        {
         id: 1,
-        name: " Karabi Biswas",
+        name: "Prof. Karabi Biswas",
         role: "IIT Kharagpur",
         imageUrl: "/karabi-biswas-34.jpg",
         talkTitle:"To be Updated Soon",
@@ -915,15 +915,15 @@ export const speakers:SpeakerCom[]=[
       },
       {
         id:3,
-        name:"Soumyabrata Dev",
+        name:"Prof. Soumyabrata Dev",
         role:"University College Dublin",
-        imageUrl:"/hopefully.jpg",
+        imageUrl:"/SoumyabrataDev2.jpeg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
       },
       {
         id:4,
-        name:"Subhas C. Mukhopadhyay",
+        name:"Prof. Subhas C.Mukhopadhyay",
         role:"Macquarie University",
         imageUrl:"/Sc-Mukhopadhyay.jpg",
         talkTitle:"To be Updated Soon",
