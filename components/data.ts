@@ -932,7 +932,7 @@ export const speakers:SpeakerCom[]=[
       {
         id:5,
         name:"Prof.  Neelam Sinha",
-        role:"Indian Institute of Science (IISC), Bangalore",
+        role:"Indian Institute of Science (IISc), Bangalore",
         imageUrl:"/NeelamSinha.jpg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
