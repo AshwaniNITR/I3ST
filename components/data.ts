@@ -907,8 +907,8 @@ export const speakers:SpeakerCom[]=[
       },
        {
         id: 2,
-        name: "Ridhi Ghosh",
-        role: "Senior Scientist, Hitachi Energy",
+        name: "Dr. Ridhi Ghosh",
+        role: "Senior Scientist, Hitachi Energy, Sweden",
         imageUrl: "/RidhiGhosh.jpg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
@@ -916,7 +916,7 @@ export const speakers:SpeakerCom[]=[
       {
         id:3,
         name:"Prof. Soumyabrata Dev",
-        role:"University College Dublin",
+        role:"University College Dublin, Ireland",
         imageUrl:"/SoumyabrataDev2.jpeg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
@@ -924,8 +924,24 @@ export const speakers:SpeakerCom[]=[
       {
         id:4,
         name:"Prof. Subhas C.Mukhopadhyay",
-        role:"Macquarie University",
+        role:"Macquarie University, Australia",
         imageUrl:"/Sc-Mukhopadhyay.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+      {
+        id:5,
+        name:"Prof.  Neelam Sinha",
+        role:"Indian Institute of Science (IISC), Bangalore",
+        imageUrl:"/NeelamSinha.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+      {
+        id:6,
+        name:"Prof. Amitava Chatterjee",
+        role:"Jadavpur University, India",
+        imageUrl:"/advisory/amitava-chatterjee-7.jpg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
       }

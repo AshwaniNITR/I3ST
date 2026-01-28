@@ -123,7 +123,7 @@ const modalContentVariants: Variants = {
 
         {/* Professional Speaker Cards Grid with Staggered Animation */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto"
+          className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -137,7 +137,7 @@ const modalContentVariants: Variants = {
                 variants={cardVariants}
                 custom={index}
                 onClick={() => hasTalkInfo && handleSpeakerClick(speaker)}
-                className={`group bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 ${
+                className={`w-full sm:w-[45%] lg:w-[45%] xl:w-[30%] group  bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 ${
                   hasTalkInfo ? 'cursor-pointer hover:border-blue-300' : 'cursor-default'
                 }`}
                 whileHover={{ 
