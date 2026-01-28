@@ -174,7 +174,7 @@ export default function ImportantDatesSlider() {
       </div>
 
       {/* Bottom gradient accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-blue-600"></div>
+      {/* <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-blue-600"></div> */}
     </div>
   )
 }
