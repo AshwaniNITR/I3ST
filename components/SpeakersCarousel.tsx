@@ -5,32 +5,114 @@ import { speakers } from "./data"
 import Image from "next/image"
 
 export default function SpeakersCarousel() {
-  const [isPaused, setIsPaused] = useState(false)
-  const sliderRef = useRef<HTMLDivElement>(null)
+  const [currentBatch, setCurrentBatch] = useState(0)
+  const [isVisible, setIsVisible] = useState(true)
+  const [speakerBatches, setSpeakerBatches] = useState<any[][]>([])
+  const batchRef = useRef<NodeJS.Timeout>(0 as unknown as NodeJS.Timeout)
 
+  // Split speakers into batches of 4, ensuring no empty spaces
   useEffect(() => {
-    if (!sliderRef.current) return
-
-    if (isPaused) {
-      sliderRef.current.style.animationPlayState = "paused"
+    const speakerMembers = speakers[0]?.members || []
+    const batches = []
+    const batchSize = 4
+    
+    if (speakerMembers.length === 0) return
+    
+    // If we have 4 or fewer speakers, create 2 batches with filled content
+    if (speakerMembers.length <= batchSize) {
+      // First batch - all speakers
+      batches.push([...speakerMembers])
+      
+      // Second batch - if not enough speakers, fill from the beginning
+      const secondBatch = []
+      let index = 0
+      for (let i = 0; i < batchSize; i++) {
+        secondBatch.push(speakerMembers[index])
+        index = (index + 1) % speakerMembers.length
+      }
+      batches.push(secondBatch)
     } else {
-      sliderRef.current.style.animationPlayState = "running"
+      // For more than 4 speakers, create proper batches
+      for (let i = 0; i < speakerMembers.length; i += batchSize) {
+        const batch = speakerMembers.slice(i, i + batchSize)
+        
+        // If last batch has less than 4, fill from the beginning
+        if (batch.length < batchSize && i > 0) {
+          let fillIndex = 0
+          while (batch.length < batchSize) {
+            batch.push(speakerMembers[fillIndex])
+            fillIndex = (fillIndex + 1) % speakerMembers.length
+          }
+        }
+        
+        batches.push(batch)
+      }
+      
+      // Ensure we have at least 2 batches
+      if (batches.length < 2) {
+        const extraBatch = []
+        let index = 0
+        for (let i = 0; i < batchSize; i++) {
+          extraBatch.push(speakerMembers[index])
+          index = (index + 1) % speakerMembers.length
+        }
+        batches.push(extraBatch)
+      }
     }
-  }, [isPaused])
-  
-  const calculateAnimationDuration = () => {
-    const speakerCount = speakers[0]?.members?.length || 6
-    return 10 + speakerCount * 2
+    
+    setSpeakerBatches(batches)
+  }, [])
+
+  // Auto-rotate batches every 1 second
+  useEffect(() => {
+    if (speakerBatches.length <= 1) return
+    
+    const rotateBatch = () => {
+      setIsVisible(false) // Fade out
+      
+      setTimeout(() => {
+        setCurrentBatch((prev) => (prev + 1) % speakerBatches.length)
+        setIsVisible(true) // Fade in
+      }, 1000) // Wait for fade out animation
+    }
+    
+    // Start auto-rotation - changed to 8 seconds
+    batchRef.current = setInterval(rotateBatch, 5500)
+    
+    return () => {
+      if (batchRef.current) clearInterval(batchRef.current)
+    }
+  }, [speakerBatches])
+
+  const handleMouseEnter = () => {
+    if (batchRef.current) clearInterval(batchRef.current)
   }
 
-  const speakerMembers = speakers[0]?.members || []
-  const allSpeakers = [...speakerMembers, ...speakerMembers]
+  const handleMouseLeave = () => {
+    if (speakerBatches.length <= 1) return
+    
+    if (batchRef.current) clearInterval(batchRef.current)
+    batchRef.current = setInterval(() => {
+      setIsVisible(false)
+      setTimeout(() => {
+        setCurrentBatch((prev) => (prev + 1) % speakerBatches.length)
+        setIsVisible(true)
+      }, 1000)
+    }, 5500) // Changed to 8 seconds
+  }
+
+  const currentSpeakers = speakerBatches[currentBatch] || []
+  const totalSpeakers = speakers[0]?.members?.length || 0
+  const originalSpeakersInBatch = Math.min(4, totalSpeakers - (currentBatch * 4))
+  
+  // Check if this is a partially filled batch (less than 4 original speakers)
+  const isPartiallyFilledBatch = originalSpeakersInBatch < 4 && originalSpeakersInBatch > 0
 
   return (
     <div
       className="relative w-full bg-gradient-to-br from-slate-50 via-white to-blue-50 shadow-xl overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -49,121 +131,161 @@ export default function SpeakersCarousel() {
           <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
             Our Speakers
           </h2>
+          {/* Batch indicator */}
+          {speakerBatches.length > 1 && (
+            <div className="absolute right-6 flex gap-1">
+              {speakerBatches.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    idx === currentBatch 
+                      ? "bg-white w-4" 
+                      : "bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     
-      <div className="relative overflow-hidden py-6">
-        <style jsx>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-        `}</style>
-
-        <div
-          ref={sliderRef}
-          className="flex w-[200%] animate-scroll"
-          style={{
-            animation: `scroll ${calculateAnimationDuration()}s linear infinite`,
-            width: "fit-content",
-            WebkitAnimation: `scroll ${calculateAnimationDuration()}s linear infinite`,
-            WebkitTransform: "translate3d(0, 0, 0)",
-            WebkitBackfaceVisibility: "hidden",
-            WebkitPerspective: 1000,
-          }}
+      <div className="relative py-6 px-4">
+        <div 
+          className={`transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
         >
-          {allSpeakers.map((speaker, index) => (
-            <div
-              key={`${speaker.id}-${index}`}
-              className="flex-shrink-0 min-w-[200px] sm:min-w-[250px] md:min-w-[300px] p-4 mx-3 bg-white/80 backdrop-blur-xl rounded-2xl border border-gray-200/50 shadow-lg  transition-all duration-300 hover:scale-105 group relative overflow-hidden"
-              style={{
-                WebkitBackfaceVisibility: "hidden",
-                WebkitPerspective: 1000,
-              }}
-            >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0  transition-opacity duration-300 pointer-events-none"></div>
-              
-              <div className="relative z-10">
-                {/* Speaker Image */}
-                <div className="mb-3 flex justify-center">
-                  <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-blue-200 shadow-lg relative">
-                    {speaker.imageUrl ? (
-                      <div className="relative w-full h-full">
-                        {/* Background fallback */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100"></div>
-                        {/* Actual Image */}
-                        <Image
-                          src={speaker.imageUrl}
-                          alt={speaker.name}
-                          fill
-                          sizes="(max-width: 768px) 80px, 80px"
-                          className="object-cover"
-                          onError={(e) => {
-                            // If image fails to load, show fallback
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            target.parentElement?.classList.add('bg-gradient-to-br', 'from-blue-100', 'to-purple-100');
-                          }}
-                        />
-                        {/* Fallback icon - only shown if image fails to load */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0">
-                          <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                          </svg>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-base font-bold text-center bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
-                    {speaker.name}
-                  </h3>
-                  
-                  <div className="flex items-center justify-center gap-1">
-                    <svg className="w-4 h-4 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    <p className="text-sm text-gray-700 font-medium text-center">
-                      {speaker.role}
-                    </p>
-                  </div>
-                  
-                  <div className="mt-2 pt-3 border-t border-gray-200">
-                    <div className="flex items-start gap-1">
-                      <svg className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <div>
-                        <p className="text-xs text-gray-500 font-semibold">Talk Title:</p>
-                        <p className="text-sm text-gray-700 font-medium">{speaker.talkTitle}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Subtle gradient border effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0  transition-opacity duration-300 pointer-events-none blur-sm -z-10"></div>
-            </div>
-          ))}
+          {/* Always use full grid layout - duplicates appear in same row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {currentSpeakers.map((speaker, index) => (
+              <SpeakerCard 
+                key={`${speaker.id}-batch${currentBatch}-${index}`} 
+                speaker={speaker} 
+                currentBatch={currentBatch}
+                index={index}
+                isDuplicate={index >= originalSpeakersInBatch && originalSpeakersInBatch < 4}
+              />
+            ))}
+          </div>
         </div>
+
+        {/* Auto-slide timer indicator - changed to 1 second */}
+        {/* {speakerBatches.length > 1 && (
+          <div className="mt-6 flex justify-center">
+            <div className="w-full max-w-md h-1 bg-gray-200 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-1000 linear"
+                style={{
+                  animation: `timer 1s linear infinite`,
+                  animationPlayState: isVisible ? 'running' : 'paused'
+                }}
+              />
+              <style jsx>{`
+                @keyframes timer {
+                  from { width: 0%; }
+                  to { width: 100%; }
+                }
+              `}</style>
+            </div>
+          </div>
+        )} */}
       </div>
 
       {/* Bottom gradient accent */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-blue-600"></div>
+    </div>
+  )
+}
+
+// Extracted Speaker Card Component for better readability
+function SpeakerCard({ speaker, currentBatch, index, isDuplicate = false }: { 
+  speaker: any, 
+  currentBatch: number, 
+  index: number,
+  isDuplicate?: boolean 
+}) {
+  return (
+    <div className={`p-4 bg-white/80 backdrop-blur-xl rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-300 hover:scale-105 group relative overflow-hidden ${
+      isDuplicate ? 'opacity-90' : ''
+    }`}>
+      {/* Gradient overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+      
+      <div className="relative z-10">
+        {/* Speaker Image */}
+        <div className="mb-3 flex justify-center">
+          <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-blue-200 shadow-lg relative">
+            {speaker.imageUrl ? (
+              <div className="relative w-full h-full">
+                {/* Background fallback */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100"></div>
+                {/* Actual Image */}
+                <Image
+                  src={speaker.imageUrl}
+                  alt={speaker.name}
+                  fill
+                  sizes="(max-width: 768px) 80px, 80px"
+                  className="object-cover"
+                  onError={(e) => {
+                    // If image fails to load, show fallback
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement?.classList.add('bg-gradient-to-br', 'from-blue-100', 'to-purple-100');
+                  }}
+                />
+                {/* Fallback icon - only shown if image fails to load */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+              </div>
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+            )}
+          </div>
+        </div>
+        
+        <div className="flex flex-col gap-2">
+          <h3 className="text-base font-bold text-center bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
+            {speaker.name}
+            {/* Show duplicate indicator */}
+            {/* {isDuplicate && (
+              <span className="block text-xs text-purple-600 font-normal mt-1">
+                (Featured Again)
+              </span>
+            )} */}
+          </h3>
+          
+          <div className="flex items-center justify-center gap-1">
+            <svg className="w-4 h-4 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            <p className="text-sm text-gray-700 font-medium text-center">
+              {speaker.role}
+            </p>
+          </div>
+          
+          <div className="mt-2 pt-3 border-t border-gray-200">
+            <div className="flex items-start gap-1">
+              <svg className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <div>
+                <p className="text-xs text-gray-500 font-semibold">Talk Title:</p>
+                <p className="text-sm text-gray-700 font-medium">{speaker.talkTitle}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Subtle gradient border effect */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none blur-sm -z-10"></div>
     </div>
   )
 }
