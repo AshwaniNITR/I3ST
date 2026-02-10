@@ -944,6 +944,23 @@ export const speakers:SpeakerCom[]=[
         imageUrl:"/advisory/amitava-chatterjee-7.jpg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
+      },
+      {
+        id:7,
+        name:"Dr. Hemant Kumar Rath",
+        role:"Principal Scientist, TCS Research and Innovation",
+        imageUrl:"/HemantKumarRath.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+      {
+        id:8,
+        name:"Prof. Thomas Thurner",
+        role:"Institute for Automation, University of Leoben, Austria",
+        imageUrl:"/thomas.jpeg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+
       }
       
     ],
