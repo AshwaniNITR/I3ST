@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://instcon2026.nitrkl.ac.in/sitemap.xml
+# Keywords: instcon2026, instcon 2026 conference
+
+
