@@ -540,7 +540,7 @@ export const advisory: Committee[] = [
         id: 27,
         name: " Shaunak Sen",
         role: "IIT Delhi",
-        imageUrl: "/advisory/shaunak-sen-27.jpg",
+        imageUrl: "/shaunakSen.jpeg",
       },
       {
         id: 28,
