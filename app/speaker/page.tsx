@@ -402,7 +402,7 @@ export default function Committee() {
                         <h4 className="text-lg font-bold text-gray-900">Abstract</h4>
                       </div>
                       <div className="p-5 bg-gray-50 border border-gray-200 rounded-lg">
-                        <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                        <p className="text-gray-700 justify-center font-medium">
                           {selectedSpeaker.abstract}
                         </p>
                       </div>
@@ -504,7 +504,7 @@ export default function Committee() {
                   >
                    
                     <div className="prose prose-sm max-w-none">
-                      <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                      <p className="text-gray-700 justify-center whitespace-pre-line">
                         {sidebarSpeaker.biosketch}
                       </p>
                     </div>
