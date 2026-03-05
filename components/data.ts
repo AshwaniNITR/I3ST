@@ -9,6 +9,7 @@ export type  Speaker={
   name:string;
   role?:string;
   imageUrl:string;
+  biosketch?:string;
   abstract?:string;
   talkTitle?:string;  
 }
@@ -958,11 +959,18 @@ export const speakers:SpeakerCom[]=[
         name:"Prof. Thomas Thurner",
         role:"Institute for Automation, University of Leoben, Austria",
         imageUrl:"/thomas.jpeg",
+          biosketch:"Thomas Thurner is Full Professor of Automation at the Technical University of Leoben, Austria and Head of the Chair of Automation and Measurement. He received his M.Sc. in Electrical Engineering from Graz University of Technology, Austria in 1999 and his Ph.D. in Optical Metrology in 2004. Following academic positions at Graz University of Technology, including research and teaching in measurement science, he led the Fatigue Testing Facility within the mechanical engineering faculty, focusing on durability testing, reliability engineering, and dynamic test system development. From 2015 to 2023, he served as Director of R&D at Infineon Technologies Austria, where he was responsible for semiconductor sensor development, verification and validation methodologies, and sensor system innovation. Since returning to academia in 2024, his research centers on advanced sensor technologies, IoT sensor systems, measurement science, and intelligent automation, with emphasis on integrated sensor solutions, optical and acoustic monitoring, and tactile robotics.",
+        talkTitle:"Energy-Efficient Edge-Intelligent IoT Sensor Systems: From Sensor System Integration to Real-World Deployment",
+        abstract:"Recent advances in semiconductor technologies — including MEMS-based sensing, ultra-low-power electronics, highly integrated microcontrollers and system-on-chip platforms, embedded signal processing, next generation wireless networks, and machine learning — have fundamentally expanded the design space for autonomous IoT sensor systems. In combination with long-range low-power wireless communication, these technologies enable scalable and energy-efficient sensing solutions across consumer, biomedical, sports, and industrial domains. This invited talk presents current research and development efforts toward application-driven IoT sensor systems designed to address concrete real-world challenges. A central focus lies on the tight integration of state-of-the-art sensor technologies with embedded edge intelligence. Local feature extraction, anomaly detection, and aggressive data reduction strategies significantly decrease communication load and power consumption, enabling multi-year or even fully energy-autonomous operation using batteries and energy harvesting concepts. System-level miniaturization and deep integration of sensors into materials and structural components are discussed as key enablers for unobtrusive and application-specific deployments. Wireless connectivity serves not only as a communication interface but as a system-level design constraint shaping architecture, energy management, and network topology. In particular, LoRa-based networks facilitate distributed deployments of autonomous smart sensor nodes over kilometer-scale distances, even in infrastructure-limited rural and urban environments.The presentation concludes with experimental results and field experiences from deployed systems in natural disaster monitoring, biomedical and sports analytics, and industrial condition monitoring, highlighting both technological achievements and practical lessons learned."
+      },
+        {
+        id:9,
+        name:"Sreelal S. Pillai",
+        role:"ISRO",
+        imageUrl:"/Sreelal.jpeg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
-
       }
-      
     ],
   },
   

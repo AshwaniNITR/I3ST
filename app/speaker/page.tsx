@@ -2,13 +2,15 @@
 import { useState } from "react"
 import Image from "next/image"
 import { speakers } from "../../components/data"
-import { motion, AnimatePresence,easeIn,easeInOut,easeOut, Variants } from "framer-motion"
+import { motion, AnimatePresence, easeInOut, easeOut, Variants } from "framer-motion"
 import CombinedBackground from "../../components/CombinedBackground"
-import { X } from "lucide-react"
+import { X, FileText, User } from "lucide-react"
 
 export default function Committee() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [sidebarSpeaker, setSidebarSpeaker] = useState(null)
 
   const handleSpeakerClick = (speaker) => {
     if (speaker.talkTitle || speaker.abstract) {
@@ -20,6 +22,17 @@ export default function Committee() {
   const closeModal = () => {
     setIsModalOpen(false)
     setTimeout(() => setSelectedSpeaker(null), 300)
+  }
+
+  const handleBiosketchClick = (e, speaker) => {
+    e.stopPropagation() // Prevent triggering the card click
+    setSidebarSpeaker(speaker)
+    setIsSidebarOpen(true)
+  }
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false)
+    setTimeout(() => setSidebarSpeaker(null), 300)
   }
 
   // Animation variants for speaker cards
@@ -68,33 +81,74 @@ export default function Committee() {
     }
   }
 
-const modalContentVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.9,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      damping: 25,
-      stiffness: 300,
+  const modalContentVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.9,
+      y: 20,
     },
-  },
-  exit: {
-    opacity: 0,
-    scale: 0.95,
-    y: 10,
-    transition: {
-      type: "spring",
-      damping: 30,
-      stiffness: 400,
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 25,
+        stiffness: 300,
+      },
     },
-  },
-}
+    exit: {
+      opacity: 0,
+      scale: 0.95,
+      y: 10,
+      transition: {
+        type: "spring",
+        damping: 30,
+        stiffness: 400,
+      },
+    },
+  }
+
+  // Sidebar animation variants
+  const sidebarVariants: Variants = {
+    hidden: {
+      x: "100%",
+    },
+    visible: {
+      x: 0,
+      transition: {
+        type: "spring",
+        damping: 25,
+        stiffness: 200,
+        duration: 0.3,
+      },
+    },
+    exit: {
+      x: "100%",
+      transition: {
+        type: "spring",
+        damping: 30,
+        stiffness: 300,
+        duration: 0.2,
+      },
+    },
+  }
+
+  const sidebarOverlayVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.15,
+      },
+    },
+  }
 
   return (
     <div className="min-h-screen py-10">
@@ -130,6 +184,7 @@ const modalContentVariants: Variants = {
         >
           {speakers[0].members.map((speaker, index) => {
             const hasTalkInfo = speaker.talkTitle || speaker.abstract
+            const hasBiosketch = speaker.biosketch
             
             return (
               <motion.div 
@@ -137,7 +192,7 @@ const modalContentVariants: Variants = {
                 variants={cardVariants}
                 custom={index}
                 onClick={() => hasTalkInfo && handleSpeakerClick(speaker)}
-                className={`w-full sm:w-[45%] lg:w-[45%] xl:w-[30%] group  bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 ${
+                className={`w-full sm:w-[45%] lg:w-[45%] xl:w-[30%] group bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 ${
                   hasTalkInfo ? 'cursor-pointer hover:border-blue-300' : 'cursor-default'
                 }`}
                 whileHover={{ 
@@ -185,26 +240,69 @@ const modalContentVariants: Variants = {
                       <p className="text-gray-800 text-sm leading-relaxed line-clamp-2">
                         {speaker.talkTitle}
                       </p>
-                      {hasTalkInfo && (
-                        <p className="text-blue-600 text-xs font-medium mt-2 flex items-center gap-1">
-                          Click for abstract 
-                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </p>
-                      )}
+                      
+                      {/* Action Buttons Container */}
+                      <div className="flex gap-2 mt-3">
+                        {hasTalkInfo && (
+                          <button
+                            onClick={() => handleSpeakerClick(speaker)}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-medium rounded-md border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-200"
+                          >
+                            <FileText className="w-3.5 h-3.5" />
+                            <span>View Abstract</span>
+                          </button>
+                        )}
+                        
+                        {/* Biosketch Button */}
+                        {hasBiosketch && (
+                          <button
+                            onClick={(e) => handleBiosketchClick(e, speaker)}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 bg-purple-50 text-purple-700 text-xs font-medium rounded-md border border-purple-200 hover:bg-purple-100 hover:border-purple-300 transition-all duration-200"
+                          >
+                            <User className="w-3.5 h-3.5" />
+                            <span>Biosketch</span>
+                          </button>
+                        )}
+                      </div>
                     </div>
                   )}
                   
                   {/* If no talk title but has abstract */}
                   {!speaker.talkTitle && speaker.abstract && hasTalkInfo && (
                     <div className="mt-4 pt-4 border-t border-gray-100">
-                      <p className="text-blue-600 text-xs font-medium flex items-center gap-1">
-                        Click to view abstract
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </p>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleSpeakerClick(speaker)}
+                          className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-medium rounded-md border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-200"
+                        >
+                          <FileText className="w-3.5 h-3.5" />
+                          <span>View Abstract</span>
+                        </button>
+                        
+                        {/* Biosketch Button for cards without talk title */}
+                        {hasBiosketch && (
+                          <button
+                            onClick={(e) => handleBiosketchClick(e, speaker)}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 bg-purple-50 text-purple-700 text-xs font-medium rounded-md border border-purple-200 hover:bg-purple-100 hover:border-purple-300 transition-all duration-200"
+                          >
+                            <User className="w-3.5 h-3.5" />
+                            <span>Biosketch</span>
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Biosketch button for cards with neither talk title nor abstract */}
+                  {!hasTalkInfo && hasBiosketch && (
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <button
+                        onClick={(e) => handleBiosketchClick(e, speaker)}
+                        className="inline-flex items-center gap-1 px-3 py-1.5 bg-purple-50 text-purple-700 text-xs font-medium rounded-md border border-purple-200 hover:bg-purple-100 hover:border-purple-300 transition-all duration-200"
+                      >
+                        <User className="w-3.5 h-3.5" />
+                        <span>View Biosketch</span>
+                      </button>
                     </div>
                   )}
                 </div>
@@ -324,6 +422,107 @@ const modalContentVariants: Variants = {
               </div>
             </motion.div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Biosketch Sidebar */}
+      <AnimatePresence>
+        {isSidebarOpen && sidebarSpeaker && (
+          <>
+            {/* Sidebar Overlay */}
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-50"
+              variants={sidebarOverlayVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              onClick={closeSidebar}
+            />
+            
+            {/* Sidebar */}
+            <motion.div
+              className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col"
+              variants={sidebarVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              {/* Fixed Header with Gradient */}
+              <div className="bg-gradient-to-r from-[#003366] to-[#0066cc] text-white p-6 flex-shrink-0">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-2xl font-bold">Biosketch</h3>
+                  <button
+                    onClick={closeSidebar}
+                    className="p-2 hover:bg-white/20 rounded-full transition-colors"
+                    aria-label="Close sidebar"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Fixed Image and Title Section */}
+              <div className="p-6 border-b border-gray-200 flex-shrink-0">
+                <motion.div 
+                  className="relative w-32 h-32 mx-auto mb-4 rounded-lg overflow-hidden border-4 border-white shadow-lg"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.1, duration: 0.3 }}
+                >
+                  <Image
+                    src={sidebarSpeaker.imageUrl || "/placeholder.svg"}
+                    alt={sidebarSpeaker.name}
+                    fill
+                    className="object-cover"
+                    sizes="200px"
+                  />
+                </motion.div>
+
+                <motion.div 
+                  className="text-center"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
+                >
+                  <h4 className="text-xl font-bold text-gray-900 mb-1">
+                    {sidebarSpeaker.name}
+                  </h4>
+                  <p className="text-gray-600 font-semibold text-sm">
+                    {sidebarSpeaker.role}
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Scrollable Biosketch Content */}
+
+              {sidebarSpeaker.biosketch && (
+                <div className="flex-1 overflow-y-auto p-6">
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.3 }}
+                  >
+                   
+                    <div className="prose prose-sm max-w-none">
+                      <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                        {sidebarSpeaker.biosketch}
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              )}
+
+              {/* Fixed Footer */}
+              <div className="border-t border-gray-200 p-4 bg-gray-50 flex-shrink-0">
+                <button
+                  onClick={closeSidebar}
+                  className="w-full py-3 bg-gradient-to-r from-[#003366] to-[#0066cc] text-white  font-semibold rounded-lg"
+                >
+                  Close Biosketch
+                </button>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </div>
