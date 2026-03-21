@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { Description } from "@radix-ui/react-dialog";
+import { Megaphone, Bell } from "lucide-react";
 
 // Simple Carousel Component (unchanged)
 const SimpleCarousel = ({ images }) => {
@@ -37,9 +38,8 @@ const SimpleCarousel = ({ images }) => {
 
 const announcements = [
   {
-    title: "Paper Submission Deadline Ending Soon",
-    description:
-      "The deadline for paper submissions is approaching fast. Make sure to submit your research work before the deadline to be part of INSTCon 2026.",
+    title: "⏳ Deadline Approaching!",
+    description: "Submit your papers before the deadline: MARCH 31, 2026.",
   },
   {
     title: "Travel Grants",
@@ -48,13 +48,13 @@ const announcements = [
   },
   {
     title: "Best Paper Award in Each Track",
-    description:
-      "To be announced soon!",
+    description: "To be announced soon!",
   },
   {
-    title:"Journal Publication Opportunity",
-    description:"Authors of papers accepted and presented at INSTCon 2026 may submit technically extended versions of their work to IEEE Transactions on Instrumentation and Measurement (TIM) and IEEE Open Journal of Instrumentation and Measurement (OJIM), in accordance with the journals’ policies for extended versions of conference papers (https://ieee-ims.org/publication/ieee-tim/information-authors, https://ieee-ims.org/publication/ieee-ojim/author-information). All such submissions will be handled as regular journal submissions and will undergo the standard peer-review process."
-  }
+    title: "Journal Publication Opportunity",
+    description:
+      "Authors of papers accepted and presented at INSTCon 2026 may submit technically extended versions of their work to IEEE Transactions on Instrumentation and Measurement (TIM) and IEEE Open Journal of Instrumentation and Measurement (OJIM), in accordance with the journals’ policies for extended versions of conference papers (https://ieee-ims.org/publication/ieee-tim/information-authors, https://ieee-ims.org/publication/ieee-ojim/author-information). All such submissions will be handled as regular journal submissions and will undergo the standard peer-review process.",
+  },
 ];
 const Hero = () => {
   const [showModal, setShowModal] = useState(false);
@@ -240,123 +240,172 @@ const Hero = () => {
 
         {/* Paper Submission Section */}
         <div className="w-full max-w-7xl mx-auto px-4">
-           <div className="flex flex-col lg:flex-row w-full py-8 items-start gap-6 lg:gap-10">
-          <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
-            {/* Heading */}
-            <div className="text-center mb-6 sm:mb-8">
-              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
-                Announcements
-              </h3>
-            </div>
+          <div className="flex flex-col lg:flex-row w-full py-8 items-start gap-6 lg:gap-10">
+            <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
+              {/* Heading */}
+              <div className="text-center mb-6 sm:mb-8 flex items-center justify-center gap-2">
+                <span className="text-red-500  animate-bounce text-xl">
+                  <Megaphone size={30} />
+                </span>
+                <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
+                  Announcements
+                </h3>
+              </div>
 
-            {/* Announcements List */}
-            <div className="overflow-hidden relative flex-1">
-              <div className="animate-scroll flex flex-col space-y-4 sm:space-y-6">
-                {[...announcements, ...announcements].map((item, index) => (
-                  <div
-                    key={index}
-                    className="p-4 rounded-xl border border-blue-100 bg-white/70 shadow-sm"
-                  >
-                    <h4 className="text-lg font-bold text-blue-700 sm:text-xl">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-700 mt-1 text-sm sm:text-base">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
+              {/* Announcements List */}
+              <div className="overflow-hidden relative flex-1">
+                <div className="animate-scroll flex flex-col space-y-4 sm:space-y-6">
+                  {[...announcements, ...announcements].map((item, index) => {
+                    const isJournal = item.title
+                      .toLowerCase()
+                      .includes("journal");
+                    const isDeadline = item.title
+                      .toLowerCase()
+                      .includes("deadline");
+
+                    return (
+                      <div
+                        key={index}
+                        className={`p-4 rounded-xl border transition-all duration-300
+              ${
+                isJournal
+                  ? "bg-yellow-100 border-yellow-400 shadow-md animate-glow"
+                  : "bg-white/70 border-blue-100 shadow-sm"
+              }
+              ${isDeadline ? "border-red-500 bg-red-100 shadow-lg animate-pulse" : ""}`}
+                      >
+                        {/* Title */}
+                        <h4
+                          className={`text-lg font-bold sm:text-xl flex items-center gap-2 justify-center
+              ${isJournal ? "text-yellow-800" : "text-blue-700"}`}
+                        >
+                          {isJournal && (
+                            <span className="text-red-500 animate-bounce text-lg">
+                              🚨
+                            </span>
+                          )}
+
+                          {item.title}
+                        </h4>
+
+                        {/* Description */}
+                        {!isDeadline ? (
+                          <p
+                            className={`mt-1 text-sm sm:text-base text-center
+              ${isJournal ? "text-yellow-900 font-semibold" : "text-gray-700"}`}
+                          >
+                            {item.description}
+                          </p>
+                        ) : (
+                          <p className="mt-1 text-sm sm:text-base text-center">
+                            Submit your papers before the deadline:{" "}
+                            <span className="text-red-600 font-bold text-md sm:text-xl">
+                              March 31, 2026
+                            </span>
+                          </p>
+                        )}
+
+                        {/* Badge */}
+                        {isJournal && (
+                          <div className="mt-2 flex justify-center">
+                            <span className="text-xs font-bold px-2 py-1 bg-red-500 text-white rounded animate-pulse">
+                              JOURNAL PUBLICATION
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="relative overflow-hidden rounded-2xl mx-auto max-w-4xl h-full flex flex-col">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-10"></div>
-            <div className="relative bg-gradient-to-br backdrop-blur-lg border-2 border-transparent bg-clip-padding rounded-2xl p-1 shadow-xl">
-              <div className="relative bg-gradient-to-r from-blue-50 via-white to-purple-50 rounded-xl p-8 text-center">
-                {/* Animated badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse mb-6">
-                  <div className="relative flex h-3 w-3">
-                    <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
-                    <div className="relative inline-flex h-3 w-3 rounded-full bg-white"></div>
-                  </div>
-                  <span className="font-bold text-white text-sm tracking-wider">
-                    LIVE NOW
-                  </span>
-                </div>
-
-                {/* Main message */}
-                <div className="space-y-2 mb-8">
-                  <h3 className="text-4xl font-black bg-gradient-to-r from-blue-700 via-purple-700 to-blue-700 bg-clip-text text-transparent">
-                    Paper Submission is Live!
-                  </h3>
-                  <p className="text-gray-600 font-semibold text-lg">
-                    Submit your papers for INSTCon 2026
-                  </p>
-                </div>
-
-                {/* Main CTA Button */}
-                <a
-                  href="https://cmt3.research.microsoft.com/INSTCON2026"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group mb-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300"
-                >
-                  <span className="tracking-wide">Click Here to Submit</span>
-                  <svg
-                    className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    ></path>
-                  </svg>
-                </a>
-
-                {/* Divider with "OR" */}
-                <div className="relative my-6">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-gray-300"></div>
-                  </div>
-                  <div className="relative flex justify-center">
-                    <span className="px-4 bg-gradient-to-r from-blue-50 via-white to-purple-50 text-gray-500 font-medium text-sm">
-                      OR
+            <div className="relative overflow-hidden rounded-2xl mx-auto max-w-4xl h-full flex flex-col">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-10"></div>
+              <div className="relative bg-gradient-to-br backdrop-blur-lg border-2 border-transparent bg-clip-padding rounded-2xl p-1 shadow-xl">
+                <div className="relative bg-gradient-to-r from-blue-50 via-white to-purple-50 rounded-xl p-8 text-center">
+                  {/* Animated badge */}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse mb-6">
+                    <div className="relative flex h-3 w-3">
+                      <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
+                      <div className="relative inline-flex h-3 w-3 rounded-full bg-white"></div>
+                    </div>
+                    <span className="font-bold text-white text-sm tracking-wider">
+                      LIVE NOW
                     </span>
                   </div>
-                </div>
 
-                {/* Secondary Button for Guidelines */}
-                <a
-                  href="/submitPaper"
-                  className="group inline-flex items-center justify-center w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 font-bold text-lg px-10 py-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <svg
-                    className="w-5 h-5 mr-3 text-blue-600 group-hover:text-blue-700"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  {/* Main message */}
+                  <div className="space-y-2 mb-8">
+                    <h3 className="text-4xl font-black bg-gradient-to-r from-blue-700 via-purple-700 to-blue-700 bg-clip-text text-transparent">
+                      Paper Submission is Live!
+                    </h3>
+                    <p className="text-gray-600 font-semibold text-lg">
+                      Submit your papers for INSTCon 2026
+                    </p>
+                  </div>
+
+                  {/* Main CTA Button */}
+                  <a
+                    href="https://cmt3.research.microsoft.com/INSTCON2026"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mb-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    ></path>
-                  </svg>
-                  <span className="tracking-wide">
-                    View Submission Guidelines
-                  </span>
-                </a>
+                    <span className="tracking-wide">Click Here to Submit</span>
+                    <svg
+                      className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.5"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      ></path>
+                    </svg>
+                  </a>
+
+                  {/* Divider with "OR" */}
+                  <div className="relative my-6">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <span className="px-4 bg-gradient-to-r from-blue-50 via-white to-purple-50 text-gray-500 font-medium text-sm">
+                        OR
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Secondary Button for Guidelines */}
+                  <a
+                    href="/submitPaper"
+                    className="group inline-flex items-center justify-center w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 font-bold text-lg px-10 py-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                  >
+                    <svg
+                      className="w-5 h-5 mr-3 text-blue-600 group-hover:text-blue-700"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      ></path>
+                    </svg>
+                    <span className="tracking-wide">
+                      View Submission Guidelines
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        </div>
-       
       </div>
 
       {/* SPECIFIC LAYOUT FOR 1024x600 SCREENS (Nest Hub) */}
@@ -492,7 +541,6 @@ const Hero = () => {
 
           {/* Paper Submission Section - Centered */}
           <div className="px-2 py-1 flex justify-center">
-            
             <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-2 w-full max-w-[95%]">
               {/* Live badge - Centered */}
               <div className="flex justify-center mb-1">
@@ -635,34 +683,85 @@ const Hero = () => {
         </div>
 
         {/* Paper Submission Section for Mobile - Adjusted for larger screens */}
-        <div className="w-full px-4 py-8 sm:px-8 sm:py-10">
-          <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
-            {/* Heading */}
-            <div className="text-center mb-6 sm:mb-8">
-              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
-                Announcements
-              </h3>
-            </div>
+        <div className="w-full flex flex-col px-4 py-8 sm:px-8 sm:py-10 gap-10">
+           <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
+              {/* Heading */}
+              <div className="text-center mb-6 sm:mb-8 flex items-center justify-center gap-2">
+                <span className="text-red-500  animate-bounce text-xl">
+                  <Megaphone size={30} />
+                </span>
+                <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
+                  Announcements
+                </h3>
+              </div>
 
-            {/* Announcements List */}
-            <div className="overflow-hidden relative flex-1">
-              <div className="animate-scroll flex flex-col space-y-4 sm:space-y-6">
-                {[...announcements, ...announcements].map((item, index) => (
-                  <div
-                    key={index}
-                    className="p-4 rounded-xl border border-blue-100 bg-white/70 shadow-sm"
-                  >
-                    <h4 className="text-lg font-bold text-blue-700 sm:text-xl">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-700 mt-1 text-sm sm:text-base">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
+              {/* Announcements List */}
+              <div className="overflow-hidden relative flex-1">
+                <div className="animate-scroll flex flex-col space-y-4 sm:space-y-6">
+                  {[...announcements, ...announcements].map((item, index) => {
+                    const isJournal = item.title
+                      .toLowerCase()
+                      .includes("journal");
+                    const isDeadline = item.title
+                      .toLowerCase()
+                      .includes("deadline");
+
+                    return (
+                      <div
+                        key={index}
+                        className={`p-4 rounded-xl border transition-all duration-300
+              ${
+                isJournal
+                  ? "bg-yellow-100 border-yellow-400 shadow-md animate-glow"
+                  : "bg-white/70 border-blue-100 shadow-sm"
+              }
+              ${isDeadline ? "border-red-500 bg-red-100 shadow-lg animate-pulse" : ""}`}
+                      >
+                        {/* Title */}
+                        <h4
+                          className={`text-lg font-bold sm:text-xl flex items-center gap-2 justify-center
+              ${isJournal ? "text-yellow-800" : "text-blue-700"}`}
+                        >
+                          {isJournal && (
+                            <span className="text-red-500 animate-bounce text-lg">
+                              🚨
+                            </span>
+                          )}
+
+                          {item.title}
+                        </h4>
+
+                        {/* Description */}
+                        {!isDeadline ? (
+                          <p
+                            className={`mt-1 text-sm sm:text-base text-center
+              ${isJournal ? "text-yellow-900 font-semibold" : "text-gray-700"}`}
+                          >
+                            {item.description}
+                          </p>
+                        ) : (
+                          <p className="mt-1 text-sm sm:text-base text-center">
+                            Submit your papers before the deadline:{" "}
+                            <span className="text-red-600 font-bold text-md sm:text-xl">
+                              March 31, 2026
+                            </span>
+                          </p>
+                        )}
+
+                        {/* Badge */}
+                        {isJournal && (
+                          <div className="mt-2 flex justify-center">
+                            <span className="text-xs font-bold px-2 py-1 bg-red-500 text-white rounded animate-pulse">
+                              JOURNAL PUBLICATION
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
           <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8">
             {/* Live badge */}
             <div className="flex justify-center mb-4">
