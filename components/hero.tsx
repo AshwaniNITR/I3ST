@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import { Description } from "@radix-ui/react-dialog";
 
 // Simple Carousel Component (unchanged)
 const SimpleCarousel = ({ images }) => {
@@ -34,7 +35,29 @@ const SimpleCarousel = ({ images }) => {
   );
 };
 
+const announcements = [
+  {
+    title: "Paper Submission Deadline Ending Soon",
+    description:
+      "The deadline for paper submissions is approaching fast. Make sure to submit your research work before the deadline to be part of INSTCon 2026.",
+  },
+  {
+    title: "Travel Grants",
+    description:
+      "Limited Travel Grants will be awarded to the selected student presenters.",
+  },
+  {
+    title: "Best Paper Award in Each Track",
+    description:
+      "To be announced soon!",
+  },
+  {
+    title:"Journal Publication Opportunity",
+    description:"Authors of papers accepted and presented at INSTCon 2026 may submit technically extended versions of their work to IEEE Transactions on Instrumentation and Measurement (TIM) and IEEE Open Journal of Instrumentation and Measurement (OJIM), in accordance with the journals’ policies for extended versions of conference papers (https://ieee-ims.org/publication/ieee-tim/information-authors, https://ieee-ims.org/publication/ieee-ojim/author-information). All such submissions will be handled as regular journal submissions and will undergo the standard peer-review process."
+  }
+];
 const Hero = () => {
+  const [showModal, setShowModal] = useState(false);
   const images = [
     "/nitfrontgate3.jpg",
     "/nitmainbuilding2.jpg",
@@ -49,6 +72,18 @@ const Hero = () => {
     "/ieeerklsub-removebg-preview.png",
     "https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg",
   ];
+  useEffect(() => {
+    const hasSeen = localStorage.getItem("seenPopup");
+
+    if (!hasSeen) {
+      const timer = setTimeout(() => {
+        setShowModal(true);
+        localStorage.setItem("seenPopup", "true");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   return (
     <div id="home" className="relative overflow-hidden">
@@ -204,8 +239,36 @@ const Hero = () => {
         </div>
 
         {/* Paper Submission Section */}
-        <div className="w-full py-8">
-          <div className="relative overflow-hidden rounded-2xl mx-auto max-w-4xl">
+        <div className="w-full max-w-7xl mx-auto px-4">
+           <div className="flex flex-col lg:flex-row w-full py-8 items-start gap-6 lg:gap-10">
+          <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
+            {/* Heading */}
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
+                Announcements
+              </h3>
+            </div>
+
+            {/* Announcements List */}
+            <div className="overflow-hidden relative flex-1">
+              <div className="animate-scroll flex flex-col space-y-4 sm:space-y-6">
+                {[...announcements, ...announcements].map((item, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded-xl border border-blue-100 bg-white/70 shadow-sm"
+                  >
+                    <h4 className="text-lg font-bold text-blue-700 sm:text-xl">
+                      {item.title}
+                    </h4>
+                    <p className="text-gray-700 mt-1 text-sm sm:text-base">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-2xl mx-auto max-w-4xl h-full flex flex-col">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-10"></div>
             <div className="relative bg-gradient-to-br backdrop-blur-lg border-2 border-transparent bg-clip-padding rounded-2xl p-1 shadow-xl">
               <div className="relative bg-gradient-to-r from-blue-50 via-white to-purple-50 rounded-xl p-8 text-center">
@@ -291,6 +354,9 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
+        </div>
+       
       </div>
 
       {/* SPECIFIC LAYOUT FOR 1024x600 SCREENS (Nest Hub) */}
@@ -426,6 +492,7 @@ const Hero = () => {
 
           {/* Paper Submission Section - Centered */}
           <div className="px-2 py-1 flex justify-center">
+            
             <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-2 w-full max-w-[95%]">
               {/* Live badge - Centered */}
               <div className="flex justify-center mb-1">
@@ -471,194 +538,221 @@ const Hero = () => {
       </div>
 
       {/* Mobile Layout (for phones) */}
-  <div className="lg:hidden relative">
-  {/* Full screen carousel */}
-  <div className="relative h-screen">
-    <div className="absolute inset-0">
-      <SimpleCarousel images={images} />
-    </div>
-
-    {/* Dark gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-transparent"></div>
-
-    {/* Content overlay - Adjusted for screens above 700px */}
-    <div className="relative z-10 h-full flex flex-col justify-end px-5 pb-6 space-y-5 pt-16 sm:justify-center sm:pt-20 sm:pb-20 sm:space-y-6">
-      {/* Title and Conference Info */}
-      <div className="text-center backdrop-blur-sm bg-white/20 rounded-lg space-y-3 sm:space-y-4 sm:px-4 sm:py-3">
-        <p className="text-md sm:text-lg md:text-xl font-bold text-white/95 drop-shadow-2xl leading-tight">
-          1st IEEE International Conference on Instrumentation
-        </p>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight drop-shadow-2xl tracking-tight">
-          INSTCon 2026
-        </h1>
-      </div>
-
-      {/* Date badge - Clean style */}
-      <div className="flex justify-center">
-        <div className="inline-flex items-center gap-3 px-5 py-3 bg-white/20 backdrop-blur-lg rounded-xl sm:px-6 sm:py-3">
-          <svg
-            className="w-5 h-5 text-white drop-shadow-2xl sm:w-6 sm:h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.5"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            ></path>
-          </svg>
-          <span className="font-black text-lg sm:text-xl text-white tracking-wider drop-shadow-2xl">
-            JULY 24-25, 2026
-          </span>
-        </div>
-      </div>
-
-      {/* Location section - Centered and adjusted for larger screens */}
-      <div className="px-3 backdrop-blur-sm bg-white/20 rounded-lg py-4 sm:px-4 sm:py-4 sm:max-w-md sm:mx-auto">
-        <div className="flex items-start gap-3 sm:flex-col sm:items-center sm:gap-4">
-          <svg
-            className="w-6 h-6 text-white drop-shadow-2xl flex-shrink-0 mt-1 sm:w-7 sm:h-7 sm:mt-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.5"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            ></path>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.5"
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-            ></path>
-          </svg>
-          <div className="text-left flex-1 sm:text-center sm:w-full">
-            <p className="font-extrabold text-white text-sm mb-1 leading-snug drop-shadow-2xl tracking-tight sm:text-base sm:mb-2 sm:leading-tight">
-              Department of Electronics and Communication Engineering
-            </p>
-            <p className="font-bold text-xs text-white/95 leading-relaxed drop-shadow-2xl sm:text-sm sm:leading-snug">
-              National Institute of Technology, Rourkela
-              <br />
-              Rourkela, Odisha, India - 769008
-            </p>
+      <div className="lg:hidden relative">
+        {/* Full screen carousel */}
+        <div className="relative h-screen">
+          <div className="absolute inset-0">
+            <SimpleCarousel images={images} />
           </div>
-        </div>
-      </div>
 
-      {/* 4 Images Overlay for Mobile - Adjusted for larger screens */}
-      <div className="grid grid-cols-2 gap-3 px-3 mt-4 sm:mt-6 sm:gap-4 sm:px-6 sm:max-w-lg sm:mx-auto">
-        {bottomImages.map((src, index) => (
-          <div key={index} className="relative group">
-            <div className="relative rounded-xl overflow-hidden group-hover:bg-black/90 transition-all duration-300 group-hover:scale-105 h-28 sm:h-36">
-              <img
-                src={src}
-                alt={`Partner ${index + 1}`}
-                className="w-full h-full object-contain p-2 sm:p-3"
-              />
+          {/* Dark gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-transparent"></div>
+
+          {/* Content overlay - Adjusted for screens above 700px */}
+          <div className="relative z-10 h-full flex flex-col justify-end px-5 pb-6 space-y-5 pt-16 sm:justify-center sm:pt-20 sm:pb-20 sm:space-y-6">
+            {/* Title and Conference Info */}
+            <div className="text-center backdrop-blur-sm bg-white/20 rounded-lg space-y-3 sm:space-y-4 sm:px-4 sm:py-3">
+              <p className="text-md sm:text-lg md:text-xl font-bold text-white/95 drop-shadow-2xl leading-tight">
+                1st IEEE International Conference on Instrumentation
+              </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight drop-shadow-2xl tracking-tight">
+                INSTCon 2026
+              </h1>
+            </div>
+
+            {/* Date badge - Clean style */}
+            <div className="flex justify-center">
+              <div className="inline-flex items-center gap-3 px-5 py-3 bg-white/20 backdrop-blur-lg rounded-xl sm:px-6 sm:py-3">
+                <svg
+                  className="w-5 h-5 text-white drop-shadow-2xl sm:w-6 sm:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <span className="font-black text-lg sm:text-xl text-white tracking-wider drop-shadow-2xl">
+                  JULY 24-25, 2026
+                </span>
+              </div>
+            </div>
+
+            {/* Location section - Centered and adjusted for larger screens */}
+            <div className="px-3 backdrop-blur-sm bg-white/20 rounded-lg py-4 sm:px-4 sm:py-4 sm:max-w-md sm:mx-auto">
+              <div className="flex items-start gap-3 sm:flex-col sm:items-center sm:gap-4">
+                <svg
+                  className="w-6 h-6 text-white drop-shadow-2xl flex-shrink-0 mt-1 sm:w-7 sm:h-7 sm:mt-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                <div className="text-left flex-1 sm:text-center sm:w-full">
+                  <p className="font-extrabold text-white text-sm mb-1 leading-snug drop-shadow-2xl tracking-tight sm:text-base sm:mb-2 sm:leading-tight">
+                    Department of Electronics and Communication Engineering
+                  </p>
+                  <p className="font-bold text-xs text-white/95 leading-relaxed drop-shadow-2xl sm:text-sm sm:leading-snug">
+                    National Institute of Technology, Rourkela
+                    <br />
+                    Rourkela, Odisha, India - 769008
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 4 Images Overlay for Mobile - Adjusted for larger screens */}
+            <div className="grid grid-cols-2 gap-3 px-3 mt-4 sm:mt-6 sm:gap-4 sm:px-6 sm:max-w-lg sm:mx-auto">
+              {bottomImages.map((src, index) => (
+                <div key={index} className="relative group">
+                  <div className="relative rounded-xl overflow-hidden group-hover:bg-black/90 transition-all duration-300 group-hover:scale-105 h-28 sm:h-36">
+                    <img
+                      src={src}
+                      alt={`Partner ${index + 1}`}
+                      className="w-full h-full object-contain p-2 sm:p-3"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
+        </div>
 
-  {/* Paper Submission Section for Mobile - Adjusted for larger screens */}
-  <div className="w-full px-4 py-8 sm:px-8 sm:py-10">
-    <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8">
-      {/* Live badge */}
-      <div className="flex justify-center mb-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse sm:px-4 sm:py-1.5">
-          <div className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
-            <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
-            <div className="relative inline-flex h-2 w-2 rounded-full bg-white sm:h-2.5 sm:w-2.5"></div>
+        {/* Paper Submission Section for Mobile - Adjusted for larger screens */}
+        <div className="w-full px-4 py-8 sm:px-8 sm:py-10">
+          <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
+            {/* Heading */}
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
+                Announcements
+              </h3>
+            </div>
+
+            {/* Announcements List */}
+            <div className="overflow-hidden relative flex-1">
+              <div className="animate-scroll flex flex-col space-y-4 sm:space-y-6">
+                {[...announcements, ...announcements].map((item, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded-xl border border-blue-100 bg-white/70 shadow-sm"
+                  >
+                    <h4 className="text-lg font-bold text-blue-700 sm:text-xl">
+                      {item.title}
+                    </h4>
+                    <p className="text-gray-700 mt-1 text-sm sm:text-base">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <span className="font-bold text-white text-xs tracking-wider sm:text-sm">
-            LIVE NOW
-          </span>
+          <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8">
+            {/* Live badge */}
+            <div className="flex justify-center mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse sm:px-4 sm:py-1.5">
+                <div className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+                  <div className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></div>
+                  <div className="relative inline-flex h-2 w-2 rounded-full bg-white sm:h-2.5 sm:w-2.5"></div>
+                </div>
+                <span className="font-bold text-white text-xs tracking-wider sm:text-sm">
+                  LIVE NOW
+                </span>
+              </div>
+            </div>
+
+            {/* Message */}
+            <div className="text-center space-y-2 mb-6 sm:space-y-3 sm:mb-8">
+              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
+                Paper Submission is Live!
+              </h3>
+              <p className="text-gray-700 font-semibold text-base sm:text-lg">
+                Submit your papers for INSTCon 2026
+              </p>
+            </div>
+
+            {/* Main Button */}
+            <a
+              href="https://cmt3.research.microsoft.com/INSTCON2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full mb-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 active:scale-95 sm:py-5 sm:text-lg"
+            >
+              <div className="flex items-center justify-center gap-2">
+                <span className="font-extrabold tracking-wide">
+                  Click Here to Submit
+                </span>
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+
+            {/* Divider */}
+            <div className="relative my-4 sm:my-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300"></div>
+              </div>
+              <div className="relative flex justify-center">
+                <span className="px-4 bg-gradient-to-br from-blue-50 to-purple-50 text-gray-500 font-medium text-sm sm:text-base">
+                  OR
+                </span>
+              </div>
+            </div>
+
+            {/* Guidelines Button */}
+            <a
+              href="/submitPaper"
+              className="group block w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 font-bold py-4 px-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all duration-300 active:scale-95 sm:py-5 sm:text-lg"
+            >
+              <div className="flex items-center justify-center gap-2">
+                <svg
+                  className="w-4 h-4 text-blue-600 group-hover:text-blue-700 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
+                <span className="font-bold tracking-wide">
+                  View Submission Guidelines
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-
-      {/* Message */}
-      <div className="text-center space-y-2 mb-6 sm:space-y-3 sm:mb-8">
-        <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
-          Paper Submission is Live!
-        </h3>
-        <p className="text-gray-700 font-semibold text-base sm:text-lg">
-          Submit your papers for INSTCon 2026
-        </p>
-      </div>
-
-      {/* Main Button */}
-      <a
-        href="https://cmt3.research.microsoft.com/INSTCON2026"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block w-full mb-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 active:scale-95 sm:py-5 sm:text-lg"
-      >
-        <div className="flex items-center justify-center gap-2">
-          <span className="font-extrabold tracking-wide">
-            Click Here to Submit
-          </span>
-          <svg
-            className="w-4 h-4 sm:w-5 sm:h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.5"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            ></path>
-          </svg>
-        </div>
-      </a>
-
-      {/* Divider */}
-      <div className="relative my-4 sm:my-6">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-gray-300"></div>
-        </div>
-        <div className="relative flex justify-center">
-          <span className="px-4 bg-gradient-to-br from-blue-50 to-purple-50 text-gray-500 font-medium text-sm sm:text-base">
-            OR
-          </span>
-        </div>
-      </div>
-
-      {/* Guidelines Button */}
-      <a
-        href="/submitPaper"
-        className="group block w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 font-bold py-4 px-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all duration-300 active:scale-95 sm:py-5 sm:text-lg"
-      >
-        <div className="flex items-center justify-center gap-2">
-          <svg
-            className="w-4 h-4 text-blue-600 group-hover:text-blue-700 sm:w-5 sm:h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-            ></path>
-          </svg>
-          <span className="font-bold tracking-wide">
-            View Submission Guidelines
-          </span>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
 
       <style jsx>{`
         @keyframes fade-in {
