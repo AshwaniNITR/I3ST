@@ -41,6 +41,9 @@ const navigation = [
       {name:"Our Sponsors",href:"/Sponsorship"},
     ]
   },
+  {
+    name:"Announcements",href:"/announcements"
+  }
 ];
 
 export default function Navbar() {

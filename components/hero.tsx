@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import { Description } from "@radix-ui/react-dialog";
-import { Megaphone, Bell } from "lucide-react";
+//import Navbar from "./Navbar";
+//import { Description } from "@radix-ui/react-dialog";
+import { Megaphone} from "lucide-react";
 
 // Simple Carousel Component (unchanged)
 const SimpleCarousel = ({ images }) => {
@@ -36,7 +36,7 @@ const SimpleCarousel = ({ images }) => {
   );
 };
 
-const announcements = [
+export const announcements = [
   {
     title: "⏳ Deadline Approaching!",
     description: "Submit your papers before the deadline: MARCH 31, 2026.",
