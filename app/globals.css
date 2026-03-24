@@ -38,3 +38,29 @@
 .animate-scroll:hover {
   animation-play-state: paused;
 }
+/* Add to your global CSS file */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* For screens 1900px and above, ensure content fills the space */
+@media (min-width: 1900px) {
+  .relative.min-h-screen {
+    min-height: 100vh;
+  }
+  
+  section.relative {
+    min-height: calc(100vh - 80px); /* Adjust based on your navbar height */
+    display: flex;
+    align-items: center;
+  }
+  
+  .grid {
+    align-items: stretch;
+  }
+}
