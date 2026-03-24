@@ -23,7 +23,7 @@ const navigation = [
     ]
   },
   {
-    name: "Author's Information",
+    name: "Author's Info",
     href: "/authors",
     dropdown:[
       { name: "Call for Papers", href: "/NITFINAL.pdf" },
@@ -34,8 +34,8 @@ const navigation = [
   {name:"Tracks",href:"/track-chairs"},
   { name: "Speakers", href: "/speaker" },
   {name:"Travel",href:"/travel"},
-  { name: "Events", href: "/updatedsoon" },,
-  { name: "Sponsorship", href: "/Sponsorship" ,
+  { name: "Events", href: "/updatedsoon" },
+  { name: "Sponsorship", href: "/Sponsorship",
     dropdown:[
       {name:"Call For Sponsors",href:"/callforSponsorship.jpeg"},
       {name:"Our Sponsors",href:"/Sponsorship"},
@@ -101,8 +101,8 @@ export default function Navbar() {
       
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-16">
-          {/* Logo - Extreme Left */}
-          <div className="flex-shrink-0 mr-8">
+          {/* Logo - Left */}
+          <div className="flex-shrink-0 mr-4 md:mr-6">
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="relative">
                 {/* Logo Container */}
@@ -125,8 +125,8 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Center Navigation - Desktop */}
-          <div className="hidden lg:flex items-center justify-center flex-1 space-x-10 lg:space-x-3">
+          {/* Center Navigation - Desktop with responsive breakpoints */}
+          <div className="hidden lg:flex items-center justify-center flex-1 space-x-2 xl:space-x-3 2xl:space-x-4">
             {navigation.map((item) => (
               item.dropdown ? (
                 <div
@@ -136,16 +136,16 @@ export default function Navbar() {
                 >
                   <button 
                     onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 focus:outline-none group px-2 py-1"
+                    className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 focus:outline-none group px-1 xl:px-2 py-1 text-sm xl:text-base whitespace-nowrap"
                   >
                     <span className="relative">
                       {item.name}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
                     </span>
                     {activeDropdown === item.name ? (
-                      <ChevronUp className="ml-1 h-4 w-4 transition-transform duration-200 text-blue-600" />
+                      <ChevronUp className="ml-1 h-3 w-3 xl:h-4 xl:w-4 transition-transform duration-200 text-blue-600" />
                     ) : (
-                      <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200" />
+                      <ChevronDown className="ml-1 h-3 w-3 xl:h-4 xl:w-4 transition-transform duration-200" />
                     )}
                   </button>
                   
@@ -171,7 +171,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 group px-2 py-1"
+                  className="relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 group px-1 xl:px-2 py-1 text-sm xl:text-base whitespace-nowrap"
                 >
                   <span className="relative">
                     {item.name}
@@ -183,91 +183,90 @@ export default function Navbar() {
           </div>
 
           {/* Register Button - Desktop */}
-          <div className="hidden lg:flex ml-8">
+          <div className="hidden lg:flex ml-4 xl:ml-6 flex-shrink-0">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <Button
-              onClick={()=>{router.push("/RegDet")}}  className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-6">
+              onClick={()=>{router.push("/RegDet")}}  className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-4 xl:px-6 text-sm xl:text-base whitespace-nowrap">
                 Register Now
               </Button>
             </div>
           </div>
 
           {/* Mobile Menu */}
-{/* Mobile Menu */}
-<div className="lg:hidden flex items-center">
-  <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-    <SheetTrigger asChild>
-      <Button variant="ghost" size="icon" className="hover:bg-blue-50/50 transition-colors">
-        <Menu className="h-6 w-6 text-gray-700" />
-      </Button>
-    </SheetTrigger>
-    <SheetContent
-      side="right"
-      className="w-[300px] bg-white/95 backdrop-blur-xl border-l border-gray-200/50 flex flex-col"
-    >
-      {/* Add SheetTitle for accessibility - visually hidden but available for screen readers */}
-      <SheetTitle className="sr-only">
-        IEEE INSTCon 2026 Navigation Menu
-      </SheetTitle>
-      
-      {/* Gradient overlay for mobile menu */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30 pointer-events-none"></div>
-      
-      {/* Scrollable container for navigation items */}
-      <div className="flex-1 overflow-y-auto py-6">
-        <nav className="flex flex-col gap-4">
-          {navigation.map((item) => (
-            item.dropdown ? (
-              <div key={item.name} className="space-y-2">
-                <div className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                  {item.name}
-                </div>
-                <div className="pl-4 space-y-2 border-l-2 border-blue-200">
-                  {item.dropdown.map((subItem) => (
-                    <Link
-                      key={subItem.name}
-                      href={subItem.href}
-                      className="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {subItem.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-600 transition-all duration-300 py-1"
-                onClick={() => setMobileMenuOpen(false)}
+          <div className="lg:hidden flex items-center">
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="hover:bg-blue-50/50 transition-colors">
+                  <Menu className="h-6 w-6 text-gray-700" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="w-[300px] bg-white/95 backdrop-blur-xl border-l border-gray-200/50 flex flex-col"
               >
-                {item.name}
-              </Link>
-            )
-          ))}
-        </nav>
-      </div>
+                {/* Add SheetTitle for accessibility - visually hidden but available for screen readers */}
+                <SheetTitle className="sr-only">
+                  IEEE INSTCon 2026 Navigation Menu
+                </SheetTitle>
+                
+                {/* Gradient overlay for mobile menu */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30 pointer-events-none"></div>
+                
+                {/* Scrollable container for navigation items */}
+                <div className="flex-1 overflow-y-auto py-6">
+                  <nav className="flex flex-col gap-4">
+                    {navigation.map((item) => (
+                      item.dropdown ? (
+                        <div key={item.name} className="space-y-2">
+                          <div className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                            {item.name}
+                          </div>
+                          <div className="pl-4 space-y-2 border-l-2 border-blue-200">
+                            {item.dropdown.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-600 transition-all duration-300 py-1"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      )
+                    ))}
+                  </nav>
+                </div>
 
-      {/* Fixed Register Button at the bottom */}
-      <div className="pt-4 border-t border-gray-200/50 shrink-0">
-        <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-          <Button 
-            className="relative w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-800/50"
-            onClick={() => {
-              router.push("/RegDet");
-              setMobileMenuOpen(false);
-            }}
-          >
-            Register Now
-          </Button>
-        </div>
-      </div>
-    </SheetContent>
-  </Sheet>
-</div>
+                {/* Fixed Register Button at the bottom */}
+                <div className="pt-4 border-t border-gray-200/50 shrink-0">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <Button 
+                      className="relative w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-800/50"
+                      onClick={() => {
+                        router.push("/RegDet");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      Register Now
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>

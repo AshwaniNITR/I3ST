@@ -48,7 +48,7 @@ const announcements = [
   },
   {
     title: "Best Paper Award in Each Track",
-    description: "To be announced soon!",
+    description: "One best paper award in each track",
   },
   {
     title: "Journal Publication Opportunity",
@@ -284,6 +284,11 @@ const Hero = () => {
                               🚨
                             </span>
                           )}
+                          {!isJournal && (
+                            <span className="inline-flex items-center px-2.5 py-0.5 text-xs font-semibold bg-red-500 text-white rounded-full shadow-sm animate-bounce">
+                              New
+                            </span>
+                          )}
 
                           {item.title}
                         </h4>
@@ -291,27 +296,36 @@ const Hero = () => {
                         {/* Description */}
                         {!isDeadline ? (
                           <p
-                            className={`mt-1 text-sm sm:text-base text-center
+                            className={`mt-1 justify-center text-sm sm:text-base text-center
               ${isJournal ? "text-yellow-900 font-semibold" : "text-gray-700"}`}
                           >
                             {item.description}
                           </p>
                         ) : (
-                          <p className="mt-1 text-sm sm:text-base text-center">
-                            Submit your papers before the deadline:{" "}
-                            <span className="text-red-600 font-bold text-md sm:text-xl">
+                          <div className="mt-1 text-sm sm:text-base text-center">
+                           <p> Submit your papers before the deadline:{" "}</p>
+                           <p className="text-red-600 font-extrabold text-md sm:text-xl ">  
                               March 31, 2026
-                            </span>
-                          </p>
+                            </p>
+                          </div>
+                          
                         )}
 
                         {/* Badge */}
                         {isJournal && (
-                          <div className="mt-2 flex justify-center">
-                            <span className="text-xs font-bold px-2 py-1 bg-red-500 text-white rounded animate-pulse">
-                              JOURNAL PUBLICATION
-                            </span>
+                          <div className="mt-2 flex flex-row gap-4 justify-center">
+                            <button className="text-xs font-bold px-2 py-1 bg-red-500 text-white rounded ">
+                              <a href="https://ieee-ims.org/publication/ieee-tim/information-authors" target="_blank" rel="noopener noreferrer">
+                                IEEE TIM
+                              </a>
+                            </button>
+                            <button className="text-xs font-bold px-2 py-1 bg-red-500 text-white rounded ">
+                            <a href="https://ieee-ims.org/publication/ieee-ojim/author-information" target="_blank" rel="noopener noreferrer">
+                              IEEE OJIM
+                            </a>
+                          </button>
                           </div>
+                        
                         )}
                       </div>
                     );
@@ -684,84 +698,96 @@ const Hero = () => {
 
         {/* Paper Submission Section for Mobile - Adjusted for larger screens */}
         <div className="w-full flex flex-col px-4 py-8 sm:px-8 sm:py-10 gap-10">
-           <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
-              {/* Heading */}
-              <div className="text-center mb-6 sm:mb-8 flex items-center justify-center gap-2">
-                <span className="text-red-500  animate-bounce text-xl">
-                  <Megaphone size={30} />
-                </span>
-                <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
-                  Announcements
-                </h3>
-              </div>
+          <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
+            {/* Heading */}
+            <div className="text-center mb-6 sm:mb-8 flex items-center justify-center gap-2">
+              <span className="text-red-500  animate-bounce text-xl">
+                <Megaphone size={30} />
+              </span>
+              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
+                Announcements
+              </h3>
+            </div>
 
-              {/* Announcements List */}
-              <div className="overflow-hidden relative flex-1">
-                <div className="animate-scroll flex flex-col space-y-4 sm:space-y-6">
-                  {[...announcements, ...announcements].map((item, index) => {
-                    const isJournal = item.title
-                      .toLowerCase()
-                      .includes("journal");
-                    const isDeadline = item.title
-                      .toLowerCase()
-                      .includes("deadline");
+            {/* Announcements List */}
+            <div className="overflow-hidden relative flex-1">
+              <div className="animate-scroll flex flex-col space-y-4 sm:space-y-6">
+                {[...announcements, ...announcements].map((item, index) => {
+                  const isJournal = item.title
+                    .toLowerCase()
+                    .includes("journal");
+                  const isDeadline = item.title
+                    .toLowerCase()
+                    .includes("deadline");
 
-                    return (
-                      <div
-                        key={index}
-                        className={`p-4 rounded-xl border transition-all duration-300
+                  return (
+                    <div
+                      key={index}
+                      className={`p-4 rounded-xl border transition-all duration-300
               ${
                 isJournal
                   ? "bg-yellow-100 border-yellow-400 shadow-md animate-glow"
                   : "bg-white/70 border-blue-100 shadow-sm"
               }
               ${isDeadline ? "border-red-500 bg-red-100 shadow-lg animate-pulse" : ""}`}
-                      >
-                        {/* Title */}
-                        <h4
-                          className={`text-lg font-bold sm:text-xl flex items-center gap-2 justify-center
+                    >
+                      {/* Title */}
+                      <h4
+                        className={`text-md font-bold sm:text-xl flex items-center gap-2 justify-center
               ${isJournal ? "text-yellow-800" : "text-blue-700"}`}
-                        >
-                          {isJournal && (
-                            <span className="text-red-500 animate-bounce text-lg">
-                              🚨
+                      >
+                        {isJournal && (
+                          <span className="text-red-500 animate-bounce text-lg">
+                            🚨
+                          </span>
+                        )}
+                         {!isJournal && (
+                            <span className="inline-flex items-center px-2.5 py-0.5 text-xs font-semibold bg-red-500 text-white rounded-full shadow-sm animate-bounce">
+                              New
                             </span>
                           )}
 
-                          {item.title}
-                        </h4>
+                        {item.title}
+                      </h4>
 
-                        {/* Description */}
-                        {!isDeadline ? (
-                          <p
-                            className={`mt-1 text-sm sm:text-base text-center
+                      {/* Description */}
+                      {!isDeadline ? (
+                        <p
+                          className={`mt-1 justify-center text-sm sm:text-base text-center
               ${isJournal ? "text-yellow-900 font-semibold" : "text-gray-700"}`}
-                          >
-                            {item.description}
-                          </p>
-                        ) : (
-                          <p className="mt-1 text-sm sm:text-base text-center">
-                            Submit your papers before the deadline:{" "}
-                            <span className="text-red-600 font-bold text-md sm:text-xl">
+                        >
+                          {item.description}
+                        </p>
+                      ) : (
+                       <div className="mt-1 text-sm sm:text-base text-center">
+                           <p> Submit your papers before the deadline:{" "}</p>
+                           <p className="text-red-600 font-extrabold text-md sm:text-xl ">  
                               March 31, 2026
-                            </span>
-                          </p>
-                        )}
-
-                        {/* Badge */}
-                        {isJournal && (
-                          <div className="mt-2 flex justify-center">
-                            <span className="text-xs font-bold px-2 py-1 bg-red-500 text-white rounded animate-pulse">
-                              JOURNAL PUBLICATION
-                            </span>
+                            </p>
                           </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
+                      )}
+
+                      {/* Badge */}
+                      {isJournal && (
+                         <div className="mt-2 flex flex-row gap-4 justify-center">
+                            <button className="text-xs font-bold px-2 py-1 bg-red-500 text-white rounded ">
+                              <a href="https://ieee-ims.org/publication/ieee-tim/information-authors" target="_blank" rel="noopener noreferrer">
+                                IEEE TIM
+                              </a>
+                            </button>
+                            <button className="text-xs font-bold px-2 py-1 bg-red-500 text-white rounded ">
+                            <a href="https://ieee-ims.org/publication/ieee-ojim/author-information" target="_blank" rel="noopener noreferrer">
+                              IEEE OJIM
+                            </a>
+                          </button>
+                          </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
+          </div>
           <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8">
             {/* Live badge */}
             <div className="flex justify-center mb-4">
