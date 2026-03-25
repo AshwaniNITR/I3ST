@@ -176,6 +176,11 @@ export default function Navbar() {
                   href={item.href}
                   className="relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 group px-1 xl:px-2 py-1 text-sm xl:text-base whitespace-nowrap"
                 >
+                  {item.name==="Announcements" ? (
+                    <span className="absolute -top-2 animate-pulse -right-2 inline-flex items-center px-1.5 py-0.5 text-xs font-semibold bg-red-500 text-white rounded-full shadow-sm">
+                      New
+                    </span>
+                  ) : null}
                   <span className="relative">
                     {item.name}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
