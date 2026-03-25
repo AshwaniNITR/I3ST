@@ -152,7 +152,7 @@ const Page = () => {
     <div className="relative min-h-screen">
       <CombinedBackground/>
 
-      <section className="relative py-8 md:py-12 lg:py-16 xl:py-20 flex flex-col items-center justify-center">
+      <section className="relative py-20 md:py-12 lg:py-16 xl:py-20 flex flex-col items-center justify-center">
         <div className="container mx-auto px-4 lg:px-8">
           {/* Modern Header */}
           <div className="mb-8 md:mb-10 lg:mb-12 text-center">

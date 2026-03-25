@@ -605,8 +605,8 @@ export const advisory: Committee[] = [
       },
       {
         id:38,
-        name:"Sreelal S. Pillai",
-        role:"ISRO",
+        name:"Dr. Sreelal S. Pillai",
+        role:"Indian Space Research Organisation",
         imageUrl:"/Sreelal.jpeg"
       }
     ],
@@ -965,8 +965,8 @@ export const speakers:SpeakerCom[]=[
       },
         {
         id:9,
-        name:"Sreelal S. Pillai",
-        role:"ISRO",
+        name:"Dr. Sreelal S. Pillai",
+        role:"Indian Space Research Organisation",
         imageUrl:"/Sreelal.jpeg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
