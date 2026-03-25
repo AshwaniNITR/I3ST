@@ -178,7 +178,7 @@ export default function Navbar() {
                 >
                   {item.name==="Announcements" ? (
                     <span className="absolute -top-2 animate-pulse -right-2 inline-flex items-center px-1.5 py-0.5 text-xs font-semibold bg-red-500 text-white rounded-full shadow-sm">
-                      New
+                    New
                     </span>
                   ) : null}
                   <span className="relative">
