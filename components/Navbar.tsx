@@ -195,7 +195,9 @@ export default function Navbar() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <Button
-              onClick={()=>{router.push("/RegDet")}}  className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-4 xl:px-6 text-sm xl:text-base whitespace-nowrap">
+              onClick={()=>{router.push("/RegDet")}}  className="relative bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-800/50 px-4 xl:px-6 text-sm xl:text-base whitespace-nowrap   [@media(min-width:1024px)_and_(max-width:1040px)]:px-2
+  [@media(min-width:1024px)_and_(max-width:1040px)]:text-xs
+  [@media(min-width:1024px)_and_(max-width:1040px)]:scale-90">
                 Register Now
               </Button>
             </div>
