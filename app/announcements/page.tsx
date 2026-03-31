@@ -27,7 +27,7 @@ const FlippableCard = ({ announcement, index, isDeadlinePassed }) => {
         {/* Front of card - Title only */}
         <div
           className={`absolute w-full h-full rounded-xl p-6 backface-hidden
-            ${isJournal ? "bg-yellow-100" : (isDeadline && isDeadlinePassed) ? "bg-green-100" : "bg-white/90"}
+            ${isJournal ? "bg-yellow-100" : (isDeadline && isDeadlinePassed) ? "bg-green-100":(isDeadline && !isDeadlinePassed) ? "bg-red-100" : "bg-white/90"}
             border ${isJournal ? "border-yellow-400" : (isDeadline && isDeadlinePassed) ? "border-green-500":(isDeadline && !isDeadlinePassed) ? "border-red-500" : "border-blue-100"}
             shadow-lg hover:shadow-xl transition-shadow duration-300
             flex flex-col items-center justify-center`}
