@@ -58,6 +58,13 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [animationStates, setAnimationStates] = useState({
+    navbar: false,
+    logo: false,
+    navItems: [] as boolean[],
+    registerBtn: false,
+    mobileBtn: false,
+  });
   const dropdownRefs = useRef({});
   const router = useRouter();
 
@@ -69,6 +76,40 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Staggered entrance animation
+  useEffect(() => {
+    // First, navbar background appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, navbar: true }));
+    }, 50);
+
+    // Then logo appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, logo: true }));
+    }, 150);
+
+    // Then each nav item appears one by one
+    navigation.forEach((_, index) => {
+      setTimeout(() => {
+        setAnimationStates(prev => {
+          const newNavItems = [...prev.navItems];
+          newNavItems[index] = true;
+          return { ...prev, navItems: newNavItems };
+        });
+      }, 250 + index * 80);
+    });
+
+    // Then register button appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, registerBtn: true }));
+    }, 250 + navigation.length * 80 + 50);
+
+    // Finally mobile menu button appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, mobileBtn: true }));
+    }, 250 + navigation.length * 80 + 100);
   }, []);
 
   // Close dropdown when clicking outside
@@ -101,7 +142,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 top-0 left-0 transition-all duration-300 ${
+      className={`fixed w-full z-50 top-0 left-0 transition-all duration-700 ease-out ${
+        animationStates.navbar
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0"
+      } ${
         scrolled
           ? "bg-white/80 backdrop-blur-xl shadow-lg border-b border-gray-200/50"
           : "bg-white/70 backdrop-blur-md border-b border-gray-200/30"
@@ -113,7 +158,11 @@ export default function Navbar() {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-16">
           {/* Logo - Left */}
-          <div className="flex-shrink-0 mr-4 md:mr-6">
+          <div className={`flex-shrink-0 mr-4 md:mr-6 transition-all duration-500 ease-out ${
+            animationStates.logo
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-5"
+          }`}>
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="relative">
                 {/* Logo Container */}
@@ -138,11 +187,15 @@ export default function Navbar() {
 
           {/* Center Navigation - Desktop with responsive breakpoints */}
           <div className="hidden lg:flex items-center justify-center flex-1 space-x-2 xl:space-x-3 2xl:space-x-4">
-            {navigation.map((item) =>
+            {navigation.map((item, idx) =>
               item.dropdown ? (
                 <div
                   key={item.name}
-                  className="relative"
+                  className={`relative transition-all duration-500 ease-out ${
+                    animationStates.navItems[idx]
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 -translate-y-4"
+                  }`}
                   ref={(el) => {
                     dropdownRefs.current[item.name] = el;
                   }}
@@ -184,7 +237,11 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 group px-1 xl:px-2 py-1 text-sm xl:text-base whitespace-nowrap"
+                  className={`relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 group px-1 xl:px-2 py-1 text-sm xl:text-base whitespace-nowrap transition-all duration-500 ease-out ${
+                    animationStates.navItems[idx]
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 -translate-y-4"
+                  }`}
                 >
                   {item.name === "Announcements" ? (
                     <span className="absolute -top-2 animate-pulse -right-2 inline-flex items-center px-1.5 py-0.5 text-xs font-semibold bg-red-500 text-white rounded-full shadow-sm">
@@ -201,7 +258,11 @@ export default function Navbar() {
           </div>
 
           {/* Register Button - Desktop */}
-          <div className="hidden lg:flex ml-4 xl:ml-6 flex-shrink-0">
+          <div className={`hidden lg:flex ml-4 xl:ml-6 flex-shrink-0 transition-all duration-500 ease-out ${
+            animationStates.registerBtn
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-5"
+          }`}>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <Button
@@ -218,7 +279,11 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu */}
-          <div className="lg:hidden flex items-center">
+          <div className={`lg:hidden flex items-center transition-all duration-500 ease-out ${
+            animationStates.mobileBtn
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-90"
+          }`}>
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button

@@ -1,39 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import CombinedBackground from "../../components/CombinedBackground";
 import { Calendar, Trophy, Plane, FileText } from "lucide-react";
 
-const announcements = [
-  {
-    title: "⏳ Deadline Approaching!",
-    description: "Submit your papers before the deadline: MARCH 31, 2026.",
-    icon: Calendar,
-    color: "from-orange-500 to-red-500",
-  },
-  {
-    title: "Travel Grants",
-    description:
-      "Limited Travel Grants will be awarded to the selected student presenters.",
-    icon: Plane,
-    color: "from-green-500 to-emerald-500",
-  },
-  {
-    title: "Best Paper Award in Each Track",
-    description: "One best paper award in each track",
-    icon: Trophy,
-    color: "from-yellow-500 to-amber-500",
-  },
-  {
-    title: "Journal Publication Opportunity",
-    description:
-      "Authors of papers accepted and presented at INSTCon 2026 may submit technically extended versions of their work to IEEE Transactions on Instrumentation and Measurement (TIM) and IEEE Open Journal of Instrumentation and Measurement (OJIM), in accordance with the journals' policies for extended versions of conference papers. All such submissions will be handled as regular journal submissions and will undergo the standard peer-review process.",
-    icon: FileText,
-    color: "from-blue-500 to-indigo-500",
-  },
-];
 
-const FlippableCard = ({ announcement, index }) => {
+
+const FlippableCard = ({ announcement, index, isDeadlinePassed }) => {
+  
   const [isFlipped, setIsFlipped] = useState(false);
   const isJournal = announcement.title.toLowerCase().includes("journal");
   const isDeadline = announcement.title.toLowerCase().includes("deadline");
@@ -53,17 +27,18 @@ const FlippableCard = ({ announcement, index }) => {
         {/* Front of card - Title only */}
         <div
           className={`absolute w-full h-full rounded-xl p-6 backface-hidden
-            ${isJournal ? "bg-yellow-100" : isDeadline ? "bg-red-100" : "bg-white/90"}
-            border ${isJournal ? "border-yellow-400" : isDeadline ? "border-red-500" : "border-blue-100"}
+            ${isJournal ? "bg-yellow-100" : (isDeadline && isDeadlinePassed) ? "bg-green-100" : "bg-white/90"}
+            border ${isJournal ? "border-yellow-400" : (isDeadline && isDeadlinePassed) ? "border-green-500":(isDeadline && !isDeadlinePassed) ? "border-red-500" : "border-blue-100"}
             shadow-lg hover:shadow-xl transition-shadow duration-300
             flex flex-col items-center justify-center`}
         >
           {/* New Badge */}
-          {!isJournal && !isDeadline && (
+          {!isJournal && (!isDeadline || isDeadlinePassed) && (
             <span className="absolute top-4 right-4 inline-flex items-center px-2.5 py-0.5 text-xs font-semibold bg-red-500 text-white rounded-full shadow-sm">
               New
             </span>
           )}
+          
           
           {/* Icon */}
           <div className={`mb-4 p-3 rounded-full bg-gradient-to-r ${announcement.color} bg-opacity-20`}>
@@ -73,7 +48,7 @@ const FlippableCard = ({ announcement, index }) => {
           {/* Title */}
           <h4
             className={`text-xl font-bold text-center
-              ${isJournal ? "text-yellow-800" : isDeadline ? "text-red-700" : "text-blue-700"}`}
+              ${isJournal ? "text-yellow-800" : (isDeadline && !isDeadlinePassed) ? "text-red-700": (isDeadline && isDeadlinePassed) ? "text-green-700" :  "text-blue-700"}`}
           >
             {announcement.title}
           </h4>
@@ -85,8 +60,8 @@ const FlippableCard = ({ announcement, index }) => {
         {/* Back of card - Description */}
         <div
           className={`absolute w-full h-full rounded-xl p-6 backface-hidden
-            ${isJournal ? "bg-yellow-100" : isDeadline ? "bg-red-100" : "bg-white/90"}
-            border ${isJournal ? "border-yellow-400" : isDeadline ? "border-red-500" : "border-blue-100"}
+            ${isJournal ? "bg-yellow-100" : (isDeadline && isDeadlinePassed)  ? "bg-green-100" : (isDeadline && !isDeadlinePassed) ? "bg-red-100" : "bg-white/90"}
+            border ${isJournal ? "border-yellow-400" : (isDeadline && isDeadlinePassed) ? "border-green-500":(isDeadline && !isDeadlinePassed) ? "border-red-500" : "border-blue-100"}
             shadow-lg
             flex flex-col items-center justify-center
             overflow-y-auto`}
@@ -105,13 +80,26 @@ const FlippableCard = ({ announcement, index }) => {
             </>
           ) : (
             <div className="text-center">
-              <Calendar className="w-10 h-10 text-red-600 mx-auto mb-3" />
+              <Calendar className={`w-10 h-10 ${isDeadlinePassed ? "text-green-600" : "text-red-600"} mx-auto mb-3`}   />
               <p className="text-sm sm:text-base text-gray-700 mb-2">
                 Submit your papers before the deadline:
               </p>
-              <p className="text-red-600 font-extrabold text-lg sm:text-xl">
-                March 31, 2026
-              </p>
+              {isDeadlinePassed ? (
+                <>
+                  <p className="text-red-600 line-through font-extrabold text-lg sm:text-xl">
+                  March 31, 2026
+                </p>
+                  <p className="text-green-600 font-extrabold text-lg sm:text-xl">
+                  April 8, 2026
+                </p>
+                </>
+              
+                
+              ) : (
+                <p className="text-red-600 font-extrabold text-lg sm:text-xl">
+                  March 31, 2026
+                </p>
+              )}
             </div>
           )}
 
@@ -148,6 +136,50 @@ const FlippableCard = ({ announcement, index }) => {
 };
 
 const Page = () => {
+  const announcements = [
+  {
+    title: "⏳ Deadline Approaching!",
+    description: "Submit your papers before the deadline: MARCH 31, 2026.",
+    icon: Calendar,
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    title: "Travel Grants",
+    description:
+      "Limited Travel Grants will be awarded to the selected student presenters.",
+    icon: Plane,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "Best Paper Award in Each Track",
+    description: "One best paper award in each track",
+    icon: Trophy,
+    color: "from-yellow-500 to-amber-500",
+  },
+  {
+    title: "Journal Publication Opportunity",
+    description:
+      "Authors of papers accepted and presented at INSTCon 2026 may submit technically extended versions of their work to IEEE Transactions on Instrumentation and Measurement (TIM) and IEEE Open Journal of Instrumentation and Measurement (OJIM), in accordance with the journals' policies for extended versions of conference papers. All such submissions will be handled as regular journal submissions and will undergo the standard peer-review process.",
+    icon: FileText,
+    color: "from-blue-500 to-indigo-500",
+  },
+];
+     const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNow(new Date());
+    }, 1000); // update every second
+
+    return () => clearInterval(interval);
+  }, []);
+  const targetTime = new Date("2026-03-31T23:59:00");
+  const isDeadlinePassed = now >= targetTime;
+  if(isDeadlinePassed){
+     announcements[0].title="⏳ Deadline Has Been Extended!";
+     announcements[0].description="Submit your papers before the extended deadline: APRIL 8, 2026.";
+     announcements[0].color="from-green-500 to-emerald-500";
+  }
   return (
     <div className="relative min-h-screen">
       <CombinedBackground/>
@@ -167,7 +199,7 @@ const Page = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
               {announcements.map((announcement, index) => (
-                <FlippableCard key={index} announcement={announcement} index={index} />
+                <FlippableCard key={index} announcement={announcement} index={index} isDeadlinePassed={isDeadlinePassed} />
               ))}
             </div>
 

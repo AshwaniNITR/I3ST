@@ -35,8 +35,9 @@ const SimpleCarousel = ({ images }) => {
     </div>
   );
 };
-
-export const announcements = [
+const Hero = () => {
+  const [showModal, setShowModal] = useState(false);
+   const announcements = [
   {
     title: "⏳ Deadline Approaching!",
     description: "Submit your papers before the deadline: MARCH 31, 2026.",
@@ -56,8 +57,34 @@ export const announcements = [
       "Authors of papers accepted and presented at INSTCon 2026 may submit technically extended versions of their work to IEEE Transactions on Instrumentation and Measurement (TIM) and IEEE Open Journal of Instrumentation and Measurement (OJIM), in accordance with the journals’ policies for extended versions of conference papers (https://ieee-ims.org/publication/ieee-tim/information-authors, https://ieee-ims.org/publication/ieee-ojim/author-information). All such submissions will be handled as regular journal submissions and will undergo the standard peer-review process.",
   },
 ];
-const Hero = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [animationStates, setAnimationStates] = useState({
+    desktopLayout: false,
+    carousel: false,
+    content: false,
+    logo: false,
+    text: false,
+    dateBadge: false,
+    locationSection: false,
+    bottomImages: [] as boolean[],
+    announcementsSection: false,
+    submissionSection: false,
+  });
+   const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNow(new Date());
+    }, 1000); // update every second
+
+    return () => clearInterval(interval);
+  }, []);
+  const targetTime = new Date("2026-03-31T23:59:00");
+  const isDeadlinePassed = now >= targetTime;
+  if(isDeadlinePassed){
+     announcements[0].title="⏳ Deadline Has Been Extended!";
+     announcements[0].description="Submit your papers before the extended deadline: APRIL 8, 2026.";
+  }
+  
   const images = [
     "/nitfrontgate3.jpg",
     "/nitmainbuilding2.jpg",
@@ -72,6 +99,7 @@ const Hero = () => {
     "/ieeerklsub-removebg-preview.png",
     "https://res.cloudinary.com/dd11bvhdi/image/upload/v1741620262/logo_I3ST_camy9q.jpg",
   ];
+  
   useEffect(() => {
     const hasSeen = localStorage.getItem("seenPopup");
 
@@ -85,19 +113,89 @@ const Hero = () => {
     }
   }, []);
 
+  // Staggered entrance animation for desktop layout
+  useEffect(() => {
+    // Overall layout appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, desktopLayout: true }));
+    }, 100);
+    
+    // Carousel appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, carousel: true }));
+    }, 200);
+    
+    // Content section appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, content: true }));
+    }, 300);
+    
+    // Logo appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, logo: true }));
+    }, 400);
+    
+    // Text appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, text: true }));
+    }, 500);
+    
+    // Date badge appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, dateBadge: true }));
+    }, 600);
+    
+    // Location section appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, locationSection: true }));
+    }, 700);
+    
+    // Each bottom image appears one by one
+    bottomImages.forEach((_, index) => {
+      setTimeout(() => {
+        setAnimationStates(prev => {
+          const newImages = [...prev.bottomImages];
+          newImages[index] = true;
+          return { ...prev, bottomImages: newImages };
+        });
+      }, 800 + index * 120);
+    });
+    
+    // Announcements section appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, announcementsSection: true }));
+    }, 800 + bottomImages.length * 120 + 50);
+    
+    // Submission section appears
+    setTimeout(() => {
+      setAnimationStates(prev => ({ ...prev, submissionSection: true }));
+    }, 800 + bottomImages.length * 120 + 150);
+    
+  }, []);
+
   return (
     <div id="home" className="relative overflow-hidden">
       {/* Desktop Layout (for larger screens) */}
-      <div className="hidden xl:block">
+      <div className={`hidden xl:block transition-all duration-700 ease-out ${
+        animationStates.desktopLayout ? "opacity-100" : "opacity-0"
+      }`}>
         {/* Your existing desktop layout */}
         <div className="flex h-[700px]">
           {/* Left side - Carousel - 60% width */}
-          <section className="w-[65%] h-full">
+          <section className={`w-[65%] h-full transition-all duration-700 ease-out ${
+            animationStates.carousel 
+              ? "opacity-100 translate-x-0" 
+              : "opacity-0 -translate-x-10"
+          }`}>
             <SimpleCarousel images={images} />
           </section>
 
           {/* Right side - Content - 40% width */}
-          <section className="relative w-[35%] h-full bg-gradient-to-br ">
+          <section className={`relative w-[35%] h-full bg-gradient-to-br transition-all duration-700 ease-out ${
+            animationStates.content 
+              ? "opacity-100 translate-x-0" 
+              : "opacity-0 translate-x-10"
+          }`}>
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <div className="absolute top-20 right-10 w-72 h-72 rounded-full blur-3xl animate-pulse"></div>
@@ -110,7 +208,11 @@ const Hero = () => {
             {/* Content Section - Adjusted spacing to push content down */}
             <div className="flex flex-col justify-start items-center w-full h-full pt-16 pb-2 relative z-10">
               {/* NIT Logo - Enlarged and reduced margin */}
-              <div className="flex justify-center items-center w-full mb-0">
+              <div className={`flex justify-center items-center w-full mb-0 transition-all duration-500 ease-out ${
+                animationStates.logo 
+                  ? "opacity-100 scale-100" 
+                  : "opacity-0 scale-90"
+              }`}>
                 <div className="relative">
                   <div className="relative w-64 h-44 rounded-2xl transition-all duration-500 overflow-hidden">
                     <img
@@ -123,7 +225,11 @@ const Hero = () => {
               </div>
 
               {/* Text content - Reduced spacing */}
-              <div className="text-center w-full px-6 space-y-2">
+              <div className={`text-center w-full px-6 space-y-2 transition-all duration-500 ease-out ${
+                animationStates.text 
+                  ? "opacity-100 translate-y-0" 
+                  : "opacity-0 translate-y-5"
+              }`}>
                 <div className="space-y-2">
                   <p className="text-xl lg:text-2xl text-blue-900 font-extrabold leading-tight tracking-tight">
                     1st IEEE International Conference on Instrumentation
@@ -134,7 +240,11 @@ const Hero = () => {
                 </div>
 
                 {/* Date badge - Reduced margin */}
-                <div className="inline-block relative group mt-2">
+                <div className={`inline-block relative group mt-2 transition-all duration-500 ease-out delay-100 ${
+                  animationStates.dateBadge 
+                    ? "opacity-100 scale-100" 
+                    : "opacity-0 scale-95"
+                }`}>
                   <div className="relative bg-gradient-to-r backdrop-blur-sm px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg">
                     <div className="flex items-center justify-center gap-3">
                       <svg
@@ -158,7 +268,11 @@ const Hero = () => {
                 </div>
 
                 {/* Location section with NIT logo positioned on top */}
-                <div className="relative group mt-8">
+                <div className={`relative group mt-8 transition-all duration-500 ease-out delay-200 ${
+                  animationStates.locationSection 
+                    ? "opacity-100 translate-y-0" 
+                    : "opacity-0 translate-y-5"
+                }`}>
                   {/* NIT Logo positioned on top of the department div */}
                   <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-10">
                     <div className="w-32 h-32 rounded-full p-2">
@@ -220,7 +334,15 @@ const Hero = () => {
           <div className="w-full px-12">
             <div className="flex justify-center items-center gap-8 w-full">
               {bottomImages.map((src, index) => (
-                <div key={index} className="relative group flex-1">
+                <div 
+                  key={index} 
+                  className={`relative group flex-1 transition-all duration-500 ease-out ${
+                    animationStates.bottomImages[index]
+                      ? "opacity-100 translate-y-0 scale-100"
+                      : "opacity-0 translate-y-8 scale-95"
+                  }`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
                   <div className="relative overflow-hidden flex justify-center items-center h-36">
                     <img
                       src={src}
@@ -241,7 +363,11 @@ const Hero = () => {
         {/* Paper Submission Section */}
         <div className="w-full max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row w-full py-8 items-start gap-6 lg:gap-10">
-            <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col">
+            <div className={`relative bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 rounded-2xl p-6 shadow-lg sm:max-w-lg sm:mx-auto sm:p-8 h-[450px] flex flex-col transition-all duration-700 ease-out ${
+              animationStates.announcementsSection
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-10"
+            }`}>
               {/* Heading */}
               <div className="text-center mb-6 sm:mb-8 flex items-center justify-center gap-2">
                 <span className="text-red-500  animate-bounce text-xl">
@@ -303,10 +429,24 @@ const Hero = () => {
                           </p>
                         ) : (
                           <div className="mt-1 text-sm sm:text-base text-center">
-                           <p> Submit your papers before the deadline:{" "}</p>
+                          {!isDeadlinePassed ?(
+                            <>
+                             <p> Submit your papers before the deadline:{" "}</p>
                            <p className="text-red-600 font-extrabold text-md sm:text-xl ">  
                               March 31, 2026
                             </p>
+                            </>
+                          ):(
+                            <>
+                             <p> Submit your papers before the deadline:{" "}</p>
+                           <p className="text-red-600 line-through font-extrabold text-md sm:text-xl ">  
+                              March 31, 2026
+                            </p>
+                             <p className="text-green-600  font-extrabold text-md sm:text-xl ">  
+                              April 8, 2026
+                            </p>
+                            </>
+                          )}
                           </div>
                           
                         )}
@@ -333,7 +473,11 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="relative overflow-hidden rounded-2xl mx-auto max-w-4xl h-full flex flex-col">
+            <div className={`relative overflow-hidden rounded-2xl mx-auto max-w-4xl h-full flex flex-col transition-all duration-700 ease-out ${
+              animationStates.submissionSection
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-10"
+            }`}>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-10"></div>
               <div className="relative bg-gradient-to-br backdrop-blur-lg border-2 border-transparent bg-clip-padding rounded-2xl p-1 shadow-xl">
                 <div className="relative bg-gradient-to-r from-blue-50 via-white to-purple-50 rounded-xl p-8 text-center">
@@ -760,10 +904,24 @@ const Hero = () => {
                         </p>
                       ) : (
                        <div className="mt-1 text-sm sm:text-base text-center">
-                           <p> Submit your papers before the deadline:{" "}</p>
+                          {!isDeadlinePassed ?(
+                            <>
+                             <p> Submit your papers before the deadline:{" "}</p>
                            <p className="text-red-600 font-extrabold text-md sm:text-xl ">  
                               March 31, 2026
                             </p>
+                            </>
+                          ):(
+                            <>
+                             <p> Submit your papers before the deadline:{" "}</p>
+                           <p className="text-red-600 line-through font-extrabold text-md sm:text-xl ">  
+                              March 31, 2026
+                            </p>
+                             <p className="text-green-600  font-extrabold text-md sm:text-xl ">  
+                              April 8, 2026
+                            </p>
+                            </>
+                          )}
                           </div>
                       )}
 
