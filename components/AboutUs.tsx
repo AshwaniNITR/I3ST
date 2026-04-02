@@ -135,7 +135,7 @@ const paragraphs = [
                   </div>
 
                   <div
-                    style={{ backgroundImage: 'url(/newFlyer.png)', backgroundSize: 'contain' }}
+                    style={{ backgroundImage: 'url(/nitfinalimg.jpeg)', backgroundSize: 'contain' }}
                     className="w-full h-full bg-gray-50 flex items-center justify-center p-4"
                   >
                     <div className="text-center">
