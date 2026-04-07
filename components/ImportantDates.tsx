@@ -172,7 +172,7 @@ export default function ImportantDatesSlider() {
                         isDeadlinePassed &&
                         item.title === "Paper Submission Ends"
                       ) {
-                        effectiveDate = new Date("2026-04-08T23:59:59+05:30");
+                        effectiveDate = new Date("2026-04-10T23:59:59+05:30");
                       }
 
                       return (
@@ -221,7 +221,7 @@ export default function ImportantDatesSlider() {
                                 31 Mar, 2026
                               </span>
                               <span className="text-green-600 font-bold">
-                                April 8, 2026
+                                April 10, 2026 <span className=" text-red-500 font-extrabold">(Hard Deadline)</span>
                               </span>
                             </>
                           );

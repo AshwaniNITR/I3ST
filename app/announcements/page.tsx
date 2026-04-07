@@ -90,7 +90,7 @@ const FlippableCard = ({ announcement, index, isDeadlinePassed }) => {
                   March 31, 2026
                 </p>
                   <p className="text-green-600 font-extrabold text-lg sm:text-xl">
-                  April 8, 2026
+                  April 10, 2026 <span className=" text-red-500 font-extrabold ">(Hard Deadline)</span>
                 </p>
                 </>
               
