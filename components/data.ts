@@ -898,30 +898,6 @@ export const speakers:SpeakerCom[]=[
     {
     title: "Our Speakers",
     members: [
-       {
-        id: 1,
-        name: "Prof. Karabi Biswas",
-        role: "Indian Institute of Technology, Kharagpur",
-        imageUrl: "/karabi-biswas-34.jpg",
-        talkTitle:"To be Updated Soon",
-        abstract:"To be Updated Soon"
-      },
-       {
-        id: 2,
-        name: "Dr. Ridhi Ghosh",
-        role: "Senior Scientist, Hitachi Energy, Sweden",
-        imageUrl: "/RidhiGhosh.jpg",
-        talkTitle:"To be Updated Soon",
-        abstract:"To be Updated Soon"
-      },
-      {
-        id:3,
-        name:"Prof. Soumyabrata Dev",
-        role:"University College Dublin, Ireland",
-        imageUrl:"/SoumyabrataDev2.jpeg",
-        talkTitle:"To be Updated Soon",
-        abstract:"To be Updated Soon"
-      },
       {
         id:4,
         name:"Prof. Subhas C.Mukhopadhyay",
@@ -930,27 +906,11 @@ export const speakers:SpeakerCom[]=[
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
       },
-      {
-        id:5,
-        name:"Prof.  Neelam Sinha",
-        role:"Indian Institute of Science (IISc), Bangalore",
-        imageUrl:"/NeelamSinha.jpg",
-        talkTitle:"To be Updated Soon",
-        abstract:"To be Updated Soon"
-      },
-      {
+        {
         id:6,
         name:"Prof. Amitava Chatterjee",
         role:"Jadavpur University, India",
         imageUrl:"/advisory/amitava-chatterjee-7.jpg",
-        talkTitle:"To be Updated Soon",
-        abstract:"To be Updated Soon"
-      },
-      {
-        id:7,
-        name:"Dr. Hemant Kumar Rath",
-        role:"Principal Scientist, TCS Research and Innovation",
-        imageUrl:"/HemantKumarRath.jpg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
       },
@@ -963,6 +923,51 @@ export const speakers:SpeakerCom[]=[
         talkTitle:"Energy-Efficient Edge-Intelligent IoT Sensor Systems: From Sensor System Integration to Real-World Deployment",
         abstract:"Recent advances in semiconductor technologies — including MEMS-based sensing, ultra-low-power electronics, highly integrated microcontrollers and system-on-chip platforms, embedded signal processing, next generation wireless networks, and machine learning — have fundamentally expanded the design space for autonomous IoT sensor systems. In combination with long-range low-power wireless communication, these technologies enable scalable and energy-efficient sensing solutions across consumer, biomedical, sports, and industrial domains. This invited talk presents current research and development efforts toward application-driven IoT sensor systems designed to address concrete real-world challenges. A central focus lies on the tight integration of state-of-the-art sensor technologies with embedded edge intelligence. Local feature extraction, anomaly detection, and aggressive data reduction strategies significantly decrease communication load and power consumption, enabling multi-year or even fully energy-autonomous operation using batteries and energy harvesting concepts. System-level miniaturization and deep integration of sensors into materials and structural components are discussed as key enablers for unobtrusive and application-specific deployments. Wireless connectivity serves not only as a communication interface but as a system-level design constraint shaping architecture, energy management, and network topology. In particular, LoRa-based networks facilitate distributed deployments of autonomous smart sensor nodes over kilometer-scale distances, even in infrastructure-limited rural and urban environments.The presentation concludes with experimental results and field experiences from deployed systems in natural disaster monitoring, biomedical and sports analytics, and industrial condition monitoring, highlighting both technological achievements and practical lessons learned."
       },
+       {
+        id:10,
+        name:"Massimo Alioto",
+        role:"National University of Singapore",
+        imageUrl:"/MassimoAloto.jpg",
+        biosketch:"Massimo Alioto received the Laurea (MSc) degree in Electronics Engineering and the Ph.D. degree in Electrical Engineering from the University of Catania (Italy) in 1997 and 2001, respectively. He is a Professor at the Department of Electrical and Computer Engineering, National University of Singapore where he leads the Green IC group, and is the Director of the Integrated Circuits and Embedded Systems area and the FD-FAbrICS industry-sponsored lab. Previously, he held positions at the University of Siena, Intel Labs – CRL (2013), University of Michigan Ann Arbor (2011-2012), BWRC – University of California, Berkeley (2009-2011), and EPFL (Switzerland, 2007).He has authored or co-authored more than 350 publications on journals and conference proceedings. He is co-author of five books, In-Memory and Immersed-in-Logic Primitives for Ubiquitous Hardware Security (Springer, 2023), Adaptive Digital Circuits for Power-Performance Range beyond Wide Voltage Scaling (Springer, 2020), Enabling the Internet of Things – from Circuits to Systems (Springer, 2017), Flip-Flop Design in Nanometer CMOS – from High Speed to Low Energy (Springer, 2015) and Model and Design of Bipolar and MOS Current-Mode Logic: CML, ECL and SCL Digital Circuits (Springer, 2005). His primary research interests include widely energy-scalable integrated systems, self-powered wireless integrated systems, near-threshold circuits for green computing, data-driven integrated systems, hardware security, and emerging technologies, among the others.He was the Editor in Chief of the IEEE Transactions on VLSI Systems (2019-2022), and the Deputy Editor in Chief of the IEEE Journal on Emerging and Selected Topics in Circuits and Systems (2018). He is the Chair of the Distinguished Lecturer Program for the IEEE Circuits and Systems Society (2023-2024), and was Distinguished Lecturer for the same Society (2022-2023, 2009-2010) and the Solid-State Circuits Society (2020-2021). He was also member of the Board of Governors of the IEEE Circuits and Systems Society (2015-2020), and Chair of the “VLSI Systems and Applications” Technical Committee (2010-2012). In the last five years, he has given 50+ invited talks in top conferences, universities and leading semiconductor companies. His research has received various best paper awards (e.g., ISSCC, ICECS), public recognition from industry (e.g., among 10 technology highlights from TSMC in 2020), and his group has been recognized as top contributor at the VLSI Symposium on Circuits (2023). He served as Guest Editor of several IEEE journal special issues (e.g., JSSC, TCAS-I, TCAS-II, JETCAS). He also serves or has served as Associate Editor of a number of IEEE and ACM journals. He is/was Technical Program Chair (e.g., ISCAS, SOCC, ICECS, NEWCAS, APCCAS), Track Chair in a number of conferences (ICCD, ISCAS, ICECS, VLSI-SoC, APCCAS, ICM), ISSCC and ASSCC subcommittee member. Prof. Alioto is an IEEE Fellow.",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+       {
+        id: 1,
+        name: "Prof. Karabi Biswas",
+        role: "Indian Institute of Technology, Kharagpur",
+        imageUrl: "/karabi-biswas-34.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+     
+      {
+        id:3,
+        name:"Prof. Soumyabrata Dev",
+        role:"University College Dublin, Ireland",
+        imageUrl:"/SoumyabrataDev2.jpeg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+      
+      {
+        id:5,
+        name:"Prof.  Neelam Sinha",
+        role:"Indian Institute of Science (IISc), Bangalore",
+        imageUrl:"/NeelamSinha.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+    
+      {
+        id:7,
+        name:"Dr. Hemant Kumar Rath",
+        role:"Principal Scientist, TCS Research and Innovation",
+        imageUrl:"/HemantKumarRath.jpg",
+        talkTitle:"To be Updated Soon",
+        abstract:"To be Updated Soon"
+      },
+      
         {
         id:9,
         name:"Dr. Sreelal S. Pillai",
@@ -971,15 +976,15 @@ export const speakers:SpeakerCom[]=[
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
       },
-      {
-        id:10,
-        name:"Massimo Alioto",
-        role:"National University of Singapore",
-        imageUrl:"/MassimoAloto.jpg",
-        biosketch:"Massimo Alioto received the Laurea (MSc) degree in Electronics Engineering and the Ph.D. degree in Electrical Engineering from the University of Catania (Italy) in 1997 and 2001, respectively. He is a Professor at the Department of Electrical and Computer Engineering, National University of Singapore where he leads the Green IC group, and is the Director of the Integrated Circuits and Embedded Systems area and the FD-FAbrICS industry-sponsored lab. Previously, he held positions at the University of Siena, Intel Labs – CRL (2013), University of Michigan Ann Arbor (2011-2012), BWRC – University of California, Berkeley (2009-2011), and EPFL (Switzerland, 2007).He has authored or co-authored more than 350 publications on journals and conference proceedings. He is co-author of five books, In-Memory and Immersed-in-Logic Primitives for Ubiquitous Hardware Security (Springer, 2023), Adaptive Digital Circuits for Power-Performance Range beyond Wide Voltage Scaling (Springer, 2020), Enabling the Internet of Things – from Circuits to Systems (Springer, 2017), Flip-Flop Design in Nanometer CMOS – from High Speed to Low Energy (Springer, 2015) and Model and Design of Bipolar and MOS Current-Mode Logic: CML, ECL and SCL Digital Circuits (Springer, 2005). His primary research interests include widely energy-scalable integrated systems, self-powered wireless integrated systems, near-threshold circuits for green computing, data-driven integrated systems, hardware security, and emerging technologies, among the others.He was the Editor in Chief of the IEEE Transactions on VLSI Systems (2019-2022), and the Deputy Editor in Chief of the IEEE Journal on Emerging and Selected Topics in Circuits and Systems (2018). He is the Chair of the Distinguished Lecturer Program for the IEEE Circuits and Systems Society (2023-2024), and was Distinguished Lecturer for the same Society (2022-2023, 2009-2010) and the Solid-State Circuits Society (2020-2021). He was also member of the Board of Governors of the IEEE Circuits and Systems Society (2015-2020), and Chair of the “VLSI Systems and Applications” Technical Committee (2010-2012). In the last five years, he has given 50+ invited talks in top conferences, universities and leading semiconductor companies. His research has received various best paper awards (e.g., ISSCC, ICECS), public recognition from industry (e.g., among 10 technology highlights from TSMC in 2020), and his group has been recognized as top contributor at the VLSI Symposium on Circuits (2023). He served as Guest Editor of several IEEE journal special issues (e.g., JSSC, TCAS-I, TCAS-II, JETCAS). He also serves or has served as Associate Editor of a number of IEEE and ACM journals. He is/was Technical Program Chair (e.g., ISCAS, SOCC, ICECS, NEWCAS, APCCAS), Track Chair in a number of conferences (ICCD, ISCAS, ICECS, VLSI-SoC, APCCAS, ICM), ISSCC and ASSCC subcommittee member. Prof. Alioto is an IEEE Fellow.",
+       {
+        id: 2,
+        name: "Dr. Ridhi Ghosh",
+        role: "Senior Scientist, Hitachi Energy, Sweden",
+        imageUrl: "/RidhiGhosh.jpg",
         talkTitle:"To be Updated Soon",
         abstract:"To be Updated Soon"
-      }
+      },
+     
     ],
   },
   
