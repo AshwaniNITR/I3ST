@@ -138,8 +138,8 @@ const FlippableCard = ({ announcement, index, isDeadlinePassed }) => {
 const Page = () => {
   const announcements = [
   {
-    title: "⏳ Deadline Approaching!",
-    description: "Submit your papers before the deadline: MARCH 31, 2026.",
+    title: "Paper Submission is now closed!",
+    description: "Thank you for your interest. Stay tuned for updates on the review process and notification of acceptance.",
     icon: Calendar,
     color: "from-orange-500 to-red-500",
   },
@@ -176,9 +176,9 @@ const Page = () => {
   const targetTime = new Date("2026-03-31T23:59:00");
   const isDeadlinePassed = now >= targetTime;
   if(isDeadlinePassed){
-     announcements[0].title="⏳ Deadline Has Been Extended!";
-     announcements[0].description="Submit your papers before the extended deadline: APRIL 8, 2026.";
-     announcements[0].color="from-green-500 to-emerald-500";
+     announcements[0].title="⏳ Paper Submission is Now Closed!";
+     announcements[0].description="Thank you for your interest. Stay tuned for updates on the review process and notification of acceptance.";
+     announcements[0].color="from-red-500 to-red-600";
   }
   return (
     <div className="relative min-h-screen">
