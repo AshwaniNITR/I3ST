@@ -176,9 +176,9 @@ const Page = () => {
   const targetTime = new Date("2026-03-31T23:59:00");
   const isDeadlinePassed = now >= targetTime;
   if(isDeadlinePassed){
-     announcements[0].title="⏳ Paper Submission is Now Closed!";
-     announcements[0].description="Thank you for your interest. Stay tuned for updates on the review process and notification of acceptance.";
-     announcements[0].color="from-red-500 to-red-600";
+     announcements[0].title="Date For Notification of Acceptance is Extended!";
+     announcements[0].description="The Notification of Acceptance date has been extended to May 31, 2026.";
+     announcements[0].color="from-green-500 to-green-600";
   }
   return (
     <div className="relative min-h-screen">

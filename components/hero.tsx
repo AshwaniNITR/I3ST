@@ -81,8 +81,8 @@ const Hero = () => {
   const targetTime = new Date("2026-03-31T23:59:00");
   const isDeadlinePassed = now >= targetTime;
   if(isDeadlinePassed){
-     announcements[0].title="⏳ Paper Submission is Now Closed!";
-     announcements[0].description="Thank you for your interest. Stay tuned for updates on the review process and notification of acceptance.";
+     announcements[0].title="Notification of Acceptance Date Extended!";
+     announcements[0].description="The Notification of Acceptance date has been extended to May 31, 2026.";
   }
   
   const images = [
