@@ -17,7 +17,7 @@ const IMPORTANT_DATES = [
   {
     id: 3,
     title: "Notification of Acceptance",
-    date: new Date("2026-05-31"),
+    date: new Date("2026-06-7"),
   },
   {
     id: 4,
@@ -233,7 +233,7 @@ export default function ImportantDatesSlider() {
                                 15 May, 2026
                               </span>
                               <span className="text-green-600 font-bold">
-                                31 May, 2026
+                                7 June, 2026
                               </span>
                             </>
                           );

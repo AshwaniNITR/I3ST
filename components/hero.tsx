@@ -82,7 +82,7 @@ const Hero = () => {
   const isDeadlinePassed = now >= targetTime;
   if(isDeadlinePassed){
      announcements[0].title="Notification of Acceptance Date Extended!";
-     announcements[0].description="The Notification of Acceptance date has been extended to May 31, 2026.";
+     announcements[0].description="The Notification of Acceptance date has been extended to June 7, 2026.";
   }
   
   const images = [

@@ -177,7 +177,7 @@ const Page = () => {
   const isDeadlinePassed = now >= targetTime;
   if(isDeadlinePassed){
      announcements[0].title="Date For Notification of Acceptance is Extended!";
-     announcements[0].description="The Notification of Acceptance date has been extended to May 31, 2026.";
+     announcements[0].description="The Notification of Acceptance date has been extended to June 7, 2026.";
      announcements[0].color="from-green-500 to-green-600";
   }
   return (
