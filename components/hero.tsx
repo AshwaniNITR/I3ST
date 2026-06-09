@@ -81,8 +81,8 @@ const Hero = () => {
   const targetTime = new Date("2026-03-31T23:59:00");
   const isDeadlinePassed = now >= targetTime;
   if(isDeadlinePassed){
-     announcements[0].title="Notification of Acceptance Date Extended!";
-     announcements[0].description="The Notification of Acceptance date has been extended to June 7, 2026.";
+     announcements[0].title="Notification of Acceptance Sent!";
+     announcements[0].description="The decisions of the manuscripts have been communicated to the Primary Authors through email notifications. The authors whose papers got ACCEPTED can check their review comments in the CMT portal and are suggested to address the queries in the Camera Ready version of the manuscript. The review comments of the REJECTED papers have also been made available in CMT portal for further improvement of the work. Some papers are DESK REJECTED due to either inadequate technical novelty, AI content or Plagiarism or being submitted in an inappropriate format";
   }
   
   const images = [
