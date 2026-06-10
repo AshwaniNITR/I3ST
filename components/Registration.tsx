@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import RegistrationCalculator from "./RegistrationCalc";
+import PaymentRegistration from "./PayementRegistration";
 
 export default function FeesPage() {
   const indianTableData = [
@@ -468,6 +469,9 @@ export default function FeesPage() {
       </motion.div>
 
       <RegistrationCalculator />
+      <PaymentRegistration
+        googleFormLink="https://forms.gle/JNV1r8Sf2e8fPRpC6"
+        qrCodeImageUrl="/path-to-your-qr-code_page-0001.jpg"/>
     </div>
   );
 }

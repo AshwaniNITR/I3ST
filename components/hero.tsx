@@ -498,6 +498,9 @@ const Hero = () => {
                     <h3 className="text-4xl font-black bg-gradient-to-r from-blue-700 via-purple-700 to-blue-700 bg-clip-text text-transparent">
                       Registration Is Now Open!
                     </h3>
+                    <p className="mt-2 text-gray-600 text-lg">
+                     Please go through the registration guidelines before doing the registration.
+                    </p>
                   </div>
 
                   {/* Main CTA Button */}
@@ -522,7 +525,7 @@ const Hero = () => {
                   </a>
 
                   {/* Divider with "OR" */}
-                  <div className="relative my-6">
+                  <div className="relative my-3">
                     <div className="absolute inset-0 flex items-center">
                       <div className="w-full border-t border-gray-300"></div>
                     </div>
@@ -533,6 +536,9 @@ const Hero = () => {
                     </div>
                   </div>
 
+                  <p className="mb-2 text-gray-600 text-md font-bold">
+                    After completing the payment, please fill the registration form to complete the registration process.
+                  </p>
                   {/* Secondary Button for Guidelines */}
                   <a
                     href="https://forms.gle/JNV1r8Sf2e8fPRpC6"
@@ -700,13 +706,17 @@ const Hero = () => {
 
               {/* Message - Centered */}
               <div className="text-center mb-1">
-                <h3 className="text-xs font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent mb-0.5">
+                <h3 className="text-md font-black font-extrabold bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent mb-0.5">
                  Registration Is Now Open!
                 </h3>
               </div>
 
               {/* Buttons - Centered */}
+            
               <div className="space-y-1">
+                  <p className="text-sm text-center mt-0.5 text-gray-600 mb-0.5">
+                  After completing the payment, please fill the registration form to complete the registration process.
+                </p>
                 <a
                   href="https://forms.gle/JNV1r8Sf2e8fPRpC6"
                   target="_blank"
@@ -715,6 +725,9 @@ const Hero = () => {
                 >
                   Click here for the Registration Form
                 </a>
+                <p className="text-sm text-center mt-0.5 text-gray-600 mb-0.5">
+                  Please go through the registration guidelines before doing the registration.
+                </p>
                 <a
                   href="/RegDet"
                   className="block w-full border border-blue-600 text-blue-600 font-bold py-1 px-2 rounded text-center text-[10px]"
@@ -949,6 +962,9 @@ const Hero = () => {
               <h3 className="text-2xl font-black bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent sm:text-3xl">
                 Registration Is Now Open!
               </h3>
+              <p className="mt-2 text-gray-600 text-md sm:text-lg">
+                Please go through the registration guidelines before doing the registration.
+              </p>
             </div>
 
             {/* Main Button */}
@@ -989,7 +1005,9 @@ const Hero = () => {
                 </span>
               </div>
             </div>
-
+            <p className="mb-2 text-gray-600 text-md font-bold text-center">
+              After completing the payment, please fill the registration form to complete the registration process.
+            </p>
             {/* Guidelines Button */}
             <a
               href="https://forms.gle/JNV1r8Sf2e8fPRpC6"
