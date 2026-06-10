@@ -58,9 +58,10 @@ const Hero = () => {
       "Authors of papers accepted and presented at INSTCon 2026 may submit technically extended versions of their work to IEEE Transactions on Instrumentation and Measurement (TIM) and IEEE Open Journal of Instrumentation and Measurement (OJIM), in accordance with the journals’ policies for extended versions of conference papers (https://ieee-ims.org/publication/ieee-tim/information-authors, https://ieee-ims.org/publication/ieee-ojim/author-information). All such submissions will be handled as regular journal submissions and will undergo the standard peer-review process.",
   },
   {
-    title:"Registration For Attendees",
-    description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
-  }
+      title:"Camera Ready Submission Guidelines",
+      description:"Please prepare your Camera Ready version following the guidelines given in the website",
+     
+    },
 ];
   const [animationStates, setAnimationStates] = useState({
     desktopLayout: false,

@@ -34,6 +34,7 @@ const navigation = [
       { name: "Call for Papers", href: "/NITFINAL.pdf" },
       { name: "Submit Paper", href: "/submitPaper" },
       { name: "Registration Details", href: "/RegDet" },
+      { name: "Camera Ready Submission", href: "/cameraReady" },
     ],
   },
   { name: "Tracks", href: "/track-chairs" },

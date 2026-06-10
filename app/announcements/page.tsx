@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import CombinedBackground from "../../components/CombinedBackground";
-import { Calendar, Trophy, Plane, FileText , Megaphone } from "lucide-react";
+import { Calendar, Trophy, Plane, FileText , Megaphone, CameraIcon } from "lucide-react";
 
 
 
@@ -143,12 +143,12 @@ const Page = () => {
     icon: Megaphone,
     color: "from-green-500 to-green-600",
   },
-     {
-    title:"Registration For Attendees",
-    description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
-    icon: Megaphone,
-    color: "from-green-500 to-green-600",
-  },
+  {
+      title:"Camera Ready Submission Guidelines",
+      description:"Please prepare your Camera Ready version following the guidelines given in the website",
+      icon: CameraIcon,
+      color: "from-red-500 to-pink-500",
+    },
   {
     title: "Paper Submission is now closed!",
     description: "Thank you for your interest. Stay tuned for updates on the review process and notification of acceptance.",
