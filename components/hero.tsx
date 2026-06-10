@@ -64,7 +64,7 @@ function calcPapersFee(base, numPapers) {
 // Pages surcharge: 6 → +0, 7 → +1000, 8 → +2000
 const PAGE_SURCHARGE = { 6: 0, 7: 1000, 8: 2000 };
 
-const RegistrationCalculator = () => {
+export const RegistrationCalculator = () => {
   const [authorType, setAuthorType] = useState("indian");
   const [membership, setMembership] = useState("nonIeee");
   const [category, setCategory] = useState("student");
@@ -76,6 +76,14 @@ const RegistrationCalculator = () => {
   const tier = isEarly ? "early" : "regular";
   const baseAmount = regDate ? fees[authorType][category][tier][membership] : null;
 
+  // Get page surcharge based on author type
+  const getPageSurcharge = (pages, authorTypeValue) => {
+    if (pages <= 6) return 0;
+    const extraPages = pages - 6;
+    const perPageCharge = authorTypeValue === "indian" ? 1000 : 50;
+    return extraPages * perPageCharge;
+  };
+
   // Per-paper breakdown for display
   const paperBreakdown = baseAmount
     ? Array.from({ length: numPapers }, (_, i) => {
@@ -86,7 +94,7 @@ const RegistrationCalculator = () => {
     : [];
 
   const papersSubtotal = baseAmount ? calcPapersFee(baseAmount, numPapers) : null;
-  const pageSurcharge = baseAmount ? PAGE_SURCHARGE[numPages] : null;
+  const pageSurcharge = baseAmount ? getPageSurcharge(numPages, authorType) : null;
   const totalAmount = baseAmount ? papersSubtotal + pageSurcharge : null;
 
   const currency = authorType === "indian" ? "₹" : "$";
@@ -97,7 +105,7 @@ const RegistrationCalculator = () => {
   const radioInactive = "bg-white border-gray-200 text-gray-500 hover:border-gray-300";
 
   return (
-    <div className=" border-t border-gray-100 pt-8 lg:pt-10">
+    <div className="mt-8 border-t border-gray-100 pt-8 lg:mt-10 lg:pt-10">
       <p className="text-center text-xl font-bold text-gray-800 mb-2 lg:text-2xl">
         Calculate your registration amount
       </p>
@@ -243,7 +251,8 @@ const RegistrationCalculator = () => {
             <div>
               <p className="text-base text-gray-500 mb-1 font-medium lg:text-lg">Number of pages</p>
               <p className="text-base text-gray-400 mb-3 lg:text-lg">
-                Pages beyond 6 incur an additional charge of {currency}1,000 per extra page.
+                Pages beyond 6 incur an additional charge of{" "}
+                {authorType === "indian" ? "₹1,000" : "$50"} per extra page.
               </p>
               <div className="flex gap-3">
                 {[6, 7, 8].map((pg) => (
@@ -266,7 +275,8 @@ const RegistrationCalculator = () => {
               </div>
               {numPages > 6 && (
                 <p className="text-base mt-2 text-purple-600 font-medium lg:text-lg lg:mt-2.5">
-                  + {currency}{PAGE_SURCHARGE[numPages].toLocaleString()} extra page charge
+                  + {currency}{pageSurcharge.toLocaleString()} extra page charge
+                  {numPages - 6 > 1 && ` (${numPages - 6} extra pages)`}
                 </p>
               )}
             </div>
@@ -294,7 +304,10 @@ const RegistrationCalculator = () => {
               </div>
               {pageSurcharge > 0 && (
                 <div className="flex justify-between text-base lg:text-lg">
-                  <span className="text-gray-500">Extra page charge ({numPages} pages)</span>
+                  <span className="text-gray-500">
+                    Extra page charge ({numPages} pages)
+                    {numPages - 6 > 0 && ` (${numPages - 6} extra page${numPages - 6 > 1 ? 's' : ''})`}
+                  </span>
                   <span className="font-semibold text-gray-700 lg:text-lg">
                     + {currency}{pageSurcharge.toLocaleString()}
                   </span>
@@ -325,7 +338,6 @@ const RegistrationCalculator = () => {
     </div>
   );
 };
-
 const Hero = () => {
   const [showModal, setShowModal] = useState(false);
   const announcements = [
