@@ -62,6 +62,10 @@ const Hero = () => {
       description:"Please prepare your Camera Ready version following the guidelines given in the website",
      
     },
+    {
+    title:"Registration For Attendees",
+    description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
+  },
 ];
   const [animationStates, setAnimationStates] = useState({
     desktopLayout: false,
