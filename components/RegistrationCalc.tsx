@@ -10,64 +10,64 @@ const fees = {
   indian: {
     student: {
       early: {
-        ieee: 5500,
-        nonIeee: 6500,
-      },
-      regular: {
-        ieee: 7000,
-        nonIeee: 8000,
-      },
-    },
-    academia: {
-      early: {
         ieee: 7500,
         nonIeee: 8500,
       },
       regular: {
-        ieee: 9500,
-        nonIeee: 10500,
+        ieee: 8000,
+        nonIeee: 9000,
+      },
+    },
+    academia: {
+      early: {
+        ieee: 10000,
+        nonIeee: 11000,
+      },
+      regular: {
+        ieee: 11000,
+        nonIeee: 12000,
       },
     },
     industry: {
       early: {
-        ieee: 9500,
-        nonIeee: 10500,
+        ieee: 15000,
+        nonIeee: 16000,
       },
       regular: {
-        ieee: 12000,
-        nonIeee: 13000,
+        ieee: 16000,
+        nonIeee: 17000,
       },
     },
   },
   foreign: {
     student: {
       early: {
-        ieee: 350,
-        nonIeee: 450,
+        ieee: 250,
+        nonIeee: 350,
       },
       regular: {
-        ieee: 450,
-        nonIeee: 550,
+        ieee: 300,
+        nonIeee: 400,
       },
     },
     academia: {
       early: {
-        ieee: 450,
-        nonIeee: 550,
+        ieee: 400,
+        nonIeee: 450,
       },
       regular: {
-        ieee: 600,
-        nonIeee: 700,
+        ieee: 450,
+        nonIeee: 500,
       },
     },
     industry: {
       early: {
-        ieee: 600,
-        nonIeee: 700,
+        ieee: 500,
+        nonIeee: 550,
       },
       regular: {
-        ieee: 750,
-        nonIeee: 850,
+        ieee: 550,
+        nonIeee: 600,
       },
     },
   },
