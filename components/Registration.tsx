@@ -26,26 +26,32 @@ export default function FeesPage() {
     "Author registration fee includes- Registration Kit, Conference Lunch and Banquet Dinner.",
     "Registration fees, once paid, are non-refundable.",
     "Papers exceeding 6 pages will be charged at ₹1000 (USD 50) per additional page, up to a maximum of 8 pages.",
-    "Registration fees for attendees (co-author/non-author/accompanying person) is ₹3500 (without any Registration Kit).",
+    "Registration fees for Attendees (co-author/non-author/accompanying person) is ₹3500 (without any Registration Kit).",
   ];
 
   // Helper function to highlight amounts in text
-  const highlightAmounts = (text) => {
+ const highlightAmounts = (text) => {
     const parts = [];
     let lastIndex = 0;
     
-    // Regex to find ₹ amounts and $ amounts
-    const amountRegex = /(₹\d+(?:,\d+)*(?:\.\d+)?|\$\d+(?:,\d+)*(?:\.\d+)?)/g;
+    // Regex to find ₹ amounts, $ amounts, and the word "attendees"
+    const highlightRegex = /(₹\d+(?:,\d+)*(?:\.\d+)?|\$\d+(?:,\d+)*(?:\.\d+)?|attendees)/gi;
     let match;
     
-    while ((match = amountRegex.exec(text)) !== null) {
-      // Add text before the amount
+    while ((match = highlightRegex.exec(text)) !== null) {
+      // Add text before the match
       if (match.index > lastIndex) {
         parts.push(<span key={`text-${lastIndex}`}>{text.substring(lastIndex, match.index)}</span>);
       }
-      // Add highlighted amount
+      
+      // Check if it's an amount or the word "attendees"
+      const isAmount = match[0].match(/[₹$]/);
+      
       parts.push(
-        <strong key={`amount-${match.index}`} className="text-red-600 bg-red-50 px-1.5 py-0.5 rounded-md inline-block mx-0.5 text-base">
+        <strong 
+          key={`highlight-${match.index}`} 
+          className={isAmount ? "text-red-600 bg-red-50 px-1.5 py-0.5 rounded-md inline-block mx-0.5 text-base" : "text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded-md inline-block mx-0.5 text-base"}
+        >
           {match[0]}
         </strong>
       );
