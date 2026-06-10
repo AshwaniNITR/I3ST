@@ -12,13 +12,23 @@ export default function FeesPage() {
     highlightRight: true,
   },
   {
+    left: "Registering Author should be an Active IEEE member to avail the discount.",
+    right:
+      "Registering Author should be a Student (UG/PG/Ph.D) to do the registration in the ‘Student Category’",
+  },
+   {
+    left: "In ‘Academia/R&D Organization’ category, to avail IEEE Membership discount the Registering Author must be an Active Full Member of IEEE",
+    right:
+      "A paper registered in ‘Academia/R&D Organization’ category, can be presented by a Student Co-author but vise-versa is not applicable.",
+  },
+  {
     left:
       "Author registration fee includes- Registration Kit, Conference Lunch and Banquet Dinner.",
     right: "Registration fees, once paid, are non-refundable.",
   },
   {
     left:
-      "Papers exceeding 6 pages will be charged at ₹1000 (USD 50) per additional page, up to a maximum of 8 pages. Beyond 8 pages, the charge will be ₹4000 (USD 200) per page",
+      "Papers exceeding 6 pages will be charged at ₹1000 (USD 50) per additional page, up to a maximum of 8 pages.",
     right:
       "Registration fees for attendees (co-author/non-author/accompanying person) is ₹3500 (without any Registration Kit).",
     highlightLeft: true,
@@ -71,7 +81,7 @@ export default function FeesPage() {
       >
         <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-5">
           <h2 className="text-2xl font-bold text-white text-center">
-            Additional Information
+            Registation Guidelines
           </h2>
           <p className="text-blue-200 text-sm mt-1 text-center">
             Important registration guidelines and policies
