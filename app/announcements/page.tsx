@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import CombinedBackground from "../../components/CombinedBackground";
-import { Calendar, Trophy, Plane, FileText } from "lucide-react";
+import { Calendar, Trophy, Plane, FileText , Megaphone } from "lucide-react";
 
 
 
@@ -137,6 +137,18 @@ const FlippableCard = ({ announcement, index, isDeadlinePassed }) => {
 
 const Page = () => {
   const announcements = [
+     {
+    title:"Registration For Attendees",
+    description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
+    icon: Megaphone,
+    color: "from-green-500 to-green-600",
+  },
+     {
+    title:"Registration For Attendees",
+    description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
+    icon: Megaphone,
+    color: "from-green-500 to-green-600",
+  },
   {
     title: "Paper Submission is now closed!",
     description: "Thank you for your interest. Stay tuned for updates on the review process and notification of acceptance.",
@@ -163,6 +175,7 @@ const Page = () => {
     icon: FileText,
     color: "from-blue-500 to-indigo-500",
   },
+  
 ];
      const [now, setNow] = useState(new Date());
 
@@ -197,11 +210,20 @@ const Page = () => {
 
           {/* Content Section - Responsive grid with flexible height */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
-              {announcements.map((announcement, index) => (
-                <FlippableCard key={index} announcement={announcement} index={index} isDeadlinePassed={isDeadlinePassed} />
-              ))}
-            </div>
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
+  {announcements.map((announcement, index) => (
+    <div
+      key={index}
+      className="w-full md:w-[calc(50%-20px)] max-w-[550px]"
+    >
+      <FlippableCard
+        announcement={announcement}
+        index={index}
+        isDeadlinePassed={isDeadlinePassed}
+      />
+    </div>
+  ))}
+</div>
 
             {/* No bottom spacing - let the page content determine the height */}
           </div>
