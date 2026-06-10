@@ -187,7 +187,7 @@ export default function FeesPage() {
                   >
                     <div className="font-bold text-lg">Early Bird</div>
                     <div className="text-blue-100 text-sm font-medium mt-1">
-                      (On or before 17.06.2025)
+                      (On or before 17.06.2026)
                     </div>
                   </th>
                   <th
@@ -299,7 +299,7 @@ export default function FeesPage() {
                       Early Bird
                     </h4>
                     <p className="text-blue-200 text-xs text-center mt-0.5">
-                      On or before 17.06.2025
+                      On or before 17.06.2026
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
@@ -394,7 +394,7 @@ export default function FeesPage() {
                   >
                     <div className="font-bold text-lg">Early Bird</div>
                     <div className="text-blue-100 text-sm font-medium mt-1">
-                      (On or before 17.06.2025)
+                      (On or before 17.06.2026)
                     </div>
                   </th>
                   <th
@@ -505,7 +505,7 @@ export default function FeesPage() {
                       Early Bird
                     </h4>
                     <p className="text-blue-200 text-xs text-center mt-0.5">
-                      On or before 17.06.2025
+                      On or before 17.06.2026
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
