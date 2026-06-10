@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import RegistrationCalculator from "./RegistrationCalc";
 
 export default function FeesPage() {
   const rows = [
@@ -62,6 +63,87 @@ export default function FeesPage() {
       </motion.h2>
       <div className="w-32 h-2 bg-gradient-to-r from-[#003366] to-[#0066cc] mx-auto mb-8 rounded-full"></div>
 
+       <motion.div
+        className="bg-gradient-to-br mb-5 from-white to-blue-50 rounded-2xl shadow-xl overflow-hidden border border-blue-200"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-5">
+          <h2 className="text-2xl font-bold text-white text-center">
+            Additional Information
+          </h2>
+          <p className="text-blue-200 text-sm mt-1 text-center">
+            Important registration guidelines and policies
+          </p>
+        </div>
+
+      <div className="p-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+    {rows.map((row, index) => (
+      <React.Fragment key={index}>
+        {/* LEFT CELL */}
+        <div className="flex items-start p-3 rounded-lg hover:bg-blue-50 transition">
+          <div
+            className={`w-6 h-6 aspect-square shrink-0 rounded-full
+  flex items-center justify-center mr-3 leading-none ${
+              row.highlightLeft ? "bg-red-100" : "bg-blue-100"
+            }`}
+          >
+            <span
+              className={`text-sm font-bold leading-none ${
+                row.highlightLeft ? "text-red-600" : "text-blue-600"
+              }`}
+            >
+              •
+            </span>
+          </div>
+          <p
+            className={`${
+              row.highlightLeft
+                ? "text-red-600 font-semibold"
+                : "text-gray-700"
+            }`}
+          >
+            {row.left}
+          </p>
+        </div>
+
+        {/* RIGHT CELL */}
+        <div className="flex items-start p-3 rounded-lg hover:bg-blue-50 transition">
+          <div
+            className={`w-6 h-6 aspect-square shrink-0 rounded-full
+  flex items-center justify-center mr-3 leading-none ${
+              row.highlightRight ? "bg-red-100" : "bg-blue-100"
+            }`}
+          >
+            <span
+              className={`text-sm font-bold leading-none ${
+                row.highlightRight ? "text-red-600" : "text-blue-600"
+              }`}
+            >
+              •
+            </span>
+          </div>
+          <p
+            className={`${
+              row.highlightRight
+                ? "text-red-600 font-semibold"
+                : "text-gray-700"
+            }`}
+          >
+            {row.right}
+          </p>
+        </div>
+      </React.Fragment>
+    ))}
+  </div>
+</div>
+
+      </motion.div>
+
+      
+
       {/* Indian Authors Table */}
       <motion.div
         className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl overflow-hidden mb-12 border border-blue-200"
@@ -95,7 +177,7 @@ export default function FeesPage() {
                   >
                     <div className="font-bold text-lg">Early Bird</div>
                     <div className="text-blue-100 text-sm font-medium mt-1">
-                      (On or before 15.06.2025)
+                      (On or before 17.06.2025)
                     </div>
                   </th>
                   <th
@@ -104,7 +186,7 @@ export default function FeesPage() {
                   >
                     <div className="font-bold text-lg">Regular</div>
                     <div className="text-blue-100 text-sm font-medium mt-1">
-                      (16.06.2026 - 22.06.2026)
+                      (18.06.2026 - 25.06.2026)
                     </div>
                   </th>
                 </tr>
@@ -207,7 +289,7 @@ export default function FeesPage() {
                       Early Bird
                     </h4>
                     <p className="text-blue-200 text-xs text-center mt-0.5">
-                      On or before 15.06.2025
+                      On or before 17.06.2025
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
@@ -239,7 +321,7 @@ export default function FeesPage() {
                       Regular
                     </h4>
                     <p className="text-blue-200 text-xs text-center mt-0.5">
-                      16.06.2026 - 22.06.2026
+                      18.06.2026 - 25.06.2026
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
@@ -302,7 +384,7 @@ export default function FeesPage() {
                   >
                     <div className="font-bold text-lg">Early Bird</div>
                     <div className="text-blue-100 text-sm font-medium mt-1">
-                      (On or before 15.06.2025)
+                      (On or before 17.06.2025)
                     </div>
                   </th>
                   <th
@@ -311,7 +393,7 @@ export default function FeesPage() {
                   >
                     <div className="font-bold text-lg">Regular</div>
                     <div className="text-blue-100 text-sm font-medium mt-1">
-                      (16.06.2026 - 22.06.2026)
+                      (18.06.2026 - 25.06.2026)
                     </div>
                   </th>
                 </tr>
@@ -413,7 +495,7 @@ export default function FeesPage() {
                       Early Bird
                     </h4>
                     <p className="text-blue-200 text-xs text-center mt-0.5">
-                      On or before 15.06.2025
+                      On or before 17.06.2025
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
@@ -445,7 +527,7 @@ export default function FeesPage() {
                       Regular
                     </h4>
                     <p className="text-blue-200 text-xs text-center mt-0.5">
-                      16.06.2026 - 22.06.2026
+                      18.06.2026 - 25.06.2026
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
@@ -475,85 +557,9 @@ export default function FeesPage() {
         </div>
       </motion.div>
 
-      {/* Additional Information Card */}
-      <motion.div
-        className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl overflow-hidden border border-blue-200"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-5">
-          <h2 className="text-2xl font-bold text-white text-center">
-            Additional Information
-          </h2>
-          <p className="text-blue-200 text-sm mt-1 text-center">
-            Important registration guidelines and policies
-          </p>
-        </div>
+      <RegistrationCalculator/>
 
-      <div className="p-6">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-    {rows.map((row, index) => (
-      <React.Fragment key={index}>
-        {/* LEFT CELL */}
-        <div className="flex items-start p-3 rounded-lg hover:bg-blue-50 transition">
-          <div
-            className={`w-6 h-6 aspect-square shrink-0 rounded-full
-  flex items-center justify-center mr-3 leading-none ${
-              row.highlightLeft ? "bg-red-100" : "bg-blue-100"
-            }`}
-          >
-            <span
-              className={`text-sm font-bold leading-none ${
-                row.highlightLeft ? "text-red-600" : "text-blue-600"
-              }`}
-            >
-              •
-            </span>
-          </div>
-          <p
-            className={`${
-              row.highlightLeft
-                ? "text-red-600 font-semibold"
-                : "text-gray-700"
-            }`}
-          >
-            {row.left}
-          </p>
-        </div>
-
-        {/* RIGHT CELL */}
-        <div className="flex items-start p-3 rounded-lg hover:bg-blue-50 transition">
-          <div
-            className={`w-6 h-6 aspect-square shrink-0 rounded-full
-  flex items-center justify-center mr-3 leading-none ${
-              row.highlightRight ? "bg-red-100" : "bg-blue-100"
-            }`}
-          >
-            <span
-              className={`text-sm font-bold leading-none ${
-                row.highlightRight ? "text-red-600" : "text-blue-600"
-              }`}
-            >
-              •
-            </span>
-          </div>
-          <p
-            className={`${
-              row.highlightRight
-                ? "text-red-600 font-semibold"
-                : "text-gray-700"
-            }`}
-          >
-            {row.right}
-          </p>
-        </div>
-      </React.Fragment>
-    ))}
-  </div>
-</div>
-
-      </motion.div>
+      
     </div>
   );
 }

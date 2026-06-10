@@ -21,9 +21,14 @@ const IMPORTANT_DATES = [
   },
   {
     id: 4,
-    title: "Final Paper Submission",
-    date: new Date("2026-05-31"),
+    title: "Camera-ready Submission",
+    date: new Date("2026-06-25"),
   },
+  {
+    id:5,
+    title:"Early Bird Regiastration",
+    date: new Date("2026-06-17"),
+  }
 ];
 
 export default function ImportantDatesSlider() {
