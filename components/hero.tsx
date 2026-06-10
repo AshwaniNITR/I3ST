@@ -66,6 +66,13 @@ const Hero = () => {
     title:"Registration For Attendees",
     description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
   },
+  {
+    title:"Accomodation",
+    description:"A limited number of paid accommodation facilities are available at NIT Rourkela Campus. Registration will open shortly.",
+  },
+
+
+
 ];
   const [animationStates, setAnimationStates] = useState({
     desktopLayout: false,
@@ -978,7 +985,7 @@ const Hero = () => {
 
             {/* Main Button */}
             <a
-              href="https://cmt3.research.microsoft.com/INSTCON2026"
+              href="/RegDet"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full mb-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-purple-800 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 active:scale-95 sm:py-5 sm:text-lg"

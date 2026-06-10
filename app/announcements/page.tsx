@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import CombinedBackground from "../../components/CombinedBackground";
-import { Calendar, Trophy, Plane, FileText , Megaphone, CameraIcon } from "lucide-react";
+import { Calendar, Trophy, Plane, FileText , Megaphone, CameraIcon, House } from "lucide-react";
 
 
 
@@ -142,6 +142,12 @@ const Page = () => {
     description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
     icon: Megaphone,
     color: "from-green-500 to-green-600",
+  },
+  {
+    title:"Accomodation",
+    description:"A limited number of paid accommodation facilities are available at NIT Rourkela Campus. Registration will open shortly.",
+    icon: House,
+    color: "from-blue-500 to-cyan-500",
   },
   {
     title:"Registration For Attendees",
