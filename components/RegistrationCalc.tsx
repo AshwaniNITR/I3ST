@@ -368,7 +368,7 @@ const RegistrationCalculator: React.FC = () => {
 
             <p className="text-sm text-gray-500 text-center lg:text-base">
               {authorType === "indian"
-                ? "Amount in INR. GST or other taxes may apply."
+                ? "Amount in INR including GST."
                 : "Amount in USD. Taxes may apply."}
             </p>
           </motion.div>
