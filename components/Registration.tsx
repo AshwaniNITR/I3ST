@@ -27,7 +27,7 @@ export default function FeesPage() {
     "Author registration fee includes- Registration Kit, Conference Lunch and Banquet Dinner.",
     "Registration fees, once paid, are non-refundable.",
     "Papers exceeding 6 pages will be charged at ₹1000 (USD 50) per additional page, up to a maximum of 8 pages.",
-    "Registration fees for Attendees (co-author/non-author/accompanying person) is ₹3500 (without any Registration Kit without any Registration Kit, including Conference Lunch and Gala Dinner). Registration for Attendees will Open soon.",
+    "Registration fees for Attendees (co-author/non-author/accompanying person) is ₹3500 (without any Registration Kit, including Conference Lunch and Gala Dinner). Registration for Attendees will Open soon.",
   ];
 
   // Helper function to highlight amounts in text
