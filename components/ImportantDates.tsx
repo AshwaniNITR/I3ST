@@ -26,8 +26,8 @@ const IMPORTANT_DATES = [
   },
   {
     id:5,
-    title:"Early Bird Regiastration",
-    date: new Date("2026-06-17"),
+    title:"Early Bird Registration",
+    date: new Date("2026-06-20"),
   }
 ];
 
@@ -239,6 +239,18 @@ export default function ImportantDatesSlider() {
                               </span>
                               <span className="text-green-600 font-bold">
                                 7 June, 2026
+                              </span>
+                            </>
+                          );
+                        }
+                        else if(item.title==="Early Bird Registration"){
+                          return (
+                            <>
+                              <span className="line-through text-red-500 mr-2">
+                                17 June, 2026
+                              </span>
+                              <span className="text-green-600 font-bold">
+                                20 June, 2026
                               </span>
                             </>
                           );

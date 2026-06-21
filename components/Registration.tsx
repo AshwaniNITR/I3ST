@@ -176,11 +176,11 @@ export default function FeesPage() {
                   </th>
                   <th colSpan={2} className="bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4 text-center border-r border-blue-500">
                     <div className="font-bold text-lg md:text-xl">Early Bird</div>
-                    <div className="text-blue-100 text-sm md:text-base font-medium mt-1">(On or before 17.06.2026)</div>
+                    <div className="text-blue-100 text-sm md:text-base font-medium mt-1">(On or before <span className="line-through text-red-500 mr-2">17.06.2026</span> 20.06.2026)</div>
                   </th>
                   <th colSpan={2} className="bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4 text-center border border-blue-500">
                     <div className="font-bold text-lg md:text-xl">Regular</div>
-                    <div className="text-blue-100 text-sm md:text-base font-medium mt-1">(18.06.2026 - 25.06.2026)</div>
+                    <div className="text-blue-100 text-sm md:text-base font-medium mt-1">(21.06.2026 - 25.06.2026)</div>
                   </th>
                 </tr>
                 <tr className="bg-gradient-to-b from-blue-800 to-blue-900">
@@ -264,7 +264,7 @@ export default function FeesPage() {
                 <div className="mb-4">
                   <div className="bg-gradient-to-r from-blue-900 to-blue-950 p-3 rounded-t-lg border border-blue-500 border-b-0">
                     <h4 className="font-bold text-white text-lg text-center">Early Bird</h4>
-                    <p className="text-blue-200 text-xs text-center mt-0.5">On or before 17.06.2026</p>
+                    <p className="text-blue-200 text-xs text-center mt-0.5">On or before <span className="line-through text-red-500 mr-2">17.06.2026</span> 20.06.2026  </p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
                     <div className="bg-gradient-to-b from-blue-800 to-blue-900 p-4 border-r border-blue-500">
@@ -286,7 +286,7 @@ export default function FeesPage() {
                 <div>
                   <div className="bg-gradient-to-r from-blue-900 to-blue-950 p-3 rounded-t-lg border border-blue-500 border-b-0">
                     <h4 className="font-bold text-white text-lg text-center">Regular</h4>
-                    <p className="text-blue-200 text-xs text-center mt-0.5">18.06.2026 - 25.06.2026</p>
+                    <p className="text-blue-200 text-xs text-center mt-0.5">21.06.2026 - 25.06.2026</p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
                     <div className="bg-gradient-to-b from-blue-800 to-blue-900 p-4 border-r border-blue-500">
@@ -333,11 +333,11 @@ export default function FeesPage() {
                   </th>
                   <th colSpan={2} className="bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4 text-center border-r border-blue-500">
                     <div className="font-bold text-lg md:text-xl">Early Bird</div>
-                    <div className="text-blue-100 text-sm md:text-base font-medium mt-1">(On or before 17.06.2026)</div>
+                    <div className="text-blue-100 text-sm md:text-base font-medium mt-1">(On or before <span className="line-through text-red-500 mr-2">17.06.2026</span> 20.06.2026)</div>
                   </th>
                   <th colSpan={2} className="bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4 text-center border border-blue-500">
                     <div className="font-bold text-lg md:text-xl">Regular</div>
-                    <div className="text-blue-100 text-sm md:text-base font-medium mt-1">(18.06.2026 - 25.06.2026)</div>
+                    <div className="text-blue-100 text-sm md:text-base font-medium mt-1">(21.06.2026 - 25.06.2026)</div>
                   </th>
                 </tr>
                 <tr className="bg-gradient-to-b from-blue-800 to-blue-900">
@@ -421,7 +421,7 @@ export default function FeesPage() {
                 <div className="mb-4">
                   <div className="bg-gradient-to-r from-blue-900 to-blue-950 p-3 rounded-t-lg border border-blue-500 border-b-0">
                     <h4 className="font-bold text-white text-lg text-center">Early Bird</h4>
-                    <p className="text-blue-200 text-xs text-center mt-0.5">On or before 17.06.2026</p>
+                    <p className="text-blue-200 text-xs text-center mt-0.5">On or before <span className="line-through text-red-500 mr-2">17.06.2026</span> 20.06.2026</p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
                     <div className="bg-gradient-to-b from-blue-800 to-blue-900 p-4 border-r border-blue-500">
@@ -443,7 +443,7 @@ export default function FeesPage() {
                 <div>
                   <div className="bg-gradient-to-r from-blue-900 to-blue-950 p-3 rounded-t-lg border border-blue-500 border-b-0">
                     <h4 className="font-bold text-white text-lg text-center">Regular</h4>
-                    <p className="text-blue-200 text-xs text-center mt-0.5">18.06.2026 - 25.06.2026</p>
+                    <p className="text-blue-200 text-xs text-center mt-0.5">21.06.2026 - 25.06.2026</p>
                   </div>
                   <div className="grid grid-cols-2 gap-0 border border-blue-500 rounded-b-lg overflow-hidden">
                     <div className="bg-gradient-to-b from-blue-800 to-blue-900 p-4 border-r border-blue-500">
