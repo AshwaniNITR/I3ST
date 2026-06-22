@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 // Constants
-const EARLY_BIRD_CUTOFF = new Date("2026-06-18");
+const EARLY_BIRD_CUTOFF = new Date("2026-06-21");
 
 // Fee structure
 const fees = {
@@ -182,8 +182,8 @@ const RegistrationCalculator: React.FC = () => {
             {regDate && (
               <p className={`text-base mt-2 font-medium lg:text-lg ${isEarly ? "text-green-600" : "text-amber-600"}`}>
                 {isEarly
-                  ? "✓ Early bird rate applies (on or before 17 Jun 2026)"
-                  : "Regular rate applies (after 17 Jun 2026)"}
+                  ? "✓ Early bird rate applies (on or before 20 Jun 2026)"
+                  : "Regular rate applies (after 21 Jun 2026)"}
               </p>
             )}
           </div>
