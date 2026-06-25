@@ -493,6 +493,7 @@ const RegularDeadline = () => {
       <RegistrationCalculator />
       <PaymentRegistration
         googleFormLink="https://forms.gle/JNV1r8Sf2e8fPRpC6"
+        attendeeFormLink="https://forms.gle/149XYH3kTZCDFbDc8"
         qrCodeImageUrl="/path-to-your-qr-code_page-0001.jpg"/>
     </div>
   );

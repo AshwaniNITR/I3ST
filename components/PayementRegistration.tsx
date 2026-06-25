@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 
 interface PaymentRegistrationProps {
   googleFormLink: string;
+  attendeeFormLink: string;
   qrCodeImageUrl?: string;
 }
 
 const PaymentRegistration: React.FC<PaymentRegistrationProps> = ({ 
   googleFormLink, 
+  attendeeFormLink,
   qrCodeImageUrl = "/api/placeholder/300/300"
 }) => {
   const [copiedText, setCopiedText] = useState<string>("");
@@ -256,26 +258,63 @@ const PaymentRegistration: React.FC<PaymentRegistrationProps> = ({
         </div>
 
         <div className="p-6 text-center">
-          <p className="text-lg text-gray-700 mb-4">
-            If you have completed the payment, please fill the form below:
-          </p>
-          
-          <a
-            href={googleFormLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-md hover:shadow-lg"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Open Registration Form
-          </a>
-          
-          <p className="text-sm text-gray-500 mt-4">
-            The form will open in a new tab. Please have your payment confirmation ready.
-          </p>
-        </div>
+  <p className="text-lg text-gray-700 mb-6">
+    If you have completed the payment, please fill the appropriate form below:
+  </p>
+
+  <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+    
+    <a
+      href={googleFormLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-md hover:shadow-lg"
+    >
+      <svg
+        className="w-5 h-5 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        />
+      </svg>
+      Author Registration Form
+    </a>
+
+    <a
+      href={attendeeFormLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-green-700 hover:to-green-800 transition-all duration-200 shadow-md hover:shadow-lg"
+    >
+      <svg
+        className="w-5 h-5 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        />
+      </svg>
+      Attendee Registration Form
+    </a>
+
+  </div>
+
+  <p className="text-sm text-gray-500 mt-6 max-w-2xl mx-auto">
+    The selected form will open in a new tab. Please keep your payment
+    confirmation details ready before proceeding.
+  </p>
+</div>
       </motion.div>
     </div>
   );
