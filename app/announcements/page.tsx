@@ -67,6 +67,7 @@ const FlippableCard = ({ announcement, index, isDeadlinePassed }) => {
             overflow-y-auto`}
           style={{ transform: "rotateY(180deg)" }}
         >
+         
           {/* Description content */}
           {!isDeadline ? (
             <>
@@ -77,6 +78,17 @@ const FlippableCard = ({ announcement, index, isDeadlinePassed }) => {
               >
                 {announcement.description}
               </p>
+               {announcement.link && (
+  <a
+    href={announcement.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={(e) => e.stopPropagation()}
+    className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-md"
+  >
+    {announcement.buttonText || "Open Form"}
+  </a>
+)}
             </>
           ) : (
             <div className="text-center">
@@ -147,6 +159,7 @@ const Page = () => {
     title:"Accomodation",
     description:"A limited number of paid accommodation facilities are available at NIT Rourkela Campus. Registration will open shortly.",
     icon: House,
+    link:"https://forms.gle/NdjgabFbXi9qt8CJ6",
     color: "from-blue-500 to-cyan-500",
   },
   {
@@ -172,6 +185,7 @@ const Page = () => {
     description:
       "Limited Travel Grants will be awarded to the selected student presenters.",
     icon: Plane,
+    link:"https://forms.gle/g55TUygzE1cDKSML9",
     color: "from-blue-500 to-cyan-500",
   },
   {
