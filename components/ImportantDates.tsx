@@ -28,6 +28,11 @@ const IMPORTANT_DATES = [
     id:5,
     title:"Early Bird Registration",
     date: new Date("2026-06-20"),
+  },
+  {
+    id:6,
+    title:"Regular Registration",
+    date: new Date("2026-06-30")
   }
 ];
 

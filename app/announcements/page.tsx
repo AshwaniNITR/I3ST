@@ -157,14 +157,15 @@ const Page = () => {
   },
   {
     title:"Accomodation",
-    description:"A limited number of paid accommodation facilities are available at NIT Rourkela Campus. Registration will open shortly.",
+    description:"A limited number of paid accommodation facilities are available at NIT Rourkela Campus. Registration is now open.",
     icon: House,
     link:"https://forms.gle/NdjgabFbXi9qt8CJ6",
     color: "from-blue-500 to-cyan-500",
   },
   {
     title:"Registration For Attendees",
-    description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
+    description:"Registration for attendees is now open",
+    link:"https://forms.gle/149XYH3kTZCDFbDc8",
     icon: Megaphone,
     color: "from-green-500 to-green-600",
   },
@@ -183,7 +184,7 @@ const Page = () => {
   {
     title: "Travel Grants",
     description:
-      "Limited Travel Grants will be awarded to the selected student presenters.",
+      "Limited Travel Grants will be awarded to the selected student presenters. Registration is now open.",
     icon: Plane,
     link:"https://forms.gle/g55TUygzE1cDKSML9",
     color: "from-blue-500 to-cyan-500",

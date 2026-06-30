@@ -46,7 +46,9 @@ const Hero = () => {
   {
     title: "Travel Grants",
     description:
-      "Limited Travel Grants will be awarded to the selected student presenters.",
+      "Registration for travel grants is now open",
+    link:"https://forms.gle/g55TUygzE1cDKSML9",
+    buttonText:"Register Here"
   },
   {
     title: "Best Paper Award in Each Track",
@@ -62,17 +64,18 @@ const Hero = () => {
       description:"Please prepare your Camera Ready version following the guidelines given in the website",
      
     },
-    {
-    title:"Registration For Attendees",
-    description:"Registration for attendees will be updated soon. Please stay tuned for updates on the registration process and deadlines.",
-  },
+   {
+  title: "Registration For Attendees",
+  description: "Registration for attendees is now open.",
+  link: "https://forms.gle/149XYH3kTZCDFbDc8",
+  buttonText: "Register Here",
+},
   {
     title:"Accomodation",
-    description:"A limited number of paid accommodation facilities are available at NIT Rourkela Campus. Registration will open shortly.",
+    description:"Registration For Accomodation is now open",
+    link:"https://forms.gle/NdjgabFbXi9qt8CJ6",
+    buttonText:"Register Here"
   },
-
-
-
 ];
   const [animationStates, setAnimationStates] = useState({
     desktopLayout: false,
@@ -443,7 +446,21 @@ const Hero = () => {
               ${isJournal ? "text-yellow-900 font-semibold" : "text-gray-700"}`}
                           >
                             {item.description}
+                            {item.link && (
+  <div className="mt-3 flex justify-center">
+    <a
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-white font-semibold hover:bg-blue-700 transition"
+    >
+      {item.buttonText || "Open Link"}
+    </a>
+  </div>
+)}
                           </p>
+                          
+                          
                         ) : (
                           <div className="mt-1 text-sm sm:text-base text-center">
                           {!isDeadlinePassed ?(
@@ -914,6 +931,18 @@ const Hero = () => {
               ${isJournal ? "text-yellow-900 font-semibold" : "text-gray-700"}`}
                         >
                           {item.description}
+                          {item.link && (
+  <div className="mt-3 flex justify-center">
+    <a
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-white font-semibold hover:bg-blue-700 transition"
+    >
+      {item.buttonText || "Open Link"}
+    </a>
+  </div>
+)}
                         </p>
                       ) : (
                        <div className="mt-1 text-sm sm:text-base text-center">
