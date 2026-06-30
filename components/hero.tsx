@@ -76,6 +76,10 @@ const Hero = () => {
     link:"https://forms.gle/NdjgabFbXi9qt8CJ6",
     buttonText:"Register Here"
   },
+  {
+    title:"Conference ID",
+    description:"Conference ID for PDFExpress-69471x"
+  }
 ];
   const [animationStates, setAnimationStates] = useState({
     desktopLayout: false,
